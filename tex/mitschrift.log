@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.30)  27 SEP 2017 21:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.30)  15 OCT 2017 18:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1102,15 +1102,15 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-<img/uzh_logo.png, id=16, 644.4075pt x 204.765pt>
-File: img/uzh_logo.png Graphic file (type png)
- <use img/uzh_logo.png>
-Package pdftex.def Info: img/uzh_logo.png used on input line 187.
+<../img/uzh_logo.png, id=16, 644.4075pt x 204.765pt>
+File: ../img/uzh_logo.png Graphic file (type png)
+ <use ../img/uzh_logo.png>
+Package pdftex.def Info: ../img/uzh_logo.png used on input line 187.
 (pdftex.def)             Requested size: 196.32405pt x 62.38292pt.
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./img/uzh_logo.png>]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <../img/uzh_logo.png>]
 [2] [3] [4] (./mitschrift.toc
 Package cleveref Info: loaded `english' language definitions on input line 1.
 )
@@ -1121,9 +1121,9 @@ Package cleveref Info: loaded `english' language definitions on input line 1.
 
 ]
 Chapter 1.
-File: img/uzh_logo.png Graphic file (type png)
-<use img/uzh_logo.png>
-Package pdftex.def Info: img/uzh_logo.png used on input line 263.
+File: ../img/uzh_logo.png Graphic file (type png)
+<use ../img/uzh_logo.png>
+Package pdftex.def Info: ../img/uzh_logo.png used on input line 263.
 (pdftex.def)             Requested size: 141.35289pt x 44.91408pt.
  [6
 
@@ -1147,14 +1147,10 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 407.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 407.
 Package rerunfilecheck Info: File `mitschrift.out' has not changed.
 (rerunfilecheck)             Checksum: 1319B35B7102F417B2350B4CE0A0D479;196.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
  23204 strings out of 493029
- 435048 string characters out of 6136234
+ 435066 string characters out of 6136234
  677188 words of memory out of 5000000
  26441 multiletter control sequences out of 15000+600000
  9651 words of font info for 43 fonts, out of 8000000 for 9000
@@ -1169,7 +1165,7 @@ t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy10.pfb>
-Output written on mitschrift.pdf (7 pages, 107048 bytes).
+Output written on mitschrift.pdf (7 pages, 107251 bytes).
 PDF statistics:
  103 PDF objects out of 1000 (max. 8388607)
  82 compressed objects within 1 object stream
