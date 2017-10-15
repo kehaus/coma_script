@@ -1,0 +1,407 @@
+\documentclass[10pt]{report}
+
+%% Text-Encoding festlegen. Mit utf8 oder utf8x funktionieren Umlaute wie gewohnt.
+%% (mit Bibtex funktioniert nur utf8)
+\usepackage[utf8x]{inputenc}
+
+%% Sprachdatei für Trennregeln, Datum-Format und ähnliches festlegen
+%\usepackage[german]{babel}  % nötig für Umlaute
+\usepackage[ngerman, english]{babel}
+
+%% optimiert das typographische Erscheinungsbild
+\usepackage{microtype}
+
+%% erlaubt Listen einfacher zu formatieren (bietet nosep für kompakte Listen)
+\usepackage{enumitem}
+%% erlaubt hübsche Tabellen über mehrere Seiten, beinhaltet booktabs (\toprule, \midrule, ...)
+\usepackage{ctable}
+%% ermöglicht farbigen Text ({\color{red} ...})
+\usepackage{xcolor} 
+
+
+\usepackage{mathrsfs}
+
+%% erweiterte Funktionalität für Formeln (Pakete der American Mathematical Society)
+\usepackage{amsfonts,amsmath,amsthm,amssymb}
+ \numberwithin{equation}{chapter}
+
+%% vordefinierte Einheiten, einfaches Angeben von Einheiten (\SI{8 \pm 1}{cm})
+%%   die Unsicherheit soll mit +- abgetrennt werden
+\usepackage[separate-uncertainty]{siunitx}
+\sisetup{
+    range-units = single,       % \SIrange soll die Einheit nur einmal anzeigen
+    list-units  = repeat,       % \SIlist soll die Einheit wiederholen
+}
+%% bei siuntix funktioniert babel leider nicht
+%% für englische Dokumente sollten diese Zeilen auskommentiert werden. 
+\sisetup{
+    range-phrase         = { bis },
+    list-final-separator = { und },
+%    list-pair-separator  = { und }, % an Uni noch nicht verfügbar
+}
+
+%% erlaubt es Bilddateien einzubinden
+%% (ctable graphicx intern auch. Trotzdem ist es sinnvoll graphicx expilizt zu laden.
+%%  Sonst entstehen schwehr verständliche Fehler, wenn ctable entfernt wird)
+\usepackage{graphicx}
+%% ermöglicht Bilder und Tabellen am eingegebenen Ort zu platzieren ([H])
+\usepackage{float}
+%% ermöglicht Unter-Bilder in einer figure-Umgebung
+\usepackage{caption}
+\captionsetup[figure]{font=footnotesize, labelfont=bf}
+\captionsetup[subfigure]{labelformat=parens, labelsep=space, font=small}
+
+\usepackage{subfig}
+%% Grafik-Dateien werden in den folgenden Ordnern gesucht
+\graphicspath{{img/}}
+%% Grafikdateien haben die folgenden Endungen (höchste Priorität zu erst)
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+%% Vertikaler Abstand zwischen Absätzen, Beginn eines Absatzes nicht einrücken
+\usepackage{parskip}
+% \setlength{\parskip}{0.6em}   % Vertikaler Abstand zwischen Absätzen anpassen 
+% \setlength{\parindent}{0em}   % Einrück-Abstand anpassen 
+
+%% zeige Labels im Seitenrand. Dies ist praktisch um Verweise zu kontrollieren
+\usepackage[final]{showkeys} % die Option 'final' deaktiviert die Ausgabe von showkeys
+
+\linespread{1.3}	% 1.3
+
+%% Seiten-Layout einstellen
+\usepackage[
+ a4paper,
+ total={13.8cm,21.7cm},          % Breite und Höhe des Inhalt-Bereichs
+ top=40mm, left=36mm,        % Ränder oben und links
+ headsep=10mm,               % Abstand des unteren Rands der Kopfzeile vom oberen Rand des Inhalts
+ footskip=10mm               % Abstand des unteren des Inhalts zum oberen Rand der Fusszeile
+% showframe					 % for troubleshooting
+]{geometry}
+
+%% Ermöglicht Links im PDF 
+%%   sollte möglichst spät in der Präambel geladen werden
+\usepackage[
+ pdftex,                        % wir verwenden pdftex/pdflatex
+ bookmarks=true,                % wir wollen auch im PDF-Reader ein Inhaltsverzeichnis
+ bookmarksdepth=3,              % das Inhaltsverzeichnis soll 3 Tiefen enthalten
+ colorlinks=true,               % Linktexte sollen Farbig sein 
+ linkcolor=black,               % Links innerhalb des Dokuments bleiben schwarz
+ citecolor=black,               % Links zu Quellenangaben bleiben ebenfalls schwarz
+ urlcolor=black,                 % URL-Linktexte sollen blau dargestellt werden
+%  pdfborder={0 0 0}              % Links im PDF erhalten keinen Rahmen, nur nötig wenn colorlinks=false
+]{hyperref}
+
+%% Angaben für die PDF-Eigenschaften
+\hypersetup{
+  pdfauthor = {Kevin Hauser},
+  pdftitle = {QM1 - Zusamenfassung},
+  pdfsubject = {LaTeX},
+  pdfkeywords = {LaTeX, Beispiel}
+}
+
+
+%% definiert \cref: Referenzen mit korrekter Bezeichnung (z.B. "Abbildung 1")
+%%   die Nummer alleine ist weiter mittels \ref verfügbar
+%% muss NACH 'hyperref' geladen werden
+%\usepackage[german]{cleveref}
+\usepackage[english, capitalise]{cleveref}
+
+
+%================  for subfigure
+
+
+%%%%%%%%%%%%%%%%%  additional libraries
+
+% link: http://tex.stackexchange.com/questions/36524/how-to-put-a-framed-box-around-text-math-environment
+\usepackage{mdframed}
+\usepackage{lipsum} % for creating dummy text
+
+\mdfdefinestyle{MyFrame}{%
+    linecolor=black,
+    outerlinewidth=2pt,
+    roundcorner=20pt,
+    innertopmargin=\baselineskip,
+    innerbottommargin=\baselineskip,
+%	leftmargin=1cm,
+    innerrightmargin=20pt,
+    innerleftmargin=20pt,
+    backgroundcolor=gray!10!white,
+    frametitlerule =true,
+%    frametitlerulewidth=0.5pt,
+	frametitlerulecolor=black
+    }
+    
+
+%=======================================================================
+% new commands
+%=======================================================================
+
+%\newcommand{\Tc}{
+%  $T_c$
+%}
+%\newcommand{\lsco}[1][]{
+%  LSCO#1
+%}
+%
+\newcommand*{\NewPage}{
+  \newpage\null\thispagestyle{empty}\newpage
+}
+
+\newcommand{\refEq}[1]{
+  Eq. \ref{#1}
+}
+
+\DeclareMathOperator{\sign}{sign}
+
+%========================================================================================================
+%========================================================================================================
+% Document
+%========================================================================================================
+%========================================================================================================
+
+%% Angaben für \maketitle
+\title{BA - rough sketch}
+\author{Kevin Hauser}
+% \date{7. Mai 2013}             % ohne Angabe wird das heutig Datum verwendet
+
+\begin{document}
+\pagenumbering{roman} %
+%=======================================================================
+% Title page
+%=======================================================================
+
+\begin{titlepage}
+    \begin{center}
+%        \vspace*{1cm}
+       
+        \Huge
+        \textbf{Mitschrift KOMA}
+       
+        \vspace{0.5cm}
+        \Large
+
+%        \includegraphics[width=0.4\textwidth]{{{img\manipulator.png}}}
+ 
+ 		\vspace{3.0cm}
+		\begin{figure}[H]
+ 		\centering
+ 		\includegraphics[width=0.5\textwidth]{{{img/uzh_logo}}}
+		\end{figure} 
+
+       
+        \vspace{1cm}
+       
+        %A thesis presented for the degree of\\
+        %Doctor of Philosophy
+       
+       
+
+       
+       
+        \vspace{1.5cm}
+       
+        Department of Physics\\
+        University of Zurich\\
+        \today
+       
+    \end{center}
+\end{titlepage}
+
+
+% empty page
+\null
+\thispagestyle{empty}
+\setcounter{page}{2}
+
+
+%=======================================================================
+% Introduction
+%=======================================================================
+
+
+\begin{abstract}
+
+
+
+\setcounter{page}{3}
+\end{abstract}
+
+\setcounter{page}{4}
+\NewPage
+\setcounter{page}{5}
+
+\tableofcontents
+\thispagestyle{empty} % don't show (roman) page number on titlepage
+
+%=======================================================================
+% Charge Order
+%=======================================================================
+
+\chapter{Charge Order}
+
+
+\section{Peierl Transition}
+
+
+\section{From Causality to Kramer-Kronig relation}
+
+
+Looking at a causal function $\tilde{\chi}(t)$, we can split it, like every analytical function, in an even $\chi_{even}(t)$ and an odd $\chi_{odd}(t)$ part.
+
+
+\begin{minipage}{0.45\textwidth}
+  \begin{equation*}
+    \tilde{\chi}(t) ~~ = ~~ \left\{ \begin{array}{lc} 
+      0        &  t < t_0 \\
+      \chi(t)  &  t > t_0
+    \end{array}\right.
+  \end{equation*}
+%   \includegraphics[width=0.8\textwidth]{img/uzh_logo}
+\end{minipage}
+\begin{minipage}{0.1\textwidth}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+   \includegraphics[width=0.8\textwidth]{img/uzh_logo}
+\end{minipage}
+
+%Every function $\tilde{\chi}(t)$ can be divided in an even $\chi_{even}(t)$ and an odd $\chi_{odd}(t)$ part.
+
+\begin{equation} \label{eq:even_odd}
+\tilde{\chi}(t) ~~ = ~~ \frac{\tilde{\chi}(t) + \tilde{\chi}(-t)}{2} + \frac{\tilde{\chi}(t) - \tilde{\chi}(-t)}{2} ~~ = ~~ \chi_{even}(t) + \chi_{odd}(t)
+\end{equation}
+
+
+Multiplying the even part of this function with the signum function yields,
+
+\begin{equation}
+  \sign(t) \cdot \chi_{even} ~~ = ~~ \sign(t) \cdot \left\{ \frac{\tilde{\chi}(t)}{2} + \frac{\tilde{\chi}(-t)}{2} \right\} ~~ = ~~~\frac{\tilde{\chi}(t)}{2} - \frac{\tilde{\chi}(t)}{2} ~~ = ~~ \chi_{odd}(t)
+\end{equation}
+
+
+Using this relation to replace $\chi_{odd}(t)$ in \refEq{eq:even_odd}.
+
+
+\begin{equation}
+\tilde{\chi}(t) ~~ = ~~ \chi_{eve} + \chi_{odd} ~~ = ~~ (1 + \sign(t)) \cdot \chi_{even}(t) ~~ = ~~ \sigma(t) \cdot \chi_{even}(t)
+\end{equation}
+
+
+\begin{thebibliography}{9}
+
+%\bibitem{bednorz86}
+%  J.G. Bednorz and K.A. Müller,
+%  Possible High T\textsubscript{c} Superconductivity in the Ba-La-Cu-O System
+%  \textit{Condens. Matter}, \textbf{64}:189-,
+%  1986.
+%
+%\bibitem{schilling93}
+%  A. Schilling, M. Cantoni, J.D. Guo and H.R. Ott,
+%  Superconductivity above 130 K in the Hg-Ba-Ca-Cu-O system
+%  \textit{Nature}, \textbf{363}:56-,
+%  1993.
+%  
+%\bibitem{ray15}
+%  Pia J. Ray,
+%  \textit{Master Thesis: Structural investigation of La\textsubscript{2-x}Sr\textsubscript{x}CuO\textsubscript{4}},
+%  University of Copenhagen,
+%  2015.
+%
+%
+%
+%\bibitem{lee06}
+%  P. A. Lee, \textit{et. al},
+%  Doping a Mott Insulator: Physics of high-temperature superconductivity,
+%  \textit{Rev. Mod. Phys.}, \textbf{78}:17-,
+%  2006.
+%
+%\bibitem{tokura00}
+%  Y. Tokura, N. Nagaosa,
+%  Orbital Physics in Transition-Metal Oxides,    
+%  \textit{Science}, \textbf{288}:462-468,
+%  2000.
+%
+%\bibitem{pickett89}
+%  W. E. Pickett,
+%  Electronic structure of the high-temperature oxid superconductors
+%  \textit{Rev. Mod. Phys.}, \textbf{61}:433-,
+%  1989.
+%  
+%\bibitem{emery87}
+%  V. J. Emery,
+%  Theory of High-$T_c$ Superconductivity in Oxides,
+%  \textit{Phys. Rev. Lett.}, \textbf{58}:2794-,
+%  1987.
+%  
+%\bibitem{zhang88}
+%  F. C. Zhang and T. M. Rice,
+%  Effective Hamiltonian for the superconducting Cu oxides,
+%  \textit{Phys. Rev. B}, \textbf{37}:3759-,
+%  1988.
+%
+%\bibitem{tanaka06}
+%  S. Tanaka,
+%  High-Temperature Superconductivity,
+%  \textit{Jpn. J. Appl. Phys.}, \textbf{Vol.45, No.12}:9011-9024,
+%  2006.
+%  
+%\bibitem{rhaman15}
+%  Md. A. Rhaman \textit{et al.},
+%  A Review on Cuprate Based Superconducting Materials Including Characteristics and Applications,
+%  \textit{American Journal of Physics and Applications}, \textbf{Vol.3, No.2}:39-56,
+%  2015.
+%
+%\bibitem{jahn37}
+%  H. A. Jahn and E. Teller,
+%  Stability of Polyatomic Molecules in Degenerate Electronic States,
+%  \textit{Proc. R. Soc. London, Ser. A}, \textbf{161}:200-,
+%  1937.
+%
+%\bibitem{damascelli03}
+%  A. Damascelli \textit{et. al},
+%  Angle-resolved photoemission studies on the cuprate superconductors,
+%  \textit{Rev. Mod. Phys.}, \textbf{75}:473-,
+%  2003.
+%
+%
+%\bibitem{damascelli04}
+%  A. Damascelli,
+%  Probing the Electronic Structure of Complex Systems by ARPES,
+%  \textit{Physica Scripta}, \textbf{T109}:61-,
+%  2004.
+%  
+%\bibitem{hufner95}
+%  S. H\"ufner,
+%  Photoelectron Spectroscopy, 2nd Edition,
+%  \textit{Springer-Verlag} New York,
+%  1995.
+%
+%\bibitem{nolting7-7}
+%  W. Nolting,
+%  Viel-Teilchen-Theorie, 7th Edition,
+%  \textit{Springer-Verlag} Berlin Heidelberg,
+%  2009.
+%
+%\bibitem{wang12}
+%  W.-P. Wang, \textit{et. al},
+%  Orbital characters determined from Fermi surface intensity patterns using angle-resolved photoemission spectroscopy,
+%  \textit{Physical Review B}, \textbf{85}:214518,
+%  2012.
+%
+%\bibitem{osterwalder_pes}
+%  J. Osterwalder,
+%  \textit{Notes from electron spectroscopy lecture},
+%  UZH.
+%  
+%\bibitem{matt12}
+%  Christian Matt, 
+%  \textit{Master Thesis: The Pseudogap phase in high-temperature superconductors},
+%  ETH Zurich,
+%  2012.
+%  
+%\bibitem{matt17}
+%  Christian Matt, \textit{et. al},
+%  High-temperature Superconductivity Restrained by Orbital Hybridisation,
+%  \textit{to be published.}
+
+\end{thebibliography}
+
+\end{document}

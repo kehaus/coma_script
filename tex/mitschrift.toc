@@ -1,0 +1,4 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Charge Order}{vi}{chapter.1}
+\contentsline {section}{\numberline {1.1}Peierl Transition}{vi}{section.1.1}
+\contentsline {section}{\numberline {1.2}From Causality to Kramer-Kronig relation}{vi}{section.1.2}
