@@ -1,4 +1,17 @@
 \select@language {english}
-\contentsline {chapter}{\numberline {1}Charge Order}{vi}{chapter.1}
-\contentsline {section}{\numberline {1.1}Peierl Transition}{vi}{section.1.1}
-\contentsline {section}{\numberline {1.2}From Causality to Kramer-Kronig relation}{vi}{section.1.2}
+\contentsline {chapter}{\numberline {1}Charge Order}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Peierl Transition}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}From Causality to Kramer-Kronig relation}{1}{section.1.2}
+\contentsline {chapter}{\numberline {2}Magnetism}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Ferromagnetism}{3}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}H\textsubscript {2} Molecule}{3}{subsection.2.1.1}
+\contentsline {subsubsection}{Wave Function Considerations}{3}{section*.5}
+\contentsline {subsubsection}{Quantum mechanical Spin-Operators}{4}{section*.6}
+\contentsline {subsubsection}{Consider weak Coulomb interaction}{4}{section*.7}
+\contentsline {subsubsection}{What is H\textsuperscript {Spin}\textsubscript {int}}{5}{section*.8}
+\contentsline {subsubsection}{Ferromagnetism}{5}{section*.9}
+\contentsline {subsubsection}{Conjecture}{6}{section*.10}
+\contentsline {subsubsection}{Solution}{6}{section*.11}
+\contentsline {subsubsection}{Landau Theory}{7}{section*.14}
+\contentsline {subsection}{\numberline {2.1.2}Exchange Interaction J}{8}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Ferromagnetic Magnons}{8}{subsection.2.1.3}

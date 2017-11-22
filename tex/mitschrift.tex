@@ -90,6 +90,8 @@
 %  pdfborder={0 0 0}              % Links im PDF erhalten keinen Rahmen, nur nötig wenn colorlinks=false
 ]{hyperref}
 
+\usepackage{mathtools}
+
 %% Angaben für die PDF-Eigenschaften
 \hypersetup{
   pdfauthor = {Kevin Hauser},
@@ -97,6 +99,7 @@
   pdfsubject = {LaTeX},
   pdfkeywords = {LaTeX, Beispiel}
 }
+
 
 
 %% definiert \cref: Referenzen mit korrekter Bezeichnung (z.B. "Abbildung 1")
@@ -129,6 +132,9 @@
 %    frametitlerulewidth=0.5pt,
 	frametitlerulecolor=black
     }
+    
+    
+\usepackage{physics}
     
 
 %=======================================================================
@@ -237,7 +243,7 @@
 %=======================================================================
 
 \chapter{Charge Order}
-
+\pagenumbering{arabic}
 
 \section{Peierl Transition}
 
@@ -283,6 +289,414 @@ Using this relation to replace $\chi_{odd}(t)$ in \refEq{eq:even_odd}.
 \begin{equation}
 \tilde{\chi}(t) ~~ = ~~ \chi_{eve} + \chi_{odd} ~~ = ~~ (1 + \sign(t)) \cdot \chi_{even}(t) ~~ = ~~ \sigma(t) \cdot \chi_{even}(t)
 \end{equation}
+
+
+
+\subsubsection*{Second Quantization: Free Electron Gas}
+
+$ k_F^3 = 3 \pi^2 n$
+
+$ E_0 = \frac{3}{5} N epsilon_F$
+
+Bohr Radius: $a_0 = \frac{\hbar}{m e^2}$
+
+\begin{equation*}
+\frac{3 \pi^2}{k_F^3} ~~ = ~~ \frac{1}{n} ~~ = ~~ \frac{V}{N} ~~ = ~~ \frac{4\pi}{3} \left(r_S a_0 \right)^3 ~~~~ \Rightarrow ~~~~ r_S = \left( \frac{9\pi}{4} \right)^{1/3} \frac{1}{a_0 k_F}
+\end{equation*}
+
+\begin{equation*}
+\frac{E_0}{N} ~~ = ~~ \frac{2.21}{r_S^2} \frac{e^2}{2a_0}
+\end{equation*}
+
+
+
+\subsubsection*{Electron Interaction}
+
+\begin{equation*}
+\frac{E_1}{N} ~~ = ~~ \frac{\bra{FS} V_{el-el} \ket{FS}}{N} ~~ = ~~ - \frac{e^2}{2}
+\end{equation*}
+
+
+
+
+
+
+\chapter{Magnetism}
+
+\section{Ferromagnetism}
+
+
+
+\subsection{H\textsubscript{2} Molecule}
+
+\subsubsection{Wave Function Considerations}
+
+\begin{align}
+  \Psi^{Total}(\text{2 Electrons})   ~~~~ \rightarrow ~~~~ \text{Antisymmetric}\\
+  \Psi^{Total}(\vec{r}_1, \vec{r}_2) ~~~~ = ~~~~ - \Psi^{Total}(\vec{r}_2, \vec{r}_1)
+\end{align}
+
+
+\begin{align}
+  \Psi_A ~~~~ = ~~~~ \psi_\alpha(\vec{r}_1) \psi_\beta(\vec{r}_2) ~~ - ~~ \psi_\alpha(\vec{r}_2)\psi_\beta(\vec{r}_1)\\
+  \Psi_S ~~~~ = ~~~~ \psi_\alpha(\vec{r}_1) \psi_\beta(\vec{r}_2) ~~ + ~~ \psi_\alpha(\vec{r}_2)\psi_\beta(\vec{r}_1)
+\end{align}
+
+
+
+Consider now spin wave function:
+
+\begin{equation}
+  \chi_S ~~ = ~~ \chi_{Symmetric} ~~ = ~~ \left\{ 
+  \begin{array}{ll}
+    | \uparrow_\alpha \downarrow_\beta \rangle &~~ | 1,1 \rangle\\
+    \left( | \uparrow \downarrow \rangle ~+~ | \downarrow \uparrow \rangle \right)/ \sqrt{2} &~~ | 1,0 \rangle\\
+    | \downarrow_\alpha \uparrow_\beta \rangle &~~ | 1,-1 \rangle
+  \end{array}\right.
+\end{equation}
+
+\begin{equation}
+  \chi_A ~~ = ~~ \chi_{Antisymmetric} ~~ = ~~ 
+  \begin{array}{ll}
+    \left(| \uparrow \downarrow \rangle ~-~ | \downarrow \uparrow \rangle \right) / \sqrt{2} &~~ | 0,0 \rangle 
+  \end{array}
+\end{equation}
+
+Where to the $\chi_S$ is refered to as \textbf{Triplet state} and to the wave function $\chi_A$ is refered to as textbf{Singlet state}.
+
+
+\subsubsection{Quantum mechanical Spin-Operators}
+
+Recalling that $\hat{S}^2 |S,m \rangle = S(S+1) | S,m \rangle$ we get for the eigenvalues of $\hat{S}^2_\alpha$ and $\hat{S}^2_\beta$
+
+\begin{align}
+  \hat{S}^2_\alpha |S_\alpha,m\rangle ~~ & = ~~ S_\alpha (S_\alpha+1) |S_\alpha,m\rangle ~~ & = ~~ 3/4\\
+  \hat{S}^2_\beta  |S_\beta,m\rangle ~~ & = ~~ S_\beta  (S_\beta+1)  |S_\beta,m\rangle ~~ & = ~~ 3/4
+\end{align}
+
+
+\begin{equation}
+  \hat{S} ~~=~~ \hat{S}_\alpha ~+~ \hat{S}_\beta ~~~~ \Rightarrow ~~~~ 
+  \hat{S}^2 ~~=~~ \hat{S}^2_\alpha ~+~ \hat{S}^2_\beta ~+~ 2 \hat{S}_\alpha \hat{S}_\beta ~~~~ \Rightarrow ~~~~
+  \hat{S}_\alpha \cdot \hat{S}_\beta ~~=~~ \frac{\hat{S}^2 - \hat{S}^2_\alpha - \hat{S}^2_\beta}{2}
+\end{equation}
+
+
+Calculating $\langle \hat{S}_\alpha \cdot \hat{S}_\beta \rangle$ leads to $1/4$ for $\chi_S$ and $-3/4$ for the $\chi_A$ case.
+
+
+\subsubsection{Consider weak Coulomb interaction}
+
+
+\begin{equation}
+  H ~~=~~ H_\text{signel-H} ~+~ H_\text{int} ~~=~~ H_0 ~+~ H_\text{int}
+\end{equation}
+
+Where the interaction Hamiltonian $H_\text{int}$ inlcudes the proton-proton, electron-electron, proton 1 - electron 2 and electron 1 - proton 2 interactions.
+
+\begin{equation}
+  H_{int} ~~=~~ \frac{e^2}{d_{pp}} ~+~ \frac{e^2}{d_{ee}} ~-~ \frac{e^2}{d_{ep}} ~-~ \frac{e^2}{d_{pe}}
+\end{equation}
+
+Here $d_{pp}$ stands for the proton-proton distance, $d_{ee}$ for the electron-electron distance.
+Furthermore contains $H_\text{single-H}$ both Hamiltonians of the single hydrogen atoms
+
+\begin{equation}
+  H_\text{single-H} ~~=~~ H_{H_1} ~+~ H_{H_2} ~~=~~ 
+  \frac{\hbar}{2m} \left( \nabla^2_\alpha + \nabla^2_\beta \right) ~-~ 
+  \left(\frac{e^2}{d_{p_\alpha e_\alpha}} + \frac{e^2}{d_{p_\beta e_\beta}} \right)
+\end{equation}
+
+
+%\begin{equation}
+%  E_+ ~=~E_S ~~=~~ \langle \Psi_S | H_\text{int} | \Psi_S \rangle ~~=~~
+%  \int \left( \psi_\alpha \psi_\beta + \psi_beta \psi_\alpha \right)^* H_\text{int} 
+%  \left( \psi_alpha \psi_\beta + \psi_\beta \psi_\alpha \right) d^3r
+%\end{equation}
+
+\begin{equation}
+  E_+ ~=~E_S ~~=~~ \langle \Psi_S | H_\text{int} | \Psi_S \rangle ~~=~~
+  \int ( \psi_\alpha \overbracket[0.5pt][3pt]{ \psi_\beta + \psi_\beta \overbracket[0.5pt][3pt]{ \psi_\alpha )^* H_\text{int} 
+  ( \psi_\alpha }^{J_2} \psi_\beta + \psi_\beta}^{J_1}  \psi_\alpha ) d^3r
+\end{equation}
+
+
+
+\begin{equation}
+  E_- ~=~E_A ~~=~~ \langle \Psi_S | H_\text{int} | \Psi_S \rangle ~~=~~
+  \int ( \psi_\alpha \overbracket[0.5pt][3pt]{ \psi_\beta - \psi_\beta \overbracket[0.5pt][3pt]{ \psi_\alpha )^* H_\text{int} 
+  ( \psi_\alpha }^{J_2} \psi_\beta - \psi_\beta}^{J_1} \psi_\alpha ) d^3r
+\end{equation}
+
+% connect different terms with each other
+% https://tex.stackexchange.com/questions/265787/connecting-parts-of-equations-with-lines
+
+By defining $C \equiv C_1+C_2$ and $J \equiv J_1+J_2$ one can write the the two energies as
+
+\begin{equation}
+  E_\pm ~~=~~ C ~\pm~ J
+\end{equation}
+
+Furthermore for the difference of the singlett- and triplett energy we get
+
+\begin{equation}
+  E_+ - E_- ~~=~~~2J \int \psi^*_\alpha \psi^*_\beta H_\text{int} \psi_\alpha \psi_\beta d^3r
+\end{equation}
+
+From this equatoin we can associate the introduced variable $J$ as the \textbf{Exchange Integral}.
+
+\begin{equation}
+  J ~~=~~ \frac{E_+-E_-}{2} ~~=~~ \int \psi^*_\alpha \psi^*_\beta H_\text{int} \psi_\alpha \psi_\beta d^3r
+\end{equation}
+
+
+\subsubsection{What is H\textsuperscript{Spin}\textsubscript{int}}
+
+\begin{equation}
+  E_\pm ~~=~~ C ~\pm~ J ~~=~~ C ~+~ J/2 ~+~ 2J ~+~ \cdot \rangle \hat{S}_\alpha \cdot \hat{S}_\beta \langle ~~=~~ \text{constant} ~+~ 2J \rangle \hat{S}_\alpha \cdot \hat{S}_\beta \rangle
+\end{equation}
+
+The constant contribution to the energies $E_\pm$ can be neglected since absolute energies values arbitrary. The interesting term for us is the second one on the right-most side. It gives us a quantitative measure of how large the energy difference between the two spin configurations is
+
+\begin{equation}
+  \Rightarrow ~~ H^\text{Spin}_\text{int} ~~=~~ - 2J \hat{S}_\alpha \cdot \hat{S}_\beta ~~~~ \left\{
+  \begin{array}{lcr}
+    J > 0 & ~~ \Rightarrow ~~ & E_S > E_A\\
+    J < 0 & ~~ \Rightarrow ~~ & E_A < E_S
+  \end{array}\right.
+\end{equation}
+
+
+From the upper formula we see that $J$ us if $\chi_S$ or $\chi_A$ is prefered. Therefore it can be seen as an indication if ferro- or antiferromagnetism is present in a material.
+
+
+\subsubsection{Ferromagnetism}
+
+\begin{align}
+  H ~~& =~~ - \sum_{ij} J_{ij} \vec{S}_i \cdot \vec{S}_j ~+~ g \mu_B \cdot \sum_j \vec{S}_j \cdot \vec{B}\nonumber \\  
+      & =~~ - \sum_j \sum_i j_{ij} \vec{S}_i \cdot \vec{S}_j ~+~ g \mu_B \sum_j \vec{S}_j \cdot \vec{B}\nonumber \\
+      & =~~ g \mu_B \sum_j \vec{S}_j \cdot ( \underbrace{\vec{B}_{mf}}_\text{interal} ~+~ \underbrace{\vec{B}}_\text{external})
+\end{align}
+
+Using a mean field approximation we rewrite the interaction from all spins on $\vec{S}_j$ from the first term as with a mean magnetic field $\vec{B}_{mf}$ wheresa we dfined $\vec{B}_{mf} \equiv -2/g \mu_B \sum_i J_{ij} \vec{S}_i$. 
+
+\subsubsection{Conjecture}
+
+By making an educated guess one could assume, that the mean magnetic field $\vec{B}_{mf}$ can be approximated macroscopicaly with the following expression.
+
+\begin{equation}
+  \vec{B}_{mf} ~~≃~~ \lambda \cdot \vec{M}
+\end{equation}
+
+
+\subsubsection{Solution}
+
+Solution can be adapted from the results about paramagnetism we gained last week. By focusing on the case $\vec{B} = 0$ we get
+
+\begin{equation} \label{eq:ferromag_graph_sol}
+  M ~~≃~~~ N \mu_B \tanh(x) ~~~~ \text{with} ~~~~ x ~~=~~\frac{\mu_B}{k_BT} (\vec{B} + \lambda \vec{M})
+\end{equation}
+
+Since the argument of the tangent hyperbolicus depends also on the magnetisation $\vec{M}$ we have a implicit equation. A solution of this equation is illustrated in \ref{fig:ferromag_graph_sol} as the crossing point between the hyperbolic tangent and the straight line. In this graph it is also visible, that above a certain Temperature $T>T_C$ there only exists one solution for of the implicit equation which can be associated with the paramagnetic phase of the material. On the other hand for $T<T_C$ we see that there are exists multiple solution of \ref{eq:ferromag_graph_sol} which is in accordance with the magnetisation curve of a ferromagnet. We can determine the Transition temperature $T_C$ by comparing the slopes of the two curves at the origin
+
+\begin{equation}
+  \frac{d}{dx} N \mu_B \tanh(x) ~~ = ~~ \frac{d}{dx} \frac{k_BT}{\mu_B \lambda} x ~~~~ \Rightarrow ~~~~
+  T_C ~=~\frac{\lambda N \mu_B^2}{k_B} ~=~ \lambda \cdot C
+\end{equation}
+
+
+\begin{figure}[t]
+  \begin{minipage}[c][6.00cm]{.5\textwidth}
+    \vspace*{\fill}
+    \centering
+    \includegraphics[width=0.916\linewidth]{../img/ferromag_graph_sol.pdf}
+%   \captionsetup{width=6.9cm}
+    \captionsetup{width=.95\linewidth}
+    \captionof{figure}{Illustration of the grafical solution of \ref{eq:ferromag_graph_sol}. the straight lines refer to different values of of $T$.}
+  \end{minipage}%
+  \begin{minipage}[c][6.00cm]{.5\textwidth}
+    \vspace*{\fill}
+    \centering
+    \includegraphics[width=0.95\linewidth]{../img/ferro_para_compar.pdf}
+    \captionsetup{width=.95\linewidth}
+ %   \captionsetup{width=6.9cm}
+    \captionof{figure}{Illustration of susceptibility $\chi$ of a Para- and Ferromagnet.}
+  \end{minipage}
+  \label{fig:2:tests}
+\end{figure}
+
+
+%\begin{figure}
+%  \centering
+%  \includegraphics[width=0.5\linewidth]{../img/ferromag_graph_sol.pdf}
+%  \caption{Illustration of the grafical solution of \ref{eq:ferromag_graph_sol}. the straight lines refer to different values of of $T$.}
+%  \label{fig:ferromag_graph_sol}
+%\end{figure}
+
+
+
+
+Looking at the limit $ x \ll 1$ 
+
+\begin{equation*}
+  \left.
+  \begin{array}{lcr}
+    M ~ & = &~ C B/T \\
+    \chi ~ & \equiv &~ M/B ~=~ C/T
+  \end{array} \right\} 
+  ~~~~ \rightarrow ~~~~ 
+  \begin{array}{lcr}
+    M ~~&=& ~ C \frac{B + \lambda M}{T}\\
+    \chi ~ &\equiv& ~ \frac{C}{T} + \frac{\lambda}{T} \chi
+  \end{array}
+  ~~~~ \Rightarrow ~~~~ 
+  \chi ~=~ \frac{C}{T-\lambda C} ~=~ \frac{C}{T - T_C}
+\end{equation*}
+
+
+Checking the magnetisation $M(T)$ at zero field $\vec{B} = 0$. Using \ref{eq:ferromag_graph_sol} with zero field and the definitinos $m = M/N \mu_B$ and $t = k_BT/N \mu_B^2 \lambda = T/T_C$ we get
+
+\begin{equation}
+  m ~~=~~ \tanh(\frac{m}{t})
+\end{equation}
+
+\begin{figure}[t]
+  \begin{minipage}[c][6.00cm]{.5\textwidth}
+    \vspace*{\fill}
+    \centering
+    \includegraphics[width=0.916\linewidth]{../img/ferromag_M_T.pdf}
+%   \captionsetup{width=6.9cm}
+    \captionsetup{width=.95\linewidth}
+    \captionof{figure}{Temperature dependence of magnetisation.}
+  \end{minipage}%
+  \begin{minipage}[c][6.00cm]{.5\textwidth}
+    \vspace*{\fill}
+    \centering
+    \includegraphics[width=0.95\linewidth]{../img/ferromag_landau.pdf}
+    \captionsetup{width=.95\linewidth}
+ %   \captionsetup{width=6.9cm}
+    \captionof{figure}{Free Energy dependence on the order parameter $m$ for the 3 cases $T<T_C$, $T=T_C$ and $T>T_C$.}
+  \end{minipage}
+  \label{fig:2:tests}
+\end{figure}
+
+
+\subsubsection{Landau Theory}
+
+According to the Landau theory of phase transisiton the free energy $F$ can be expressed
+
+\begin{equation} \label{eq:ferromag_landau}
+  F ~~=~~ F_0 ~+~ a(T) m^2 ~+~ b m^4 + ... 
+\end{equation}
+
+Were the parameter $a$ and $b$ has to meet the conditions
+
+\begin{equation} \label{eq:ferromag_landau_condition}
+  a(T) ~=~ a_0(T-T_C) ~~~~ \text{and} ~~~~ b>0
+\end{equation}
+
+We find the thermodynamical state of our system by minimizing the free energy
+
+\begin{equation}
+  \frac{dF}{dm} ~=~ m ( 2a(T) ~+~ 4bm^2) ~=~ 0 ~~~~ \Rightarrow ~~~~ m ~=~ \left\{ 
+  \begin{array}{c}
+    0\\
+    \pm \sqrt{\frac{a_0(T-T_C)}{2b}}
+  \end{array}
+  \right.
+\end{equation}
+
+
+
+\subsection{Exchange Interaction J}
+
+
+% plot - spin orientation
+
+Analog to the susceptibility of ferromagnets $\chi_{FM} = C/(T-T_C)$, we can define the susceptibility for anti-ferromagnets
+
+\begin{equation}
+  \chi_{AFM} ~~=~~ \frac{C}{T+T_N}
+\end{equation}
+
+Where we refer to the Transition Temperature $T_N$ as Neel-Temperature.
+
+% plot - inverse susceptibility for AFM
+% plot - susceptibility AFM
+
+
+\subsection{Ferromagnetic Magnons}
+
+Consider a linear FM chain $ | \text{FM} \rangle ~=~ | \uparrow~ \uparrow~ \uparrow~ ...~ \rangle$. Applying the latter operator $ s^-_j$ onto this expression leads to
+
+\begin{equation}
+  | j \rangle ~~=~~ s^-_j | \text{FM} \rangle ~~=~~ 
+  | \uparrow~ \uparrow~ ...~ \uparrow \underbrace{\downarrow}_{j} \uparrow~ ...~ \rangle
+\end{equation}
+
+
+Defining
+
+\begin{equation}
+  | q \rangle ~~=~~ \frac{1}{\sqrt{N}} \sum_j e^{i q R_j} | j \rangle
+\end{equation}
+
+The Hamilton is given as 
+
+\begin{align}
+  H ~~& =~~ - \sum_{ij} J_{ij} \hat{S}_i \cdot \hat{S}_j ~~=~~ -2J \sum_i \hat{S}_i \cdot \hat{S}_{i+1}\nonumber \\
+      & =~~ - 2J \sum_i \left\{ \hat{S}^z_i \hat{S}^z_{i+1} ~+~ 
+      \frac{1}{2} \left[ \hat{S}^+_i \hat{S}^-_{i+1} + \hat{S}^-_i \hat{S}^+_{i+1} \right]  \right\}
+\end{align}
+
+By taking only nearest neighbour interactions into account we get the 
+The second equality sign holds if we only take neares neighbour interactions into account. To get the final expression we used the substitution
+
+\begin{equation}
+  \hat{S}^2 ~~=~~ \hat{S}^{z^2} ~+~ \frac{1}{2} \left[ \hat{S}^+_i \hat{S}^-_{i+1} + \hat{S}^-_i \hat{S}^+_{i+1} \right]
+\end{equation}
+
+
+\begin{equation}
+  H | \text{FM} \rangle ~~=~~ -2 J N S^2 | \text{FM} \rangle ~~=~~ E_0 | \text{FM} \rangle
+\end{equation}
+
+\begin{equation}
+  H | j \rangle ~~=~~ -2J \left\{ (N-4) S^2 | j \rangle ~+~ S \left[ |j+1\rangle + |j-1\rangle \right] \right\}
+\end{equation}
+
+\begin{align}
+  H | q \rangle ~~& =~~ \frac{1}{\sqrt{N}} \sum_j e^{i q R_j} \left\{
+  NS^2 |j\rangle ~-~ 2S^2|j\rangle ~+~ S |j+1\rangle ~+~ S|j-1\rangle \right\} \nonumber \\
+                  & =~~ -2JNS^2 |q\rangle - 2J \left\{ -2S^2 ~+~ \left( e^{iqa} + e^{-iqa} \right) \right\} |q\rangle \nonumber \\
+                  & =~~ E_0 |q\rangle ~+~ 2JS \left\{ 1 - \cos(qa) \right\} |q\rangle 
+\end{align}
+
+%%%% one equation not transcripted from lecture notes %%%
+
+
+Since we are consindering an infinit long 1D chain of spin states we can rewrite the expression
+
+\begin{equation}
+  H |q\rangle ~~=~~ E_0 |q\rangle + 2JS \left\{ 2 - 2\cos(qa) \right\} |q\rangle
+\end{equation} 
+
+which leads to
+
+\begin{equation}
+  H |q\rangle ~~=~~ E(q) |q\rangle ~~~~~ \text{with} ~~~~ E(q) ~≃~ E_0 + 2JS(2 - 2\cos(qa))
+\end{equation}
+
+This is the dispersion relation for ferromagnets. For anti-ferromagnets we have a similar relation (not derived)
+
+\begin{equation}
+  \hbar \omega ~~=~~ 2J | \sin(qa) |
+\end{equation}
+
+
+%========================================================================================================
+%========================================================================================================
+%========================================================================================================
 
 
 \begin{thebibliography}{9}
