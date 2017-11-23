@@ -135,6 +135,8 @@
     
     
 \usepackage{physics}
+
+\usepackage{siunitx}	% for typeset SI units correctly
     
 
 %=======================================================================
@@ -323,9 +325,112 @@ Bohr Radius: $a_0 = \frac{\hbar}{m e^2}$
 
 \chapter{Magnetism}
 
+\section{Paramagnetism}
+
+\subsubsection{Magnetic Moment}
+
+\textcolor{red}{insert picture - magnetic moment}
+
+If $\vec{A}$ is the area inside the loop and $I$ the current, the magnetic moment can be written as
+
+\begin{equation} \label{eq:mag_mom}
+  \vec{\mu} ~~=~~ I \vec{A}
+\end{equation}
+
+
+\subsubsection{Example: Hydrogen Atom}
+
+\textcolor{red}{insert picture - hydrogen atom and orbiting electron}
+
+The magnetic moment of a hydrogen atom can be described semi-classically by assuming the electron to be on a fixed trajectory orbiting the hydrogen nucleus with constant radius $r$ and velocity $v$. The current $I$ produced by the moving electron can be written as $I = -e/\tau$ with the orbital period $\tau = 2\pi r/v$. For the loop area we use the formula $A= \pi r^2$. This leads the magnetic moment to be
+
+\begin{equation} \label{eq:dev_mag_mom}
+  \mu ~~=~~ \frac{-e v \pi r^2}{2 \pi r} ~~=~~ \frac{-evr}{2} ~~=~~ \frac{-e m v r}{2m}
+\end{equation}
+
+We can identify the classical definition of the angular momentum  $\vec{l} = \vec{r} \times m \vec{v}$ in the numerator. Taking the quantisation of angular momentum $|\hat{l}| = n \hbar$ in quantum mechanics into account we can rewritte expression \ref{eq:dev_mag_mom} for $n=1$
+
+\begin{equation} \label{eq:bohr_mag}
+  \mu ~≃ ~~ \frac{-e \hbar}{2m} ~~ \equiv ~~ -\mu_B
+\end{equation}
+
+Which we define as the Bohr magneton $\mu_B$.
+
+
+\subsubsection{Magnetic Moment of Atoms}
+
+The total angular momentum in an atom is given as the sum of total orbital angular Momentum $\hat{L}$  and total spin angular momentum $\hat{S}$
+
+\begin{equation}
+  \hat{J} ~~≃~~ \hat{L} ~+~ \hat{S}
+\end{equation}
+
+\subsubsection{Magnetisation}
+
+Considering a solid with $N$ atoms each having a magnetic moment $\vec{\mu}$. We define the magnetization as 
+
+\begin{equation}
+  \vec{M} ~~\equiv~~ \frac{\text{Magnetic moment}}{\text{Volume}}
+\end{equation}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\linewidth]{../img/mag_in_solid.pdf}
+  \caption{hohohoh}
+\end{figure}
+
+\subsubsection{Magnetic Moment in a $\vec{B}$-Field}
+
+
+From classical electrodynamics we know that the potential energy $E$ of a magnetic moment $\vec{\mu}$ in a magnetic field $\vec{B}$ is described as
+
+\begin{equation}
+  E ~~=~~ - \vec{\mu} ~\cdot~ \vec{B}
+\end{equation}
+
+To get a feeling for the order of magnitudes of magnetic energy of atomic scale we 
+
+\begin{equation*}
+  \mu_B ~\times~ 1 \text{Tesla} ~~\simeq~~ \SI{0.05}{meV}
+\end{equation*}
+
+This is comparable to the energy one has to put into a system to increase its temperature by \SI[mode=text]{1}{K} ($ k_B \cdot \SI{1}{K} ~~\simeq~~ \SI{0.084}{meV}$).
+
+
+\subsubsection{Magnetic susceptibility}
+
+\begin{equation}
+  \chi ~~≃~~ \frac{\mu_0 \vec{M}}{\vec{B}}
+\end{equation}
+
+We can look at the magnetic susceptibility $\chi$ as response function. $\chi$ describes the response of the system $\vec{M}$ when exposed to an external changing field $\vec{B}$.
+To simplify things in the calculations we will make the following constraints on $\vec{B}$.
+
+\begin{align*}
+  \vec{B} \text{is static} ~~~~ &  \Rightarrow  ~~~~ \text{no time dependence}\\
+  \vec{B} \text{is homogeneous} ~~~~ & \Rightarrow  ~~~~ \text{no depencence on}\ \vec{r}
+\end{align*}
+
+
+The definition of the susceptibility allows us now to classify materials depending on how the respond to an external magnetic field. We calc materials to be \textit{paramagnetic} if they align there spin parallel to the applied $\vec{B}$-Field. This is the case if $\chi > 0$. On the contrary we refer to materials as \textit{diamagnetic} if their inner magnetic moments align anti-parallel in respect to an applied field $\vec{B}$. This results in a negativ value for the susceptibility $\chi < 0$.
+
+In reality, the response of systems is composed of multiple differenent responses which can have different origins.
+
+\begin{equation}
+  \chi_{total} ~~≃~~ \chi_\text{paramagnetic} ~+~ \chi_\text{diamagnetic} ~+~ ...
+\end{equation}
+
+Paramagnetism and diamagnetism can also have different origins. For example:
+
+\begin{align*}
+  \chi_\text{paramagnetic} ~~& ≃~~ \chi_\text{Langevin} ~+~ \chi_\text{Van Vleck} ~+~ \chi_\text{Pauli} ~+~ ....\\
+  \chi_\text{diamagnetic} ~~& ≃~~ \chi_\text{electronic} ~+~ \chi_{superconductivity} ~+~ ...  
+\end{align*}
+
+
+
+
 \section{Ferromagnetism}
-
-
 
 \subsection{H\textsubscript{2} Molecule}
 
@@ -611,7 +716,12 @@ We find the thermodynamical state of our system by minimizing the free energy
 \subsection{Exchange Interaction J}
 
 
-% plot - spin orientation
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\linewidth]{../img/exch_spin_config.pdf}
+  \caption{hohoho}
+\end{figure}
+
 
 Analog to the susceptibility of ferromagnets $\chi_{FM} = C/(T-T_C)$, we can define the susceptibility for anti-ferromagnets
 
@@ -621,8 +731,26 @@ Analog to the susceptibility of ferromagnets $\chi_{FM} = C/(T-T_C)$, we can def
 
 Where we refer to the Transition Temperature $T_N$ as Neel-Temperature.
 
-% plot - inverse susceptibility for AFM
-% plot - susceptibility AFM
+
+\begin{figure}[t]
+  \begin{minipage}[c][6.00cm]{.5\textwidth}
+    \vspace*{\fill}
+    \centering
+    \includegraphics[width=0.916\linewidth]{../img/antiferro_suscept.pdf}
+%   \captionsetup{width=6.9cm}
+    \captionsetup{width=.95\linewidth}
+    \captionof{figure}{Temperature dependence of magnetisation.}
+  \end{minipage}%
+  \begin{minipage}[c][6.00cm]{.5\textwidth}
+    \vspace*{\fill}
+    \centering
+    \includegraphics[width=1.0\linewidth]{../img/antiferro_para_compar.pdf}
+    \captionsetup{width=1.0\linewidth}
+ %   \captionsetup{width=6.9cm}
+    \captionof{figure}{Free Energy dependence on the order parameter $m$ for the 3 cases $T<T_C$, $T=T_C$ and $T>T_C$.}
+  \end{minipage}
+  \label{fig:2:tests}
+\end{figure}
 
 
 \subsection{Ferromagnetic Magnons}
@@ -692,6 +820,9 @@ This is the dispersion relation for ferromagnets. For anti-ferromagnets we have 
 \begin{equation}
   \hbar \omega ~~=~~ 2J | \sin(qa) |
 \end{equation}
+
+
+
 
 
 %========================================================================================================

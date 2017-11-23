@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 
 
 
-from base_axes import arrow_array
+from base_axes import put_arrowhead_axes
 
 
 #==============================================================================
@@ -65,31 +65,21 @@ font_dict_txt = {
 #==============================================================================
 # plot function
 #==============================================================================
-x = np.linspace(-2,2, 1001)
+x = np.linspace(-4,4, 1001)
 
-plt.close('all')
-fig1 = plt.figure(num=1,figsize=(8,4));
+fig1 = plt.figure(1); fig1.clf()
 ax1 = fig1.add_subplot(111)
 
-ax1.set_xlim([-0.08,0.78])
-ax1.set_ylim([-0.08,0.28])
+#ax1.plot(x, np.tanh(x), **line_style1)
+ax1.plot(x[657:], np.polyval([0.4, -0.50], x[657:]), **line_style_blue)
+ax1.plot(x[500:], np.polyval([0.4,  0],    x[500:]), **line_style1)
+ax1.plot(x[344:], np.polyval([0.4,  0.50], x[344:]), **line_style_red)
+ax1.set_xlim([-1.5,2.7])
+ax1.set_ylim([-0.2,0.7])
 
 # changes axes to arrow head
-fig1, ax1 = arrow_array(fig1, ax1, x0=-0.04, y0=0, arr_size=[4,3], 
-                        spin_orientation='all_up')
+fig1, ax1 = put_arrowhead_axes(fig1, ax1)
 
-fig1, ax1 = arrow_array(fig1, ax1, x0=0.50, y0=0, arr_size=[4,3], 
-                        spin_orientation='anti_parallel')
-                        
-#fig1, ax1 = arrow_array(fig1, ax1, x0=0.78, y0=0.08, arr_size=[1,1], 
-#                        spin_orientation='anti_parallel')
-#                        
-#fig1, ax1 = arrow_array(fig1, ax1, x0=0.88, y0=0.2, arr_size=[1,1], 
-#                        spin_orientation='anti_parallel')
-#
-#plt.plot([0.82, 0.93],[0.075, 0.075], '-k', lw=1.2)
-#plt.plot([0.80, 0.86],[0.12, 0.170], '-k', lw=1.2)
-#plt.plot([0.95, 0.88],[0.12, 0.170], '-k', lw=1.2)
 
 
 # set opalic
@@ -97,21 +87,28 @@ ax1.patch.set_facecolor('none')
 ax1.patch.set_alpha(0)
 
 
+# axis label
+xlabel = ax1.annotate('T', (0.90, 0.20), xycoords='figure fraction',
+                      **font_dict_label)
+ylabel = ax1.annotate(r'$ 1/\chi $', (0.40, 0.93), xycoords='figure fraction',
+                      **font_dict_label)
 
 # textboxes
-txt1 = ax1.annotate(r'$ J > 0 $', (0.22, 0.87), xycoords='figure fraction', color='k',
+txt1 = ax1.annotate('AFM', (0.28, 0.67), xycoords='figure fraction', color=khRed,
                     **font_dict_txt)
-txt2 = ax1.annotate(r'$ J < 0 $', (0.69, 0.87), xycoords='figure fraction', color='k',
+txt2 = ax1.annotate('Paramagnet', (0.63, 0.93), xycoords='figure fraction', color='k',
                     **font_dict_txt)
-#txt3 = ax1.annotate(r'$ J < 0 $', (0.78, 0.87), xycoords='figure fraction', color='k',
-#                    **font_dict_txt)
-#txt4 = ax1.annotate(' ? ', (0.86, 0.41), xycoords='figure fraction', color='k',
-#                    **font_dict_label)
-#
-#
+txt3 = ax1.annotate('FM', (0.76, 0.45), xycoords='figure fraction', color=khBlue,
+                    **font_dict_txt)
+
+txt4 = ax1.annotate(r'$ T_C $', (0.62, 0.22), xycoords='figure fraction', color='k',
+                    **font_dict_txt)
+txt5 = ax1.annotate(r'$ T_N $', (0.16, 0.22), xycoords='figure fraction', color='k',
+                    **font_dict_txt)
 
 
-fig1.savefig('../img/exch_spin_config.pdf', transparent=True)
+
+fig1.savefig('../img/antiferro_para_compar.pdf', transparent=True)
 
 #==============================================================================
 # Main function

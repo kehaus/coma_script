@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.30)  22 NOV 2017 00:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.30)  23 NOV 2017 01:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1853,27 +1853,33 @@ LaTeX Warning: Label `fig:2:tests' multiply defined.
 
 LaTeX Warning: Label `fig:2:tests@cref' multiply defined.
 
+
+LaTeX Warning: Label `fig:2:tests' multiply defined.
+
+
+LaTeX Warning: Label `fig:2:tests@cref' multiply defined.
+
 )
 \openout1 = `mitschrift.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
  (/usr/share/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
-LaTeX Info: Redefining \microtypecontext on input line 172.
+LaTeX Info: Redefining \microtypecontext on input line 174.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1962,7 +1968,7 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box61
-Package hyperref Info: Link coloring ON on input line 172.
+Package hyperref Info: Link coloring ON on input line 174.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -1971,21 +1977,21 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count199
 )
-LaTeX Info: Redefining \ref on input line 172.
-LaTeX Info: Redefining \pageref on input line 172.
-LaTeX Info: Redefining \nameref on input line 172.
+LaTeX Info: Redefining \ref on input line 174.
+LaTeX Info: Redefining \pageref on input line 174.
+LaTeX Info: Redefining \nameref on input line 174.
 
 (./mitschrift.out) (./mitschrift.out)
 \@outlinefile=\write3
 \openout3 = `mitschrift.out'.
 
 \c__siunitx_mathsf_int=\count266
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 172.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 174.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 172.
+LaTeX Font Info:    Try loading font information for U+msa on input line 174.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1993,7 +1999,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 172.
+LaTeX Font Info:    Try loading font information for U+msb on input line 174.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -2011,10 +2017,10 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-<../img/uzh_logo.png, id=68, 644.4075pt x 204.765pt>
+<../img/uzh_logo.png, id=96, 644.4075pt x 204.765pt>
 File: ../img/uzh_logo.png Graphic file (type png)
  <use ../img/uzh_logo.png>
-Package pdftex.def Info: ../img/uzh_logo.png used on input line 193.
+Package pdftex.def Info: ../img/uzh_logo.png used on input line 195.
 (pdftex.def)             Requested size: 196.32405pt x 62.38292pt.
 
 [1
@@ -2032,128 +2038,183 @@ Package cleveref Info: loaded `english' language definitions on input line 1.
 Chapter 1.
 File: ../img/uzh_logo.png Graphic file (type png)
 <use ../img/uzh_logo.png>
-Package pdftex.def Info: ../img/uzh_logo.png used on input line 269.
+Package pdftex.def Info: ../img/uzh_logo.png used on input line 271.
 (pdftex.def)             Requested size: 141.35289pt x 44.91408pt.
  [1
 
 ] [2]
 Chapter 2.
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathsurround' on input line 330.
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 330.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 330.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 330.
-
-[3
-
-] [4]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathsurround' on input line 453.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 453.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 453.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathsurround' on input line 453.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 453.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 453.
-
-[5] (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-34.def
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-34.def
 File: uni-34.def 2013/05/13 UCS: Unicode data U+2200..U+22FF
-)
+) [3
 
-LaTeX Warning: Reference `fig:ferromag_graph_sol' on page 6 undefined on input 
-line 500.
+]
+<../img/mag_in_solid.pdf, id=165, 578.16pt x 216.81pt>
+File: ../img/mag_in_solid.pdf Graphic file (type pdf)
 
-<../img/ferromag_graph_sol.pdf, id=166, 578.16pt x 433.62pt>
+<use ../img/mag_in_solid.pdf>
+Package pdftex.def Info: ../img/mag_in_solid.pdf used on input line 378.
+(pdftex.def)             Requested size: 314.11969pt x 117.79353pt.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 382.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 382.
+
+[4 <../img/mag_in_solid.pdf>]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathsurround' on input line 435.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\z@' on input line 435.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 435.
+
+[5] [6]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathsurround' on input line 558.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\z@' on input line 558.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 558.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathsurround' on input line 558.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\z@' on input line 558.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 558.
+
+[7]
+
+LaTeX Warning: Reference `fig:ferromag_graph_sol' on page 8 undefined on input 
+line 605.
+
+[8] <../img/ferromag_graph_sol.pdf, id=240, 578.16pt x 433.62pt>
 File: ../img/ferromag_graph_sol.pdf Graphic file (type pdf)
 
 <use ../img/ferromag_graph_sol.pdf>
-Package pdftex.def Info: ../img/ferromag_graph_sol.pdf used on input line 512.
+Package pdftex.def Info: ../img/ferromag_graph_sol.pdf used on input line 617.
 (pdftex.def)             Requested size: 179.8329pt x 134.87073pt.
 
-<../img/ferro_para_compar.pdf, id=169, 578.16pt x 433.62pt>
+<../img/ferro_para_compar.pdf, id=243, 578.16pt x 433.62pt>
 File: ../img/ferro_para_compar.pdf Graphic file (type pdf)
 
 <use ../img/ferro_para_compar.pdf>
-Package pdftex.def Info: ../img/ferro_para_compar.pdf used on input line 520.
+Package pdftex.def Info: ../img/ferro_para_compar.pdf used on input line 625.
 (pdftex.def)             Requested size: 186.50725pt x 139.87943pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 509--526
+Underfull \hbox (badness 10000) in paragraph at lines 614--631
 []$[]$$[]$
  []
 
 
-Overfull \hbox (1.24411pt too wide) detected at line 554
+Overfull \hbox (1.24411pt too wide) detected at line 659
 []     \OMS/cmsy/m/n/10 !     []     )     \OML/cmm/m/it/10 ^^_  \OT1/cmr/m/n/1
 0 =  []  =  []
  []
 
-[6 <../img/ferromag_graph_sol.pdf> <../img/ferro_para_compar.pdf
-
-pdfTeX warning: pdflatex (file ../img/ferro_para_compar.pdf): PDF inclusion: mu
-ltiple pdfs with page group included in a single page
->] <../img/ferromag_M_T.pdf, id=226, 578.16pt x 433.62pt>
+<../img/ferromag_M_T.pdf, id=245, 578.16pt x 433.62pt>
 File: ../img/ferromag_M_T.pdf Graphic file (type pdf)
 
 <use ../img/ferromag_M_T.pdf>
-Package pdftex.def Info: ../img/ferromag_M_T.pdf used on input line 567.
+Package pdftex.def Info: ../img/ferromag_M_T.pdf used on input line 672.
 (pdftex.def)             Requested size: 179.8329pt x 134.87073pt.
 
-<../img/ferromag_landau.pdf, id=227, 578.16pt x 433.62pt>
+<../img/ferromag_landau.pdf, id=246, 578.16pt x 433.62pt>
 File: ../img/ferromag_landau.pdf Graphic file (type pdf)
 
 <use ../img/ferromag_landau.pdf>
-Package pdftex.def Info: ../img/ferromag_landau.pdf used on input line 575.
+Package pdftex.def Info: ../img/ferromag_landau.pdf used on input line 680.
 (pdftex.def)             Requested size: 186.50725pt x 139.87943pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 564--581
+Underfull \hbox (badness 10000) in paragraph at lines 669--686
 []$[]$$[]$
  []
 
-[7 <../img/ferromag_M_T.pdf> <../img/ferromag_landau.pdf
+[9 <../img/ferromag_graph_sol.pdf> <../img/ferro_para_compar.pdf
+
+pdfTeX warning: pdflatex (file ../img/ferro_para_compar.pdf): PDF inclusion: mu
+ltiple pdfs with page group included in a single page
+>] <../img/exch_spin_config.pdf, id=302, 578.16pt x 289.08pt>
+File: ../img/exch_spin_config.pdf Graphic file (type pdf)
+
+<use ../img/exch_spin_config.pdf>
+Package pdftex.def Info: ../img/exch_spin_config.pdf used on input line 721.
+(pdftex.def)             Requested size: 274.85248pt x 137.4247pt.
+
+<../img/antiferro_suscept.pdf, id=303, 578.16pt x 433.62pt>
+File: ../img/antiferro_suscept.pdf Graphic file (type pdf)
+
+<use ../img/antiferro_suscept.pdf>
+Package pdftex.def Info: ../img/antiferro_suscept.pdf used on input line 739.
+(pdftex.def)             Requested size: 179.8329pt x 134.87073pt.
+
+<../img/antiferro_para_compar.pdf, id=304, 578.16pt x 433.62pt>
+File: ../img/antiferro_para_compar.pdf Graphic file (type pdf)
+
+<use ../img/antiferro_para_compar.pdf>
+Package pdftex.def Info: ../img/antiferro_para_compar.pdf used on input line 74
+7.
+(pdftex.def)             Requested size: 196.32405pt x 147.24358pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 736--753
+[]$[]$$[]$
+ []
+
+[10 <../img/ferromag_M_T.pdf> <../img/ferromag_landau.pdf
 
 pdfTeX warning: pdflatex (file ../img/ferromag_landau.pdf): PDF inclusion: mult
 iple pdfs with page group included in a single page
->] [8] [9]
+>] [11 <../img/exch_spin_config.pdf> <../img/antiferro_suscept.pdf
 
-LaTeX Warning: Empty `thebibliography' environment on input line 819.
+pdfTeX warning: pdflatex (file ../img/antiferro_suscept.pdf): PDF inclusion: mu
+ltiple pdfs with page group included in a single page
+> <../img/antiferro_para_compar.pdf
+
+pdfTeX warning: pdflatex (file ../img/antiferro_para_compar.pdf): PDF inclusion
+: multiple pdfs with page group included in a single page
+>] [12]
+
+LaTeX Warning: Empty `thebibliography' environment on input line 950.
 
 
 Package caption Warning: Unused \captionsetup[subfigure] on input line 52.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 821.
-[10
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 952.
+[13
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 821.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 952.
  (./mitschrift.aux
 Package cleveref Info: loaded `english' language definitions on input line 22.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 821.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 821.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 952.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 952.
 Package rerunfilecheck Info: File `mitschrift.out' has not changed.
-(rerunfilecheck)             Checksum: 6F6F6ED5717B6D790C6311A5085AAC4D;1094.
+(rerunfilecheck)             Checksum: 9C9D3C67CDD453FAB902533503C5FECC;1568.
 
 
 LaTeX Warning: There were undefined references.
@@ -2163,13 +2224,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 24884 strings out of 493029
- 457342 string characters out of 6136234
- 707588 words of memory out of 5000000
- 27981 multiletter control sequences out of 15000+600000
- 18291 words of font info for 95 fonts, out of 8000000 for 9000
+ 24956 strings out of 493029
+ 458570 string characters out of 6136234
+ 707536 words of memory out of 5000000
+ 28013 multiletter control sequences out of 15000+600000
+ 19165 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 53i,17n,92p,10370b,764s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,17n,92p,10370b,768s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texli
@@ -2186,12 +2247,13 @@ hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on mitschrift.pdf (15 pages, 261223 bytes).
+/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/symbols/msbm7.pfb>
+Output written on mitschrift.pdf (18 pages, 313735 bytes).
 PDF statistics:
- 384 PDF objects out of 1000 (max. 8388607)
- 303 compressed objects within 4 object streams
- 80 named destinations out of 1000 (max. 500000)
- 23706 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 546 PDF objects out of 1000 (max. 8388607)
+ 409 compressed objects within 5 object streams
+ 101 named destinations out of 1000 (max. 500000)
+ 25830 words of extra memory for PDF output out of 29859 (max. 10000000)
 

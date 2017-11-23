@@ -68,18 +68,18 @@ font_dict_txt = {
 x = np.linspace(-2,2, 1001)
 
 plt.close('all')
-fig1 = plt.figure(num=1,figsize=(8,4));
+fig1 = plt.figure(num=1,figsize=(8,3));
 ax1 = fig1.add_subplot(111)
 
-ax1.set_xlim([-0.08,0.78])
-ax1.set_ylim([-0.08,0.28])
+ax1.set_xlim([-0.15,0.93])
+ax1.set_ylim([-0.14,0.25])
 
 # changes axes to arrow head
-fig1, ax1 = arrow_array(fig1, ax1, x0=-0.04, y0=0, arr_size=[4,3], 
-                        spin_orientation='all_up')
+fig1, ax1 = arrow_array(fig1, ax1, x0=-0.15, y0=0, arr_size=[7,3], 
+                        spin_orientation='random')
 
-fig1, ax1 = arrow_array(fig1, ax1, x0=0.50, y0=0, arr_size=[4,3], 
-                        spin_orientation='anti_parallel')
+fig1, ax1 = arrow_array(fig1, ax1, x0=0.50, y0=0, arr_size=[7,3], 
+                        spin_orientation='all_up')
                         
 #fig1, ax1 = arrow_array(fig1, ax1, x0=0.78, y0=0.08, arr_size=[1,1], 
 #                        spin_orientation='anti_parallel')
@@ -99,9 +99,9 @@ ax1.patch.set_alpha(0)
 
 
 # textboxes
-txt1 = ax1.annotate(r'$ J > 0 $', (0.22, 0.87), xycoords='figure fraction', color='k',
+txt1 = ax1.annotate(r'$ M = 0 $', (0.22, 0.10), xycoords='figure fraction', color='k',
                     **font_dict_txt)
-txt2 = ax1.annotate(r'$ J < 0 $', (0.69, 0.87), xycoords='figure fraction', color='k',
+txt2 = ax1.annotate(r'$ M \neq 0 $', (0.70, 0.10), xycoords='figure fraction', color='k',
                     **font_dict_txt)
 #txt3 = ax1.annotate(r'$ J < 0 $', (0.78, 0.87), xycoords='figure fraction', color='k',
 #                    **font_dict_txt)
@@ -111,7 +111,7 @@ txt2 = ax1.annotate(r'$ J < 0 $', (0.69, 0.87), xycoords='figure fraction', colo
 #
 
 
-fig1.savefig('../img/exch_spin_config.pdf', transparent=True)
+fig1.savefig('../img/mag_in_solid.pdf', transparent=True)
 
 #==============================================================================
 # Main function
