@@ -143,6 +143,14 @@
 % new commands
 %=======================================================================
 
+\newcommand{\myRef}[1]{
+  Fig.\ref{#1}
+}
+
+\newcommand{\myEq}[1]{
+  Eq.\ref{#1}
+}
+
 %\newcommand{\Tc}{
 %  $T_c$
 %}
@@ -292,9 +300,64 @@ Using this relation to replace $\chi_{odd}(t)$ in \refEq{eq:even_odd}.
 \tilde{\chi}(t) ~~ = ~~ \chi_{eve} + \chi_{odd} ~~ = ~~ (1 + \sign(t)) \cdot \chi_{even}(t) ~~ = ~~ \sigma(t) \cdot \chi_{even}(t)
 \end{equation}
 
+%=======================================================================
+% 
+%=======================================================================
+
+\subsubsection{Onsager Relation}
+
+\begin{equation}
+  S \cdot \left( \frac{1}{B_{n+1}} ~-~ \frac{1}{B_n} \right) ~~=~~ \frac{2 \pi e}{\hbar}
+\end{equation}
+
+$S$ is the Fermi surface ($S=\pi k_F^2$.
+
+\begin{equation}
+  F ~~\equiv~~ \left( \frac{1}{B_{n+1}} ~-~ \frac{1}{B_n} \right)^{-1}
+\end{equation}
+
+\begin{equation}
+  F ~~=~~ \frac{\Phi_0}{2 \pi^2} \cdot S
+\end{equation}
+
+where $\Phi_0 = \frac{h}{2e} = \text{Flux Quantum}$
 
 
-\subsubsection*{Second Quantization: Free Electron Gas}
+
+%=======================================================================
+% Second quantization
+%=======================================================================
+%
+% lec.notes 10.10.17 - first part
+% lec-notes 16.10.17 - second part
+
+\subsubsection{Second quantisation: Free electron gas} % 10.10.17 - first part
+
+Hamiltonian of a free electron gas can be written as. 
+
+\begin{equation}
+  H ~~=~~ \sum_{k \sigma} \frac{(\hbar \hat{k})^2}{2m} c_{k \sigma}^\dag c_{k \sigma}
+\end{equation}
+
+
+The ground state at $T=0K$ is create by applying the electron-creation operators $c_{k_i \uparrow}$ of the $i-\text{th}$ electron $e_{i \uparrow}$ to the vacuum state $|0\rangle$ for every electron that is present in the electron gas. 
+
+\begin{equation}
+  | \text{FS} \rangle ~~=~~ c_{k_{N/2} \uparrow} c_{k_{N/2} \downarrow} ... c_{k_1 \uparrow} c_{k_1 \downarrow} | 0 \rangle ~~=~~   
+\end{equation}
+
+To get the total number of electrons $N$ the number operator $\hat{N} = \sum_{k \sigma} c_{k\sigma}^\dag c_{k\sigma}$ can be applied on the ground state to the ground state $| \text{FS} \rangle$
+
+\begin{equation}
+  N ~~=~~ \langle \text{FS} | \hat{N} | \text{FS} \rangle 
+    ~~=~~ \langle \text{FS} | \sum_{k\sigma} c_{k\sigma}^\dag c_{k\sigma} | \text{FS} \rangle
+\end{equation} 
+
+This expression is equivalent to a step function 
+
+
+
+\subsubsection*{Second Quantization: Free Electron Gas} % 16.10.17 - second part 
 
 $ k_F^3 = 3 \pi^2 n$
 
@@ -315,13 +378,30 @@ Bohr Radius: $a_0 = \frac{\hbar}{m e^2}$
 \subsubsection*{Electron Interaction}
 
 \begin{equation*}
-\frac{E_1}{N} ~~ = ~~ \frac{\bra{FS} V_{el-el} \ket{FS}}{N} ~~ = ~~ - \frac{e^2}{2}
+  \frac{E_1}{N} ~~ = ~~ \frac{\bra{FS} V_{el-el} \ket{FS}}{N} ~~ = ~~ 
+  - \frac{e^2}{2} \frac{V}{N} \frac{k_F^4}{2 \pi^3} ~~=~~ - \frac{0.916}{r_S} \frac{e^2}{2 a_0}
 \end{equation*}
 
 
+\textcolor{red}{plot - energy minimum at $r_S$}
+
+
+\begin{equation}
+  V_\text{el-el} ~~=~~ \frac{1}{2V} \sum_{\sigma_1 \sigma_2} \sum_{k_1 k_2 q} 
+    V_q c_{k_1+q}^\dag c_{k_2-q}^\dag c_{k_2} c_{k_1}
+\end{equation}
+
+
+\subsubsection{Electron Tight Binding Model}
+% lec-notes 17.10.17
 
 
 
+
+
+%=======================================================================
+% Magnetism
+%=======================================================================
 
 \chapter{Magnetism}
 
@@ -399,7 +479,7 @@ This is comparable to the energy one has to put into a system to increase its te
 
 \subsubsection{Magnetic susceptibility}
 
-\begin{equation}
+\begin{equation} \label{eq:mag_suscept}
   \chi ~~≃~~ \frac{\mu_0 \vec{M}}{\vec{B}}
 \end{equation}
 
@@ -429,6 +509,142 @@ Paramagnetism and diamagnetism can also have different origins. For example:
 
 
 
+\subsubsection{Diamagnetism}
+
+\textcolor{red}{insert picture - loop current to illustrate lens law}
+
+To symbolize diamagnetic behaviour we recall lens law. It states, that a a changing magnetic field induces a current which creates for itself a magnetic field that points in the opposit direction as the initial magnetic field change. In that way the system tries to compensate the externaly induced field changes.
+
+To describe that, we use \ref{eq:mag_mom}, with the area $\vec{A} = \pi <r^2>$ and the current $I = -Z e/ \tau$ with the number of electrons $Z$ per atom and the orbit period $\tau$. expression the orbit period in terms of the \textit{cyclotron frequency} $\omega = eB/2m$ shows the dependency on the magnetic field.
+
+\begin{equation}
+  \tau ~~=~~ \frac{2\pi}{\omega} ~~=~~ \frac{4\pi m}{e B}
+\end{equation}
+
+Putting everything together we get the following expression to approximate the magnetic moment of a diamagnet
+
+\begin{equation} \label{eq:mag_mom_diamag}
+  \vec{\mu} ~~=~~ -\frac{Z e^2 B}{4\pi m} \pi <r^2> ~~=~~ -\frac{Ze^2B}{4m} <r^2>
+\end{equation}
+
+The magnetisation of a macroscopic material can be written as the sum over all the magnetic moments of its atoms resulting in
+
+\begin{equation}
+  \vec{M} ~~=~~ \mu_0 N \vec{\mu}
+\end{equation}
+
+where $N$ denotes the number of atoms per volume. Recalling \ref{eq:mag_suscept}, we find for the diamagnetic susceptibility caused by electrons
+
+\textcolor{red}{compare formula with wikipedia. probably wrong by a prefactor}
+
+\begin{equation}
+  \chi_\text{Diamagnetic} ~~=~~ -\frac{\mu_0 N e^2 <r^2> Z}{4m}
+\end{equation}
+
+
+\subsubsection{Simplest Case: $e^-$ only}
+
+Consider a system consisting of atoms with only one electron
+
+\begin{equation}
+  \rightarrow ~~ \hat{L} ~~=~~0, ~~~~ \hat{S} ~~≃~~ 1/2 ~~~~~~~~~\Rightarrow ~~ \hat{J} ~~=~~ 1/2
+\end{equation}
+
+Further more we asume for the spin g-factor $g \simeq 2$ (not proved). This system has only to states: \textit{spin-up} and \textit{spin-down}.
+
+
+Consider the energy of these two states leads to
+
+\begin{equation}
+  E ~~=~~ - \vec{\mu} \cdot \vec{B} ~~=~~ \pm \mu_B \cdot |\vec{B}|
+\end{equation}
+
+\textcolor{red}{ vector diagram nergy consideration of magnetic moment in B-field}
+
+As stated before, the Energy resulting from magnetic moments of the order of magnituted of a bohr magneton $\mu_B$ to magentic fields to several Tesla are in the same the energy range of some Kelvin ( some $k_B T$). Therefore we use Boltzman statistics to describe the \textbf{population distribution} of the system. The probability of energy level $E_1$ to be populated can be written as
+
+\begin{equation}
+  p_\alpha ~~=~~ \frac{e^{\beta E_\alpha}}{\mathcal{Z}} ~~=~~ \frac{e^{\beta E_\alpha}}{e^{\beta E_1} + e^{\beta E_2}}, ~~~~ \text{with} ~~ \alpha = \{1,2\}
+\end{equation}
+
+
+where $\beta = 1/k_BT$ and the partition function $\mathcal{Z} = \sum_i e^{\beta E_i}$. 
+
+
+\begin{equation}
+  p_1 ~~=~~ \frac{e^{ \beta E_1}}{e^{\beta E_1} + e^{-\beta E_1}}, ~~~~ 
+  p_2 ~~=~~ \frac{e^{-\beta E_1}}{e^{\beta E_1} + e^{-\beta E_1}}
+\end{equation}
+
+This has to be equatl to $p_1 = N_1/N$ and $p_2 = N_2/N$ with $N_1$ ($N_2$) being the number of electrons in the energy state $E_1$ ($E_2$) and $N = N_1 + N_2$ being the total number of electrons in the system. Futhermore we subtitute $\Bar{x} = \beta E_1 = \mu_B b/k_B T$.
+
+\textcolor{red}{plots energy level polulation}
+
+
+The magnetisation $M$ can now be written as the difference in the number of electrons with opposite magnetic moment
+
+\begin{align}
+  M ~~& =~~ (N_1 - N_2) \mu_B ~~=~~ N \mu_B (\frac{N_1}{N} - \frac{N_2}{N}) ~~=~~ 
+  N \mu_B \left( \frac{e^{\Bar{x}} - e^{-\Bar{x}}}{e^{\Bar{x}} + e^{-\Bar{x}}} \right) \nonumber \\
+  M ~~& =~~ N \mu_B \tanh(\Bar{x})
+\end{align}
+
+
+Looking at the case $\Bar{x} \ll 1$, which stands for having large Temperatures and/or low magnetic fields. We get for the magnetisation
+
+\begin{equation}
+  M ~~\simeq~~ N \mu_B \Bar{x} ~~=~~ N \frac{\mu_B^2 B}{k_B T}
+\end{equation}
+
+With the help of this equation we can now write down an expression for the paramagnetic susceptibility for (large temperature or low magnetic fields)
+
+\begin{equation}
+  \chi_\text{paramagnet} ~~=~~ \frac{N \mu_B^2}{k_B T} 
+\end{equation}
+
+We refer to this formula as \textit{Curie law} and we call the introduced constant $C = N \mu_B^2/k_B$ \textit{Curie-constant}.
+
+
+\subsection{How to fill the valence shell}
+
+\subsubsection{Hund's rules}
+
+The hund's rules provide simply rules which give an idea about the total spin-, total orbital- and total angular momentum of an atom in its ground state
+
+\begin{enumerate}
+  \item{Maximize $S$ to minimize the Coulomb energy}
+  \item{Maximize $L$ to minimize Coulomb repulsion}
+  \item{ $J=|L-S|$ for less than half filling and $J=|L+S|$ for more than half filling.}
+\end{enumerate}
+
+\subsubsection{Crystal field effects}
+
+Atoms arranged in a lattice feel the presence of the atoms around. This happens in a way, that the valence electrons of the atom under consideration are experiencing the electric field from the ligands surrounding the atom. That causes the energy degenerecy, apparent in a free atom, to be lifted. This splitting of energy levels has impact on the occupation of the different orbitals when "filling" the atom with electrons.
+For studying this effect now we will consider the valence electrons to partially fill the $3d$-orbital because this is also the case in a variety of materials in nature. Partially filled $3d$-bands can especially be found in the \textit{Transition metals}. 
+ We now exemplify that at at systems with ligands arranged octahedraly and tetragonal. 
+
+
+\subsubsection{Octahedral crystal environment}
+
+
+
+\subsubsection{Tetrahedral crystal environment}
+
+
+\subsubsection{Variation of crystal field environment}
+
+
+\subsubsection{Jahn-Teller Distortion}
+
+\textcolor{red}{complete this subsubsection with infos from lecture notes}
+
+
+\subsubsection{Resonant inelastic x-ray scattering (RIXS)}
+
+
+%===============================================================================================================
+% Feromagnetism
+%===============================================================================================================
 
 \section{Ferromagnetism}
 
@@ -822,7 +1038,170 @@ This is the dispersion relation for ferromagnets. For anti-ferromagnets we have 
 \end{equation}
 
 
+%===============================================================================================================
+% Superconductivity
+%===============================================================================================================
 
+\chapter{Superconductivity}
+
+\section{Conventional superconducters}
+
+\subsection{Link $\rho$ \& Meissner Effect}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\linewidth]{../img/sc_resistivity_drop.pdf}
+  \caption{hohoho}
+  \label{fig:sc_res_drop}
+\end{figure}
+
+
+As we know, superconductors are characterised by vanishing resistvity ($\rho=0$) for undergoing a critical temperature $T_C$ (\myRef{fig:sc_res_drop}).
+Recalling Ohm's law, 
+
+\begin{equation} \label{eq:ohms_law}
+  \vec{j} ~~=~~ \sigma \vec{E}
+\end{equation}
+
+
+which relates the electron current density $\vec{j}$ and the electric field inside a conductor $\vec{E}$ by introductin the material dependent conductivity $\sigma$.
+
+Looking at the case of superconductors, we can emphasize, by rearranging Ohm's law, that the electric field vanishes.
+
+\begin{equation}
+  \vec{E} ~~=~~ \frac{1}{\sigma} \vec{j} ~~=~~ \rho \vec{j} ~~≃~~ 0
+\end{equation}
+
+By using one of the Maxwell equation $\nabla \times \vec{E} = - d\vec{B}/ dt$ we can conclude, that for a vanishing electric field $\vec{E} = 0$ there can't be a change of the magnetic field over time $d\vec{B}/dt=0$.
+
+
+\textcolor{red}{diagram vanishing B-field}
+
+
+\subsection{London Equation}
+
+The lonodon equation is a macroscopic theory that was one of the first theories which allowed to describe effects like the Meissner-Ochsenfeld effect quantitatively.
+We know want to qualitiatively derive the london equation. For that consider a current oscillating if the frequency $\omega$
+
+\begin{equation}\label{eq:osc_curr}
+  \vec{j} e^{-i \omega t} ~~=~~ \sigma(\omega) \vec{E} e^{-i \omega t}
+\end{equation}
+
+Using the expression for the conductivity $\sigma(\omega)$ from the Drude model for a time-dependent electric field
+
+\begin{equation}
+  \sigma(\omega) ~~=~~ \frac{\vec{j}}{\vec{E}} ~~=~~ \frac{ne^2 \tau}{m} \frac{1}{1-i\omega \tau}
+\end{equation}
+
+%Looking at the real part of the conductivity
+%
+%\begin{equation}
+%  \Re(\sigma(\omega)) ~~=~~ \frac{ne^2}{m} \frac{\tau}{1+\omega \tau}~~ \xrightarrow{\omega \rightarrow 0} ~~
+%  \frac{ne^2 \tau}{m}
+%\end{equation}
+
+From this we get, as already proven in a previous excercise, that the real part of the conductivity can be written in the limit of $\tau \rightarrow \infty$ as
+
+\begin{equation}\label{eq:real_conduct}
+  \Re(\sigma(\omega)) ~~=~~ \frac{\pi n e^2}{m} \delta(\omega)
+\end{equation}
+
+
+This can also be made clear, when looking at the limits
+
+\begin{equation}
+  \Re(\sigma(\omega)) ~~=~~ \frac{ne^2}{m} \frac{\tau}{1+\omega \tau}~~ \xrightarrow{\omega \rightarrow 0} ~~
+  \frac{ne^2 \tau}{m}
+\end{equation}
+
+\begin{equation}
+  \sigma(\omega) ~~ \xrightarrow{\tau \rightarrow \infty} ~~ -\frac{ne^2}{im\omega} = \Im(\sigma(\omega)) ~~~~ \Rightarrow ~~~~ \Re(\sigma(\omega)) = 0 ~~~~~~\text{for}\ \omega \neq 0
+\end{equation}
+
+
+From \myEq{eq:real_conduct}, we see that in the regime of very large mean free times $\tau$ between ionic collisions, the real part of the conductivity $\sigma(\omega)$ is only different from zero for vanishing oscillations of the electric field. 
+
+To derive the London equation, the following two assumptions have to be made
+
+\begin{enumerate}
+\item{$\tau \rightarrow \infty$, which is given since there are no collisions between electrons and lattice ions in the superconducting state.}
+\item{We have to split up the conductivity in a part $\sigma_{N}(\omega)$ of normal state electrons and a conductivity contribution due to \textit{super electrons} $\sigma_{S}$: 
+$\sigma(\omega) = \sigma_N(\omega) + \sigma_S(\omega)$, were only $\sigma_S(\omega) \neq 0$ in the superconducting state}
+\end{enumerate}
+
+
+Taking the curl of the oscillating current
+
+\begin{align}\label{eq:curl_curr}
+  \nabla \times (\vec{j} e^{-i\omega t}) & ~~=~~ -\sigma(\omega) \nabla \times (\vec{E}\cdot e^{-i\omega t}) ~~=~~
+  -\sigma(\omega) \frac{d}{dt} (\vec{B} \cdot e^{-i\omega t})\nonumber \\
+    & ~~=~~ - \frac{n_Se^2}{m} \vec{B} \cdot e^{-i\omega t}
+\end{align}
+
+Here we used \myEq{eq:osc_curr} in the first and farradays law ($\nabla \times \vec{E} = d/dt \vec{B}$) in the second step. Furthermore is only the \textit{super electron} density $n_S$ contributing to the conductivity $\sigma(\omega)$. From this equation we can deduce that
+
+\begin{equation}\label{eq:london_eq}
+  \nabla \times \vec{j} ~~\propto~~ \vec{B} ~~~~~~\text{and thereof}~~~~ \vec{j} = -\frac{n_Se^2}{m} \vec{A}
+\end{equation}
+
+with $\vec{A}$ being the vector potential. The equation describing this proprtionality between the current density $\vec{j}$ and the vector potential $\vec{A}$ is the London equation.
+
+
+%The london equation allows us now to set up a differential equation for the magnetic field $\vec{B}$. 
+%
+Together with Ampere's law ($\nabla \times \vec{B} = \mu_0 \vec{j}$) allows us the London equation (\myEq{eq:london_eq}) now to set up a differential equation for the magentic field $\vec{B}$.
+
+\begin{equation}
+  \nabla \times \nabla \times \vec{B} ~~=~~ -\frac{1}{\lambda^2} \vec{B}, ~~~~~~ \text{where}~~ 
+  \lambda = \sqrt{\frac{m}{\mu_0 n_S e^2}}
+\end{equation}
+
+This equation can also be written as
+
+\begin{equation} \label{eq:deq_B}
+  \nabla^2 \cdot \vec{B} ~~=~~ \frac{1}{\lambda^2} \vec{B}
+\end{equation}
+
+
+To exemplify the solution of this differential equation we look at it in one dimension. Then \myEq{eq:deq_B} becomes $d^2/dx^2 B_z(x) = 1/\lambda^2 B_x$.
+
+To exemplify the solution of this differential equation we look at a situation were we have a superconductor filling the space for all values $x\geq 0$ correspinding to that we have vacuum at $x<0$. Applyling now a magnetic field in the vacuum region aligned along the z-axis $\vec{B} = (0,0,B_0)$. in this case the differential equation \myEq{eq:deq_B} simplifies to 
+
+\begin{equation}
+  \frac{d^2}{dx^2} B_z(x) ~~=~~ \frac{1}{\lambda^2} B_z(x)
+\end{equation}
+
+Using the boundary conditions $B_z(x) \xrightarrow{x \rightarrow \infty} 0$ (Meissner Effect) and $B_z(x \rightarrow 0)=B_0$ leads to the solution
+
+\begin{equation}
+  B_z ~~=~~ B_0 e^{-x/\lambda}
+\end{equation}
+
+
+\begin{figure}[t]
+  \begin{minipage}[c][6.00cm]{.5\textwidth}
+    \vspace*{\fill}
+    \centering
+    \includegraphics[width=0.916\linewidth]{../img/london_B_1dim.pdf}
+%   \captionsetup{width=6.9cm}
+    \captionsetup{width=.95\linewidth}
+    \captionof{figure}{Temperature dependence of magnetisation.}
+  \end{minipage}%
+  \begin{minipage}[c][6.00cm]{.5\textwidth}
+    \vspace*{\fill}
+    \centering
+    \includegraphics[width=1.0\linewidth]{../img/london_lambda.pdf}
+    \captionsetup{width=1.0\linewidth}
+ %   \captionsetup{width=6.9cm}
+    \captionof{figure}{Free Energy dependence on the order parameter $m$ for the 3 cases $T<T_C$, $T=T_C$ and $T>T_C$.}
+  \end{minipage}
+  \label{fig:2:tests}
+\end{figure}
+
+
+%\begin{equation}
+%  \sigma(\omega) ~~ -\frac{n e^2}{im\omega} ~~~~ \text{for}\ \tau = \infty ~~~~ \text{and}\ \omega \neq 0
+%\end{equation}
 
 
 %========================================================================================================
