@@ -38,8 +38,9 @@
 \contentsline {chapter}{\numberline {3}Superconductivity}{17}{chapter.3}
 \contentsline {section}{\numberline {3.1}Conventional superconducters}{17}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Link $\rho $ \& Meissner Effect}{17}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}London Equation}{17}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Coherence Length}{20}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}Ginzburg-Landau Theory}{21}{subsection.3.1.4}
-\contentsline {subsection}{\numberline {3.1.5}Classification of different superconductors}{22}{subsection.3.1.5}
-\contentsline {subsection}{\numberline {3.1.6}Vorteces}{22}{subsection.3.1.6}
+\contentsline {section}{\numberline {3.2}London Equation}{17}{section.3.2}
+\contentsline {section}{\numberline {3.3}Coherence Length}{20}{section.3.3}
+\contentsline {section}{\numberline {3.4}Ginzburg-Landau Theory}{21}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Orderparameter in the Ginzburg-Landau Model}{22}{subsection.3.4.1}
+\contentsline {section}{\numberline {3.5}Classification of different superconductors}{23}{section.3.5}
+\contentsline {section}{\numberline {3.6}Vorteces}{23}{section.3.6}

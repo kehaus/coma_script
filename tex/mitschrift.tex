@@ -1078,7 +1078,7 @@ By using one of the Maxwell equation $\nabla \times \vec{E} = - d\vec{B}/ dt$ we
 \textcolor{red}{diagram vanishing B-field}
 
 
-\subsection{London Equation}
+\section{London Equation}
 
 The lonodon equation is a macroscopic theory that was one of the first theories which allowed to describe effects like the Meissner-Ochsenfeld effect quantitatively.
 We know want to qualitiatively derive the london equation. For that consider a current oscillating if the frequency $\omega$
@@ -1206,7 +1206,7 @@ Looking at the definition of the London penetration depth we see that $n_{S_1} <
 
 
 
-\subsection{Coherence Length}
+\section{Coherence Length}
 
 Another lengthscale that helps us to classify the different types of superconductors is the \textit{coherence length} $\xi$. The coherence length is a measure of the distance within which the superconducting electron concentration cannot change drastically in a spatially-varying magnetic field.
 
@@ -1225,7 +1225,7 @@ Values of $\kappa$ for some materials are given in \textcolor{red}{lenght scale 
 \textcolor{red}{include table from PPP}
 
 
-\subsection{Ginzburg-Landau Theory}
+\section{Ginzburg-Landau Theory}
 
 The Landau Theory of Phase Transtition can also be used in the case of the transition from normal to superconducting state. The free energy per volume of the system in the superconducting state is given as
 
@@ -1302,10 +1302,35 @@ Evaluating \myEq{eq:diff_heat_cap} at the transition Temperature gives us the ju
 \end{equation}
 
 
-\subsection{Classification of different superconductors}
+\subsection{Orderparameter in the Ginzburg-Landau Model}
+
+To point out the connection between the penetration depth resulting from the London Equation and the Ginzburg-Landau Theory, we look a bit closer at the order parameter $|\psi|$. Before we defined the term of the super electrons $n_s$ in the London's theory. In BCS-Theory this quantity is referred to as density of cooper pairs.
+
+\begin{equation*}
+  n_S ~~=~~ \left\{
+  \begin{array}{lcr}
+    \# \text{super electrons} & ~~\leftarrow~~ & \text{London Theory}\\
+    \# \text{cooper pairs}    & ~~\leftarrow~~ & \text{BCS Theory}
+  \end{array} \right.
+\end{equation*} 
 
 
-\subsection{Vorteces}
+Here we assign 
+
+\begin{equation}
+  n_S ~~=~~ 2|\psi|^2 ~~=~~ 2 \frac{a_0(T_C-T)}{b_0}
+\end{equation}
+
+This allows us now to express the penetretion depth $\lambda$ from \myEq{eq:deq_B_0} as explicitly temperature dependent
+
+\begin{equation} \label{eq:penetration_depth_temp_dep}
+  \lambda(T) ~~=~~ \sqrt{\frac{b_0 m}{2 \mu_0 e^2 a_0 (T_C-T)}}
+\end{equation}
+
+\section{Classification of different superconductors}
+
+
+\section{Vorteces}
 
 To define the appearance of vorteces from Type 2 Superconductors into into our formalism we define the free energy per volumne as
 
@@ -1370,6 +1395,47 @@ Here we used the same expression for $a(T)$ as in the ginzburg-Landau Theory.
   \end{minipage}
 \end{figure}
 
+We can now use our expressions for the penetration depth (\myEq{eq:penetration_depth_temp_dep}) and the coherence length (\myEq{eq:vortex_coherence_length}) to express the Ginzburg-Landau paramater $\kappa$ as
+
+\begin{equation}
+  \kappa ~~\equiv~~ \frac{\lambda(T)}{\xi(t)}
+\end{equation}
+
+Since the temperature dependence of both characteristic length scales cancels out, \textbf{$\kappa$ is independent of $T$}.
+
+Each vortex has one flux quantum $\Phi_0$. The diameter of a vortex is given by the coherence length $\xi$. Looking at a cut through a superconductor with edge length $L$,  we can define the total surface of the material covered by vorteces as
+
+\begin{equation}
+  2\pi \xi^2 N ~~=~~ A_\text{vortex}
+\end{equation}
+
+where $N$ is the number of vorteces in the material an. Looking for the situation where $A_\text{vortex} = L$ we can say, that the superconducting state is fully repressed by the vortex inherent magnetic field. 
+The magnetic field inside the superconductor can then be written as
+
+\begin{equation}
+  H ~~=~~~\frac{N \Phi_0}{L^2}
+\end{equation}
+
+This allows us to set up a relation between the upper critical field $H_{c_2}$ for which the superconducting state is entirely suppressed and the coherence length, which defines the vortex diameter
+
+\begin{equation}
+  H_{c_2} ~≃~~ \frac{\Phi_0}{2\pi \xi^2}
+\end{equation}
+
+
+Since one vortex has exactly one flux quantum, we can set up a relation between the penetration depth $\lambda$ and a lower critical field $H_{c_1}$. This lower critical field marks the point when vorteces start to be \textit{produced} at the materials surface. 
+We assume, that the magnetic field penetration the superconductor has at least to be as strong as one flux quantum to be able to create a vortex
+
+\begin{equation}
+  \pi \lambda^2 H ~~\overset{!}{=}~~ \Phi_0 ~~~~~~\Rightarrow~~~~~~ H_{c_1} ~=~ \frac{\Phi_0}{\pi \lambda}
+\end{equation}
+
+
+
+
+\textcolor{red}{sketch - vorteces in the material}
+
+\textcolor{red}{sketch - condition for creating one vortex}
 
 
 
