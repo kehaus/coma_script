@@ -163,7 +163,7 @@
 }
 
 \newcommand{\refEq}[1]{
-  Eq. \ref{#1}
+  Eq  \ref{#1}
 }
 
 \DeclareMathOperator{\sign}{sign}
@@ -1151,7 +1151,7 @@ with $\vec{A}$ being the vector potential. The equation describing this proprtio
 %
 Together with Ampere's law ($\nabla \times \vec{B} = \mu_0 \vec{j}$) allows us the London equation (\myEq{eq:london_eq}) now to set up a differential equation for the magentic field $\vec{B}$.
 
-\begin{equation}
+\begin{equation} \label{eq:deq_B_0}
   \nabla \times \nabla \times \vec{B} ~~=~~ -\frac{1}{\lambda^2} \vec{B}, ~~~~~~ \text{where}~~ 
   \lambda = \sqrt{\frac{m}{\mu_0 n_S e^2}}
 \end{equation}
@@ -1173,9 +1173,13 @@ To exemplify the solution of this differential equation we look at a situation w
 
 Using the boundary conditions $B_z(x) \xrightarrow{x \rightarrow \infty} 0$ (Meissner Effect) and $B_z(x \rightarrow 0)=B_0$ leads to the solution
 
-\begin{equation}
-  B_z ~~=~~ B_0 e^{-x/\lambda}
+\begin{equation} \label{eq:B_decrease}
+  B_z(x) ~~=~~ B_0 e^{-x/\lambda}
 \end{equation}
+
+This solution describes an exponentially decreasing magnetic field inside the the superconductor close to the surface. From this formula one can also recognize that $\lambda = \sqrt{m/\mu_0 n_S e^2}$ introduced a characteristic length scale over which the magnetic penetrates the superconductor. For that reason $\lambda$ is referred to as \textit{London penetration depth}. 
+In \ref{fig:london_lambda} we see \myEq{eq:B_decrease} plotted for two different values of lambda $\lambda_1 > \lambda_2$. 
+Looking at the definition of the London penetration depth we see that $n_{S_1} < n_{S_2}$, which means that the higher the charge density the more is the penetrating magnetic field $B_z(x)$ diminished.
 
 
 \begin{figure}[t]
@@ -1185,23 +1189,188 @@ Using the boundary conditions $B_z(x) \xrightarrow{x \rightarrow \infty} 0$ (Mei
     \includegraphics[width=0.916\linewidth]{../img/london_B_1dim.pdf}
 %   \captionsetup{width=6.9cm}
     \captionsetup{width=.95\linewidth}
-    \captionof{figure}{Temperature dependence of magnetisation.}
+    \captionof{figure}{Illustration of the magnetic field decrease inside the superconductor according to \myEq{eq:B_decrease}. The magnetic field is pictorially drawn as blue vectors. Adapted from \text{red}{Kittel - include citation}}
+    \label{fig:london_B_1dim}
   \end{minipage}%
   \begin{minipage}[c][6.00cm]{.5\textwidth}
     \vspace*{\fill}
     \centering
     \includegraphics[width=1.0\linewidth]{../img/london_lambda.pdf}
-    \captionsetup{width=1.0\linewidth}
+    \captionsetup{width=0.95\linewidth}
  %   \captionsetup{width=6.9cm}
-    \captionof{figure}{Free Energy dependence on the order parameter $m$ for the 3 cases $T<T_C$, $T=T_C$ and $T>T_C$.}
+    \captionof{figure}{Illustration of \myEq{eq:B_decrease} for two different values for the london penetration depth.}
+    \label{fig:london_lambda}
   \end{minipage}
-  \label{fig:2:tests}
 \end{figure}
 
 
-%\begin{equation}
-%  \sigma(\omega) ~~ -\frac{n e^2}{im\omega} ~~~~ \text{for}\ \tau = \infty ~~~~ \text{and}\ \omega \neq 0
-%\end{equation}
+
+
+\subsection{Coherence Length}
+
+Another lengthscale that helps us to classify the different types of superconductors is the \textit{coherence length} $\xi$. The coherence length is a measure of the distance within which the superconducting electron concentration cannot change drastically in a spatially-varying magnetic field.
+
+\begin{equation} \label{eq:coherence_length}
+  \xi ~~=~~ \frac{\hbar v_F}{\pi \Delta}
+\end{equation}
+
+Where $v_F$ stands for the fermi velocity and $\Delta$ for superconducting gap being present at the fermi surface in the SC state. $\xi$ is a parameter in the \textit{Ginzburg-Landau Theory} and can be derived there.
+
+The two length scales, penetration depth and coherence length, allow us now, to categorize the superconductors in the groups \textit{Type 1} and \textit{Type 2}. This goes as follows:
+
+By defining $\kappa \equiv \xi/\lambda$ we say a Superconductor contains to the group of \textit{Type 1} (\textit{Type 2}) if $\kappa ~<~ (>)~ 1/\sqrt{2} \simeq 0.707 $. 
+
+Values of $\kappa$ for some materials are given in \textcolor{red}{lenght scale table}. The classification of SC into Type 1 and Type 2 does not fully coincide with the classification of conventional and unconvential. Although a lot of the conventional (elementary) supperconductors are of Type 1, there are also some expetions like Niobium (Nb) which is a conventional Type 2 Superconductor.
+
+\textcolor{red}{include table from PPP}
+
+
+\subsection{Ginzburg-Landau Theory}
+
+The Landau Theory of Phase Transtition can also be used in the case of the transition from normal to superconducting state. The free energy per volume of the system in the superconducting state is given as
+
+\begin{equation}
+  f_\text{SC} ~~=~~ f_\text{NS} ~+~ a(T) |\psi(T)|^2 ~+~ \frac{1}{2} b(T) |\psi(T)|^4 ~+~ ...
+\end{equation}
+
+$|\psi|$ is treated as the order parameter. 
+To find the temperature dependence of the free energy per volumne we make the following assumptions: near the transition temperature $T_C$ has $a$ to be linear in temperature ($a(T)=a_0(T-T_C) +...$) and $b$ given as $b(T)=b_0+...$ with $a_0, b_0$ being constant and larger than zero.
+
+Looking for the extrema of $(f_\text{SC}-f_\text{NS})$
+
+\begin{equation} \label{eq:f_SC_derived}
+  \frac{d (f_\text{SC}-f_\text{NS})}{d|\psi|} ~~=~~ 2|\psi| \left\{a(T) ~+~ b(T)|\psi|^2  \right\} 
+  ~~\overset{!}{=}~~ 0
+\end{equation}
+
+We find the following condition for $|\psi|$ to minimize $(f_\text{SC}-f_\text{NS})$
+
+\begin{equation} \label{eq:psi_condition}
+  |\psi| ~~=~~ \left\{ 
+  \begin{array}{cr}
+    0, & T>T_C\\
+    \pm \sqrt{-a(T)/b(T)}, & T<T_C
+  \end{array} \right.
+\end{equation}
+
+Plugging \myEq{eq:psi_condition} into \myEq{eq:f_SC_derived} leads to
+
+\begin{equation}
+  (f_\text{SC} - f_\text{NS}) ~~=~~ -\frac{a^2(T)}{b(T)} ~+~ \frac{1}{2} \frac{a^2(T)}{b(T)} ~~=~~
+  -\frac{1}{2} \frac{a_0^2(T-T_C)^2}{b_0}
+\end{equation}
+
+
+\begin{figure}[t]
+  \begin{minipage}[c][6.50cm]{.5\textwidth}
+    \vspace*{\fill}
+    \centering
+    \includegraphics[width=0.916\linewidth]{../img/landauginzburg_f_SC.pdf}
+%   \captionsetup{width=6.9cm}
+    \captionsetup{width=.95\linewidth}
+    \captionof{figure}{Difference of the free energy per volume between the normal- and superconducting state.}
+    \label{fig:london_B_1dim}
+  \end{minipage}%
+  \begin{minipage}[c][6.00cm]{.5\textwidth}
+    \vspace*{\fill}
+    \centering
+    \includegraphics[width=1.0\linewidth]{../img/landauginzburg_psi_T.pdf}
+    \captionsetup{width=0.95\linewidth}
+ %   \captionsetup{width=6.9cm}
+    \captionof{figure}{Temperature dependence of the order parameter $|\psi|$. }
+    \label{fig:london_lambda}
+  \end{minipage}
+\end{figure}
+
+Since $f_\text{SC}$ is the free energy, we can write
+
+\begin{equation}
+  S ~~\equiv~~ -\frac{df}{dT} ~~~~~~\text{and}~~~~~~ C ~~\equiv~~ T \cdot \frac{dS}{dT}
+\end{equation}
+
+This gives for the difference in the heat capacity
+
+\begin{equation} \label{eq:diff_heat_cap}
+  \Delta C ~~\equiv~~ C_\text{SC} ~-~ C_\text{NS} ~~=~~ -T \frac{d^2(f_\text{SC}-f_\text{NS})}{dT^2} 
+  ~~=~~ T \frac{a_0^2}{b_0}
+\end{equation}
+
+Evaluating \myEq{eq:diff_heat_cap} at the transition Temperature gives us the jump in specific heat at the phase transition
+
+\begin{equation}
+  \Delta C(T_C) ~~=~~ \frac{a_0^2}{b_0} T_C
+\end{equation}
+
+
+\subsection{Classification of different superconductors}
+
+
+\subsection{Vorteces}
+
+To define the appearance of vorteces from Type 2 Superconductors into into our formalism we define the free energy per volumne as
+
+\begin{equation} \label{eq:vortex_free_energy}
+  f_\text{SC} - f_\text{NS} ~~≃~~ a(T) |\psi(r)|^2 ~+~ b(T)|\psi(r)|^4 ~+~ 
+  \frac{\hbar^2}{2m} \nabla |\psi|^2
+\end{equation}
+
+To get the total Free energy we integrate \myEq{eq:vortex_free_energy} over all space
+
+\begin{equation}
+  F_\text{SC} - F_\text{NS} ~~=~~ \int d^3r (f_\text{SC} - f_\text{NS})
+\end{equation}
+
+We are interested now in finding the wavefunction $\psi(r)$ for which the Free energy is minimized. Since $\psi(r)$ is a function, this condition is formulated in a functional of the following form
+
+\begin{equation}
+  \frac{\delta F_\text{SC}}{\delta \psi(r)} ~~\overset{!}{=}~~ 0
+\end{equation}
+
+This is a differential equation for $\psi(r)$. In one dimnesion this DEG looks like the following
+
+\begin{equation} \label{eq:vortex_wave_function_deg}
+  -\frac{\hbar^2}{2m} \frac{d^2\psi(x)}{dx^2} ~+~ a(T) \psi(x) ~+~ b(T) \psi^3(x) ~~=~~ 0
+\end{equation}
+
+A solution to this differential equation is
+
+\begin{equation} \label{eq:vortex_wave_function}
+  \psi(x) ~~=~~ \psi_0 \tanh(\frac{x}{\sqrt{2} \xi(T)})
+  \ 
+\end{equation}
+
+
+The coherence length $\xi(T)$ introduces a temperature dependent length scale and is given as
+
+\begin{equation} \label{eq:vortex_coherence_length}
+  \xi(T) ~~=~~ \left( \frac{\hbar}{2m |a(T)|} \right)^{1/2} ~~=~~ \xi_0\ t^{-1/2} ~~~~~~\text{with}~~~~ 
+  t = \frac{T-T_C}{T_C}
+\end{equation}
+
+Here we used the same expression for $a(T)$ as in the ginzburg-Landau Theory.
+
+\begin{figure}[t]
+  \begin{minipage}[c][6.50cm]{.5\textwidth}
+    \vspace*{\fill}
+    \centering
+    \includegraphics[width=0.916\linewidth]{../img/vortex_coherence_length.pdf}
+%   \captionsetup{width=6.9cm}
+    \captionsetup{width=.95\linewidth}
+    \captionof{figure}{Coherence length $\xi(T)$ plotted over Temperature according to \myEq{eq:cortex_coherence_length}. Noteworthy is the diverging of $\xi$ when going close to $T_C$.}
+    \label{fig:london_B_1dim}
+  \end{minipage}%
+  \begin{minipage}[c][6.00cm]{.5\textwidth}
+    \vspace*{\fill}
+    \centering
+    \includegraphics[width=1.0\linewidth]{../img/vortex_wavefunction.pdf}
+    \captionsetup{width=0.95\linewidth}
+ %   \captionsetup{width=6.9cm}
+    \captionof{figure}{Wavefunction in one dimension according to \myEq{eq:vortex_wave_function}. Comparing the the blue and red curve shows that the wave function gets \textit{pushed down} for increasing coherence length ($\xi_2 > \xi_1$).}
+    \label{fig:london_lambda}
+  \end{minipage}
+\end{figure}
+
+
 
 
 %========================================================================================================

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.30)  2 DEC 2017 20:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.30)  3 DEC 2017 16:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1860,10 +1860,28 @@ LaTeX Warning: Label `fig:2:tests' multiply defined.
 LaTeX Warning: Label `fig:2:tests@cref' multiply defined.
 
 
-LaTeX Warning: Label `fig:2:tests' multiply defined.
+LaTeX Warning: Label `fig:london_B_1dim' multiply defined.
 
 
-LaTeX Warning: Label `fig:2:tests@cref' multiply defined.
+LaTeX Warning: Label `fig:london_B_1dim@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:london_lambda' multiply defined.
+
+
+LaTeX Warning: Label `fig:london_lambda@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:london_B_1dim' multiply defined.
+
+
+LaTeX Warning: Label `fig:london_B_1dim@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:london_lambda' multiply defined.
+
+
+LaTeX Warning: Label `fig:london_lambda@cref' multiply defined.
 
 )
 \openout1 = `mitschrift.aux'.
@@ -2023,7 +2041,7 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-<../img/uzh_logo.png, id=164, 644.4075pt x 204.765pt>
+<../img/uzh_logo.png, id=180, 644.4075pt x 204.765pt>
 File: ../img/uzh_logo.png Graphic file (type png)
 
 <use ../img/uzh_logo.png>
@@ -2064,7 +2082,7 @@ File: uni-34.def 2013/05/13 UCS: Unicode data U+2200..U+22FF
 ) [4
 
 ]
-<../img/mag_in_solid.pdf, id=251, 578.16pt x 216.81pt>
+<../img/mag_in_solid.pdf, id=271, 578.16pt x 216.81pt>
 File: ../img/mag_in_solid.pdf Graphic file (type pdf)
 
 <use ../img/mag_in_solid.pdf>
@@ -2135,14 +2153,14 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 LaTeX Warning: Reference `fig:ferromag_graph_sol' on page 12 undefined on input
  line 821.
 
-[12] <../img/ferromag_graph_sol.pdf, id=353, 578.16pt x 433.62pt>
+[12] <../img/ferromag_graph_sol.pdf, id=373, 578.16pt x 433.62pt>
 File: ../img/ferromag_graph_sol.pdf Graphic file (type pdf)
 
 <use ../img/ferromag_graph_sol.pdf>
 Package pdftex.def Info: ../img/ferromag_graph_sol.pdf used on input line 833.
 (pdftex.def)             Requested size: 179.8329pt x 134.87073pt.
 
-<../img/ferro_para_compar.pdf, id=356, 578.16pt x 433.62pt>
+<../img/ferro_para_compar.pdf, id=376, 578.16pt x 433.62pt>
 File: ../img/ferro_para_compar.pdf Graphic file (type pdf)
 
 <use ../img/ferro_para_compar.pdf>
@@ -2159,14 +2177,14 @@ Overfull \hbox (1.24411pt too wide) detected at line 875
 0 =  []  =  []
  []
 
-<../img/ferromag_M_T.pdf, id=358, 578.16pt x 433.62pt>
+<../img/ferromag_M_T.pdf, id=378, 578.16pt x 433.62pt>
 File: ../img/ferromag_M_T.pdf Graphic file (type pdf)
 
 <use ../img/ferromag_M_T.pdf>
 Package pdftex.def Info: ../img/ferromag_M_T.pdf used on input line 888.
 (pdftex.def)             Requested size: 179.8329pt x 134.87073pt.
 
-<../img/ferromag_landau.pdf, id=359, 578.16pt x 433.62pt>
+<../img/ferromag_landau.pdf, id=379, 578.16pt x 433.62pt>
 File: ../img/ferromag_landau.pdf Graphic file (type pdf)
 
 <use ../img/ferromag_landau.pdf>
@@ -2181,21 +2199,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 885--902
 
 pdfTeX warning: pdflatex (file ../img/ferro_para_compar.pdf): PDF inclusion: mu
 ltiple pdfs with page group included in a single page
->] <../img/exch_spin_config.pdf, id=414, 578.16pt x 289.08pt>
+>] <../img/exch_spin_config.pdf, id=435, 578.16pt x 289.08pt>
 File: ../img/exch_spin_config.pdf Graphic file (type pdf)
 
 <use ../img/exch_spin_config.pdf>
 Package pdftex.def Info: ../img/exch_spin_config.pdf used on input line 937.
 (pdftex.def)             Requested size: 274.85248pt x 137.4247pt.
 
-<../img/antiferro_suscept.pdf, id=415, 578.16pt x 433.62pt>
+<../img/antiferro_suscept.pdf, id=436, 578.16pt x 433.62pt>
 File: ../img/antiferro_suscept.pdf Graphic file (type pdf)
 
 <use ../img/antiferro_suscept.pdf>
 Package pdftex.def Info: ../img/antiferro_suscept.pdf used on input line 955.
 (pdftex.def)             Requested size: 179.8329pt x 134.87073pt.
 
-<../img/antiferro_para_compar.pdf, id=416, 578.16pt x 433.62pt>
+<../img/antiferro_para_compar.pdf, id=437, 578.16pt x 433.62pt>
 File: ../img/antiferro_para_compar.pdf Graphic file (type pdf)
 
 <use ../img/antiferro_para_compar.pdf>
@@ -2233,7 +2251,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1049.
 
-<../img/sc_resistivity_drop.pdf, id=567, 578.16pt x 433.62pt>
+<../img/sc_resistivity_drop.pdf, id=587, 578.16pt x 433.62pt>
 File: ../img/sc_resistivity_drop.pdf Graphic file (type pdf)
 
 <use ../img/sc_resistivity_drop.pdf>
@@ -2242,50 +2260,100 @@ Package pdftex.def Info: ../img/sc_resistivity_drop.pdf used on input line 1053
 (pdftex.def)             Requested size: 274.85248pt x 206.13705pt.
  [17
 
-] [18 <../img/sc_resistivity_drop.pdf>] [19] <../img/london_B_1dim.pdf, id=621,
+] [18 <../img/sc_resistivity_drop.pdf>] [19] <../img/london_B_1dim.pdf, id=643,
  578.16pt x 433.62pt>
 File: ../img/london_B_1dim.pdf Graphic file (type pdf)
 
 <use ../img/london_B_1dim.pdf>
-Package pdftex.def Info: ../img/london_B_1dim.pdf used on input line 1185.
+Package pdftex.def Info: ../img/london_B_1dim.pdf used on input line 1189.
 (pdftex.def)             Requested size: 179.8329pt x 134.87073pt.
 
-<../img/london_lambda.pdf, id=622, 578.16pt x 433.62pt>
+<../img/london_lambda.pdf, id=646, 578.16pt x 433.62pt>
 File: ../img/london_lambda.pdf Graphic file (type pdf)
 
 <use ../img/london_lambda.pdf>
-Package pdftex.def Info: ../img/london_lambda.pdf used on input line 1193.
+Package pdftex.def Info: ../img/london_lambda.pdf used on input line 1198.
 (pdftex.def)             Requested size: 196.32405pt x 147.24358pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1182--1199
-[]$[]$$[]$
- []
-
-[20 <../img/london_B_1dim.pdf> <../img/london_lambda.pdf
+ [20 <../img/london_B_1dim.pdf> <../img/london_lambda.pdf
 
 pdfTeX warning: pdflatex (file ../img/london_lambda.pdf): PDF inclusion: multip
 le pdfs with page group included in a single page
+>] [21] <../img/landauginzburg_f_SC.pdf, id=702, 578.16pt x 433.62pt>
+File: ../img/landauginzburg_f_SC.pdf Graphic file (type pdf)
+
+<use ../img/landauginzburg_f_SC.pdf>
+Package pdftex.def Info: ../img/landauginzburg_f_SC.pdf used on input line 1268
+.
+(pdftex.def)             Requested size: 179.8329pt x 134.87073pt.
+
+<../img/landauginzburg_psi_T.pdf, id=703, 578.16pt x 433.62pt>
+File: ../img/landauginzburg_psi_T.pdf Graphic file (type pdf)
+
+<use ../img/landauginzburg_psi_T.pdf>
+Package pdftex.def Info: ../img/landauginzburg_psi_T.pdf used on input line 127
+7.
+(pdftex.def)             Requested size: 196.32405pt x 147.24358pt.
+ [22 <../img/landauginzburg_f_SC.pdf> <../img/landauginzburg_psi_T.pdf
+
+pdfTeX warning: pdflatex (file ../img/landauginzburg_psi_T.pdf): PDF inclusion:
+ multiple pdfs with page group included in a single page
+>] <../img/vortex_coherence_length.pdf, id=760, 578.16pt x 433.62pt>
+File: ../img/vortex_coherence_length.pdf Graphic file (type pdf)
+
+<use ../img/vortex_coherence_length.pdf>
+Package pdftex.def Info: ../img/vortex_coherence_length.pdf used on input line 
+1356.
+(pdftex.def)             Requested size: 179.8329pt x 134.87073pt.
+
+
+LaTeX Warning: Reference `eq:cortex_coherence_length' on page 23 undefined on i
+nput line 1359.
+
+
+LaTeX Warning: Reference `eq:cortex_coherence_length' on page 23 undefined on i
+nput line 1359.
+
+<../img/vortex_wavefunction.pdf, id=761, 578.16pt x 433.62pt>
+File: ../img/vortex_wavefunction.pdf Graphic file (type pdf)
+
+<use ../img/vortex_wavefunction.pdf>
+Package pdftex.def Info: ../img/vortex_wavefunction.pdf used on input line 1365
+.
+(pdftex.def)             Requested size: 196.32405pt x 147.24358pt.
+
+
+LaTeX Warning: Reference `eq:vortex_wave_function' on page 23 undefined on inpu
+t line 1368.
+
+
+LaTeX Warning: Reference `eq:vortex_wave_function' on page 23 undefined on inpu
+t line 1368.
+
+[23 <../img/vortex_coherence_length.pdf> <../img/vortex_wavefunction.pdf
+
+pdfTeX warning: pdflatex (file ../img/vortex_wavefunction.pdf): PDF inclusion: 
+multiple pdfs with page group included in a single page
 >]
 
-LaTeX Warning: Empty `thebibliography' environment on input line 1329.
+LaTeX Warning: Empty `thebibliography' environment on input line 1498.
 
 
 Package caption Warning: Unused \captionsetup[subfigure] on input line 52.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1331.
-[21
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1500.
+[24
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1331.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1500.
  (./mitschrift.aux
 Package cleveref Info: loaded `english' language definitions on input line 22.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1331.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1331.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1500.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1500.
 
 Package rerunfilecheck Info: File `mitschrift.out' has not changed.
-(rerunfilecheck)             Checksum: 5838EC667D0789A37B72611A46F23676;2863.
+(rerunfilecheck)             Checksum: C1240D3B33BA72CE0BB7B22FB1F1D984;3168.
 
 
 LaTeX Warning: There were undefined references.
@@ -2295,11 +2363,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 25105 strings out of 493029
- 460637 string characters out of 6136234
- 707561 words of memory out of 5000000
- 28070 multiletter control sequences out of 15000+600000
- 19999 words of font info for 116 fonts, out of 8000000 for 9000
+ 25198 strings out of 493029
+ 462467 string characters out of 6136234
+ 707560 words of memory out of 5000000
+ 28117 multiletter control sequences out of 15000+600000
+ 21047 words of font info for 126 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  53i,17n,92p,10370b,836s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
@@ -2315,17 +2383,20 @@ ts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/symbols/msbm7.pfb>
-Output written on mitschrift.pdf (26 pages, 378320 bytes).
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
+m10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
+7.pfb>
+Output written on mitschrift.pdf (29 pages, 443212 bytes).
 PDF statistics:
- 773 PDF objects out of 1000 (max. 8388607)
- 595 compressed objects within 6 object streams
- 164 named destinations out of 1000 (max. 500000)
- 25981 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 927 PDF objects out of 1000 (max. 8388607)
+ 708 compressed objects within 8 object streams
+ 187 named destinations out of 1000 (max. 500000)
+ 28081 words of extra memory for PDF output out of 29859 (max. 10000000)
 
