@@ -2,44 +2,46 @@
 \BOOKMARK [1][-]{section.1.1}{Peierl Transition}{chapter.1}% 2
 \BOOKMARK [1][-]{section.1.2}{From Causality to Kramer-Kronig relation}{chapter.1}% 3
 \BOOKMARK [2][-]{section*.3}{Onsager Relation}{section.1.2}% 4
-\BOOKMARK [3][-]{section*.4}{Second quantisation: Free electron gas}{section*.3}% 5
-\BOOKMARK [3][-]{section*.7}{Electron Tight Binding Model}{section*.3}% 6
-\BOOKMARK [0][-]{chapter.2}{Magnetism}{}% 7
-\BOOKMARK [1][-]{section.2.1}{Paramagnetism}{chapter.2}% 8
-\BOOKMARK [2][-]{section*.8}{Magnetic Moment}{section.2.1}% 9
-\BOOKMARK [3][-]{section*.9}{Example: Hydrogen Atom}{section*.8}% 10
-\BOOKMARK [3][-]{section*.10}{Magnetic Moment of Atoms}{section*.8}% 11
-\BOOKMARK [3][-]{section*.11}{Magnetisation}{section*.8}% 12
-\BOOKMARK [3][-]{section*.13}{Magnetic Moment in a -Field}{section*.8}% 13
-\BOOKMARK [3][-]{section*.14}{Magnetic susceptibility}{section*.8}% 14
-\BOOKMARK [3][-]{section*.15}{Diamagnetism}{section*.8}% 15
-\BOOKMARK [3][-]{section*.16}{Simplest Case: e- only}{section*.8}% 16
-\BOOKMARK [2][-]{subsection.2.1.1}{How to fill the valence shell}{section.2.1}% 17
-\BOOKMARK [3][-]{section*.17}{Hund's rules}{subsection.2.1.1}% 18
-\BOOKMARK [3][-]{section*.18}{Crystal field effects}{subsection.2.1.1}% 19
-\BOOKMARK [3][-]{section*.19}{Octahedral crystal environment}{subsection.2.1.1}% 20
-\BOOKMARK [3][-]{section*.20}{Tetrahedral crystal environment}{subsection.2.1.1}% 21
-\BOOKMARK [3][-]{section*.21}{Variation of crystal field environment}{subsection.2.1.1}% 22
-\BOOKMARK [3][-]{section*.22}{Jahn-Teller Distortion}{subsection.2.1.1}% 23
-\BOOKMARK [3][-]{section*.23}{Resonant inelastic x-ray scattering \(RIXS\)}{subsection.2.1.1}% 24
-\BOOKMARK [1][-]{section.2.2}{Ferromagnetism}{chapter.2}% 25
-\BOOKMARK [2][-]{subsection.2.2.1}{H2 Molecule}{section.2.2}% 26
-\BOOKMARK [3][-]{section*.24}{Wave Function Considerations}{subsection.2.2.1}% 27
-\BOOKMARK [3][-]{section*.25}{Quantum mechanical Spin-Operators}{subsection.2.2.1}% 28
-\BOOKMARK [3][-]{section*.26}{Consider weak Coulomb interaction}{subsection.2.2.1}% 29
-\BOOKMARK [3][-]{section*.27}{What is HSpinint}{subsection.2.2.1}% 30
-\BOOKMARK [3][-]{section*.28}{Ferromagnetism}{subsection.2.2.1}% 31
-\BOOKMARK [3][-]{section*.29}{Conjecture}{subsection.2.2.1}% 32
-\BOOKMARK [3][-]{section*.30}{Solution}{subsection.2.2.1}% 33
-\BOOKMARK [3][-]{section*.33}{Landau Theory}{subsection.2.2.1}% 34
-\BOOKMARK [2][-]{subsection.2.2.2}{Exchange Interaction J}{section.2.2}% 35
-\BOOKMARK [2][-]{subsection.2.2.3}{Ferromagnetic Magnons}{section.2.2}% 36
-\BOOKMARK [0][-]{chapter.3}{Superconductivity}{}% 37
-\BOOKMARK [1][-]{section.3.1}{Conventional superconducters}{chapter.3}% 38
-\BOOKMARK [2][-]{subsection.3.1.1}{Link \040\046 Meissner Effect}{section.3.1}% 39
-\BOOKMARK [1][-]{section.3.2}{London Equation}{chapter.3}% 40
-\BOOKMARK [1][-]{section.3.3}{Coherence Length}{chapter.3}% 41
-\BOOKMARK [1][-]{section.3.4}{Ginzburg-Landau Theory}{chapter.3}% 42
-\BOOKMARK [2][-]{subsection.3.4.1}{Orderparameter in the Ginzburg-Landau Model}{section.3.4}% 43
-\BOOKMARK [1][-]{section.3.5}{Classification of different superconductors}{chapter.3}% 44
-\BOOKMARK [1][-]{section.3.6}{Vorteces}{chapter.3}% 45
+\BOOKMARK [0][-]{chapter.2}{Second Quantization}{}% 5
+\BOOKMARK [1][-]{section.2.1}{1D-Chain}{chapter.2}% 6
+\BOOKMARK [2][-]{section*.4}{Second quantization: Free electron gas}{section.2.1}% 7
+\BOOKMARK [3][-]{section*.7}{Electron Tight Binding Model}{section*.4}% 8
+\BOOKMARK [0][-]{chapter.3}{Magnetism}{}% 9
+\BOOKMARK [1][-]{section.3.1}{Paramagnetism}{chapter.3}% 10
+\BOOKMARK [2][-]{section*.8}{Magnetic Moment}{section.3.1}% 11
+\BOOKMARK [3][-]{section*.9}{Example: Hydrogen Atom}{section*.8}% 12
+\BOOKMARK [3][-]{section*.10}{Magnetic Moment of Atoms}{section*.8}% 13
+\BOOKMARK [3][-]{section*.11}{Magnetisation}{section*.8}% 14
+\BOOKMARK [3][-]{section*.13}{Magnetic Moment in a -Field}{section*.8}% 15
+\BOOKMARK [3][-]{section*.14}{Magnetic susceptibility}{section*.8}% 16
+\BOOKMARK [3][-]{section*.15}{Diamagnetism}{section*.8}% 17
+\BOOKMARK [3][-]{section*.16}{Simplest Case: e- only}{section*.8}% 18
+\BOOKMARK [2][-]{subsection.3.1.1}{How to fill the valence shell}{section.3.1}% 19
+\BOOKMARK [3][-]{section*.17}{Hund's rules}{subsection.3.1.1}% 20
+\BOOKMARK [3][-]{section*.18}{Crystal field effects}{subsection.3.1.1}% 21
+\BOOKMARK [3][-]{section*.19}{Octahedral crystal environment}{subsection.3.1.1}% 22
+\BOOKMARK [3][-]{section*.20}{Tetrahedral crystal environment}{subsection.3.1.1}% 23
+\BOOKMARK [3][-]{section*.21}{Variation of crystal field environment}{subsection.3.1.1}% 24
+\BOOKMARK [3][-]{section*.22}{Jahn-Teller Distortion}{subsection.3.1.1}% 25
+\BOOKMARK [3][-]{section*.23}{Resonant inelastic x-ray scattering \(RIXS\)}{subsection.3.1.1}% 26
+\BOOKMARK [1][-]{section.3.2}{Ferromagnetism}{chapter.3}% 27
+\BOOKMARK [2][-]{subsection.3.2.1}{H2 Molecule}{section.3.2}% 28
+\BOOKMARK [3][-]{section*.24}{Wave Function Considerations}{subsection.3.2.1}% 29
+\BOOKMARK [3][-]{section*.25}{Quantum mechanical Spin-Operators}{subsection.3.2.1}% 30
+\BOOKMARK [3][-]{section*.26}{Consider weak Coulomb interaction}{subsection.3.2.1}% 31
+\BOOKMARK [3][-]{section*.27}{What is HSpinint}{subsection.3.2.1}% 32
+\BOOKMARK [3][-]{section*.28}{Ferromagnetism}{subsection.3.2.1}% 33
+\BOOKMARK [3][-]{section*.29}{Conjecture}{subsection.3.2.1}% 34
+\BOOKMARK [3][-]{section*.30}{Solution}{subsection.3.2.1}% 35
+\BOOKMARK [3][-]{section*.33}{Landau Theory}{subsection.3.2.1}% 36
+\BOOKMARK [2][-]{subsection.3.2.2}{Exchange Interaction J}{section.3.2}% 37
+\BOOKMARK [2][-]{subsection.3.2.3}{Ferromagnetic Magnons}{section.3.2}% 38
+\BOOKMARK [0][-]{chapter.4}{Superconductivity}{}% 39
+\BOOKMARK [1][-]{section.4.1}{Conventional superconducters}{chapter.4}% 40
+\BOOKMARK [2][-]{subsection.4.1.1}{Link \040\046 Meissner Effect}{section.4.1}% 41
+\BOOKMARK [1][-]{section.4.2}{London Equation}{chapter.4}% 42
+\BOOKMARK [1][-]{section.4.3}{Coherence Length}{chapter.4}% 43
+\BOOKMARK [1][-]{section.4.4}{Ginzburg-Landau Theory}{chapter.4}% 44
+\BOOKMARK [2][-]{subsection.4.4.1}{Orderparameter in the Ginzburg-Landau Model}{section.4.4}% 45
+\BOOKMARK [1][-]{section.4.5}{Classification of different superconductors}{chapter.4}% 46
+\BOOKMARK [1][-]{section.4.6}{Vorteces}{chapter.4}% 47

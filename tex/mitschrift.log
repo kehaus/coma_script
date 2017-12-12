@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.30)  3 DEC 2017 17:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.30)  12 DEC 2017 21:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1886,24 +1886,24 @@ LaTeX Warning: Label `fig:london_lambda@cref' multiply defined.
 )
 \openout1 = `mitschrift.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
  (/usr/share/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
-LaTeX Info: Redefining \microtypecontext on input line 182.
+LaTeX Info: Redefining \microtypecontext on input line 188.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1992,7 +1992,7 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box61
-Package hyperref Info: Link coloring ON on input line 182.
+Package hyperref Info: Link coloring ON on input line 188.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -2001,21 +2001,21 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count199
 )
-LaTeX Info: Redefining \ref on input line 182.
-LaTeX Info: Redefining \pageref on input line 182.
-LaTeX Info: Redefining \nameref on input line 182.
+LaTeX Info: Redefining \ref on input line 188.
+LaTeX Info: Redefining \pageref on input line 188.
+LaTeX Info: Redefining \nameref on input line 188.
 
 (./mitschrift.out) (./mitschrift.out)
 \@outlinefile=\write3
 \openout3 = `mitschrift.out'.
 
 \c__siunitx_mathsf_int=\count266
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 182.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 188.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 182.
+LaTeX Font Info:    Try loading font information for U+msa on input line 188.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -2023,7 +2023,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 182.
+LaTeX Font Info:    Try loading font information for U+msb on input line 188.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -2041,11 +2041,11 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-<../img/uzh_logo.png, id=184, 644.4075pt x 204.765pt>
+<../img/uzh_logo.png, id=192, 644.4075pt x 204.765pt>
 File: ../img/uzh_logo.png Graphic file (type png)
 
 <use ../img/uzh_logo.png>
-Package pdftex.def Info: ../img/uzh_logo.png used on input line 203.
+Package pdftex.def Info: ../img/uzh_logo.png used on input line 209.
 (pdftex.def)             Requested size: 196.32405pt x 62.38292pt.
  [1
 
@@ -2062,174 +2062,183 @@ Package cleveref Info: loaded `english' language definitions on input line 1.
 Chapter 1.
 File: ../img/uzh_logo.png Graphic file (type png)
 <use ../img/uzh_logo.png>
-Package pdftex.def Info: ../img/uzh_logo.png used on input line 279.
+Package pdftex.def Info: ../img/uzh_logo.png used on input line 285.
 (pdftex.def)             Requested size: 141.35289pt x 44.91408pt.
 
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 307.
+(hyperref)                than one, level fixed on input line 313.
 
 [1
 
-] [2] [3]
+] [2]
 Chapter 2.
+[3
+
+] [4] [5]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 410.
+(hyperref)                than one, level fixed on input line 466.
+
+[6] [7]
+Chapter 3.
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 542.
 
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-34.def
 File: uni-34.def 2013/05/13 UCS: Unicode data U+2200..U+22FF
-) [4
+) [8
 
 ]
-<../img/mag_in_solid.pdf, id=276, 578.16pt x 216.81pt>
+<../img/mag_in_solid.pdf, id=325, 578.16pt x 216.81pt>
 File: ../img/mag_in_solid.pdf Graphic file (type pdf)
 
 <use ../img/mag_in_solid.pdf>
-Package pdftex.def Info: ../img/mag_in_solid.pdf used on input line 458.
+Package pdftex.def Info: ../img/mag_in_solid.pdf used on input line 590.
 (pdftex.def)             Requested size: 314.11969pt x 117.79353pt.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 462.
+(hyperref)                removing `math shift' on input line 594.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 462.
+(hyperref)                removing `math shift' on input line 594.
 
-[5 <../img/mag_in_solid.pdf>] [6]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 545.
-
+[9 <../img/mag_in_solid.pdf>] [10]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 545.
+(hyperref)                removing `math shift' on input line 677.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 545.
-
-[7] [8]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathsurround' on input line 651.
+(hyperref)                removing `superscript' on input line 677.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 651.
+(hyperref)                removing `math shift' on input line 677.
+
+[11] [12]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathsurround' on input line 783.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 651.
-
-[9] [10]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathsurround' on input line 774.
+(hyperref)                removing `\z@' on input line 783.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 774.
+(hyperref)                removing `subscript' on input line 783.
+
+[13] [14]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathsurround' on input line 906.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 774.
+(hyperref)                removing `\z@' on input line 906.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathsurround' on input line 774.
+(hyperref)                removing `superscript' on input line 906.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 774.
+(hyperref)                removing `\mathsurround' on input line 906.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 774.
+(hyperref)                removing `\z@' on input line 906.
 
-[11]
 
-LaTeX Warning: Reference `fig:ferromag_graph_sol' on page 12 undefined on input
- line 821.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 906.
 
-[12] <../img/ferromag_graph_sol.pdf, id=378, 578.16pt x 433.62pt>
+[15]
+
+LaTeX Warning: Reference `fig:ferromag_graph_sol' on page 16 undefined on input
+ line 953.
+
+[16] <../img/ferromag_graph_sol.pdf, id=426, 578.16pt x 433.62pt>
 File: ../img/ferromag_graph_sol.pdf Graphic file (type pdf)
 
 <use ../img/ferromag_graph_sol.pdf>
-Package pdftex.def Info: ../img/ferromag_graph_sol.pdf used on input line 833.
+Package pdftex.def Info: ../img/ferromag_graph_sol.pdf used on input line 965.
 (pdftex.def)             Requested size: 179.8329pt x 134.87073pt.
 
-<../img/ferro_para_compar.pdf, id=381, 578.16pt x 433.62pt>
+<../img/ferro_para_compar.pdf, id=429, 578.16pt x 433.62pt>
 File: ../img/ferro_para_compar.pdf Graphic file (type pdf)
 
 <use ../img/ferro_para_compar.pdf>
-Package pdftex.def Info: ../img/ferro_para_compar.pdf used on input line 841.
+Package pdftex.def Info: ../img/ferro_para_compar.pdf used on input line 973.
 (pdftex.def)             Requested size: 186.50725pt x 139.87943pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 830--847
+Underfull \hbox (badness 10000) in paragraph at lines 962--979
 []$[]$$[]$
  []
 
 
-Overfull \hbox (1.24411pt too wide) detected at line 875
+Overfull \hbox (1.24411pt too wide) detected at line 1007
 []     \OMS/cmsy/m/n/10 !     []     )     \OML/cmm/m/it/10 ^^_  \OT1/cmr/m/n/1
 0 =  []  =  []
  []
 
-<../img/ferromag_M_T.pdf, id=383, 578.16pt x 433.62pt>
+<../img/ferromag_M_T.pdf, id=431, 578.16pt x 433.62pt>
 File: ../img/ferromag_M_T.pdf Graphic file (type pdf)
 
 <use ../img/ferromag_M_T.pdf>
-Package pdftex.def Info: ../img/ferromag_M_T.pdf used on input line 888.
+Package pdftex.def Info: ../img/ferromag_M_T.pdf used on input line 1020.
 (pdftex.def)             Requested size: 179.8329pt x 134.87073pt.
 
-<../img/ferromag_landau.pdf, id=384, 578.16pt x 433.62pt>
+<../img/ferromag_landau.pdf, id=432, 578.16pt x 433.62pt>
 File: ../img/ferromag_landau.pdf Graphic file (type pdf)
 
 <use ../img/ferromag_landau.pdf>
-Package pdftex.def Info: ../img/ferromag_landau.pdf used on input line 896.
+Package pdftex.def Info: ../img/ferromag_landau.pdf used on input line 1028.
 (pdftex.def)             Requested size: 186.50725pt x 139.87943pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 885--902
+Underfull \hbox (badness 10000) in paragraph at lines 1017--1034
 []$[]$$[]$
  []
 
-[13 <../img/ferromag_graph_sol.pdf> <../img/ferro_para_compar.pdf
+[17 <../img/ferromag_graph_sol.pdf> <../img/ferro_para_compar.pdf
 
 pdfTeX warning: pdflatex (file ../img/ferro_para_compar.pdf): PDF inclusion: mu
 ltiple pdfs with page group included in a single page
->] <../img/exch_spin_config.pdf, id=440, 578.16pt x 289.08pt>
+>] <../img/exch_spin_config.pdf, id=487, 578.16pt x 289.08pt>
 File: ../img/exch_spin_config.pdf Graphic file (type pdf)
 
 <use ../img/exch_spin_config.pdf>
-Package pdftex.def Info: ../img/exch_spin_config.pdf used on input line 937.
+Package pdftex.def Info: ../img/exch_spin_config.pdf used on input line 1069.
 (pdftex.def)             Requested size: 274.85248pt x 137.4247pt.
 
-<../img/antiferro_suscept.pdf, id=441, 578.16pt x 433.62pt>
+<../img/antiferro_suscept.pdf, id=488, 578.16pt x 433.62pt>
 File: ../img/antiferro_suscept.pdf Graphic file (type pdf)
 
 <use ../img/antiferro_suscept.pdf>
-Package pdftex.def Info: ../img/antiferro_suscept.pdf used on input line 955.
+Package pdftex.def Info: ../img/antiferro_suscept.pdf used on input line 1087.
 (pdftex.def)             Requested size: 179.8329pt x 134.87073pt.
 
-<../img/antiferro_para_compar.pdf, id=442, 578.16pt x 433.62pt>
+<../img/antiferro_para_compar.pdf, id=489, 578.16pt x 433.62pt>
 File: ../img/antiferro_para_compar.pdf Graphic file (type pdf)
 
 <use ../img/antiferro_para_compar.pdf>
-Package pdftex.def Info: ../img/antiferro_para_compar.pdf used on input line 96
-3.
+Package pdftex.def Info: ../img/antiferro_para_compar.pdf used on input line 10
+95.
 (pdftex.def)             Requested size: 196.32405pt x 147.24358pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 952--969
+Underfull \hbox (badness 10000) in paragraph at lines 1084--1101
 []$[]$$[]$
  []
 
-[14 <../img/ferromag_M_T.pdf> <../img/ferromag_landau.pdf
+[18 <../img/ferromag_M_T.pdf> <../img/ferromag_landau.pdf
 
 pdfTeX warning: pdflatex (file ../img/ferromag_landau.pdf): PDF inclusion: mult
 iple pdfs with page group included in a single page
->] [15 <../img/exch_spin_config.pdf> <../img/antiferro_suscept.pdf
+>] [19 <../img/exch_spin_config.pdf> <../img/antiferro_suscept.pdf
 
 pdfTeX warning: pdflatex (file ../img/antiferro_suscept.pdf): PDF inclusion: mu
 ltiple pdfs with page group included in a single page
@@ -2237,114 +2246,114 @@ ltiple pdfs with page group included in a single page
 
 pdfTeX warning: pdflatex (file ../img/antiferro_para_compar.pdf): PDF inclusion
 : multiple pdfs with page group included in a single page
->] [16]
-Chapter 3.
+>] [20]
+Chapter 4.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1049.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\rho' on input line 1049.
+(hyperref)                removing `math shift' on input line 1181.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1049.
+(hyperref)                removing `\rho' on input line 1181.
 
-<../img/sc_resistivity_drop.pdf, id=592, 578.16pt x 433.62pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1181.
+
+<../img/sc_resistivity_drop.pdf, id=640, 578.16pt x 433.62pt>
 File: ../img/sc_resistivity_drop.pdf Graphic file (type pdf)
 
 <use ../img/sc_resistivity_drop.pdf>
-Package pdftex.def Info: ../img/sc_resistivity_drop.pdf used on input line 1053
+Package pdftex.def Info: ../img/sc_resistivity_drop.pdf used on input line 1185
 .
 (pdftex.def)             Requested size: 274.85248pt x 206.13705pt.
- [17
+ [21
 
-] [18 <../img/sc_resistivity_drop.pdf>] [19] <../img/london_B_1dim.pdf, id=648,
+] [22 <../img/sc_resistivity_drop.pdf>] [23] <../img/london_B_1dim.pdf, id=695,
  578.16pt x 433.62pt>
 File: ../img/london_B_1dim.pdf Graphic file (type pdf)
 
 <use ../img/london_B_1dim.pdf>
-Package pdftex.def Info: ../img/london_B_1dim.pdf used on input line 1189.
+Package pdftex.def Info: ../img/london_B_1dim.pdf used on input line 1321.
 (pdftex.def)             Requested size: 179.8329pt x 134.87073pt.
 
-<../img/london_lambda.pdf, id=651, 578.16pt x 433.62pt>
+<../img/london_lambda.pdf, id=698, 578.16pt x 433.62pt>
 File: ../img/london_lambda.pdf Graphic file (type pdf)
 
 <use ../img/london_lambda.pdf>
-Package pdftex.def Info: ../img/london_lambda.pdf used on input line 1198.
+Package pdftex.def Info: ../img/london_lambda.pdf used on input line 1330.
 (pdftex.def)             Requested size: 196.32405pt x 147.24358pt.
- [20 <../img/london_B_1dim.pdf> <../img/london_lambda.pdf
+ [24 <../img/london_B_1dim.pdf> <../img/london_lambda.pdf
 
 pdfTeX warning: pdflatex (file ../img/london_lambda.pdf): PDF inclusion: multip
 le pdfs with page group included in a single page
->] [21] <../img/landauginzburg_f_SC.pdf, id=707, 578.16pt x 433.62pt>
+>] [25] <../img/landauginzburg_f_SC.pdf, id=754, 578.16pt x 433.62pt>
 File: ../img/landauginzburg_f_SC.pdf Graphic file (type pdf)
 
 <use ../img/landauginzburg_f_SC.pdf>
-Package pdftex.def Info: ../img/landauginzburg_f_SC.pdf used on input line 1268
+Package pdftex.def Info: ../img/landauginzburg_f_SC.pdf used on input line 1400
 .
 (pdftex.def)             Requested size: 179.8329pt x 134.87073pt.
 
-<../img/landauginzburg_psi_T.pdf, id=708, 578.16pt x 433.62pt>
+<../img/landauginzburg_psi_T.pdf, id=755, 578.16pt x 433.62pt>
 File: ../img/landauginzburg_psi_T.pdf Graphic file (type pdf)
 
 <use ../img/landauginzburg_psi_T.pdf>
-Package pdftex.def Info: ../img/landauginzburg_psi_T.pdf used on input line 127
-7.
+Package pdftex.def Info: ../img/landauginzburg_psi_T.pdf used on input line 140
+9.
 (pdftex.def)             Requested size: 196.32405pt x 147.24358pt.
- [22 <../img/landauginzburg_f_SC.pdf> <../img/landauginzburg_psi_T.pdf
+ [26 <../img/landauginzburg_f_SC.pdf> <../img/landauginzburg_psi_T.pdf
 
 pdfTeX warning: pdflatex (file ../img/landauginzburg_psi_T.pdf): PDF inclusion:
  multiple pdfs with page group included in a single page
->] [23] <../img/vortex_coherence_length.pdf, id=776, 578.16pt x 433.62pt>
+>] [27] <../img/vortex_coherence_length.pdf, id=823, 578.16pt x 433.62pt>
 File: ../img/vortex_coherence_length.pdf Graphic file (type pdf)
 
 <use ../img/vortex_coherence_length.pdf>
 Package pdftex.def Info: ../img/vortex_coherence_length.pdf used on input line 
-1381.
+1513.
 (pdftex.def)             Requested size: 179.8329pt x 134.87073pt.
 
 
-LaTeX Warning: Reference `eq:cortex_coherence_length' on page 24 undefined on i
-nput line 1384.
+LaTeX Warning: Reference `eq:cortex_coherence_length' on page 28 undefined on i
+nput line 1516.
 
 
-LaTeX Warning: Reference `eq:cortex_coherence_length' on page 24 undefined on i
-nput line 1384.
+LaTeX Warning: Reference `eq:cortex_coherence_length' on page 28 undefined on i
+nput line 1516.
 
-<../img/vortex_wavefunction.pdf, id=777, 578.16pt x 433.62pt>
+<../img/vortex_wavefunction.pdf, id=824, 578.16pt x 433.62pt>
 File: ../img/vortex_wavefunction.pdf Graphic file (type pdf)
 
 <use ../img/vortex_wavefunction.pdf>
-Package pdftex.def Info: ../img/vortex_wavefunction.pdf used on input line 1390
+Package pdftex.def Info: ../img/vortex_wavefunction.pdf used on input line 1522
 .
 (pdftex.def)             Requested size: 196.32405pt x 147.24358pt.
- [24 <../img/vortex_coherence_length.pdf> <../img/vortex_wavefunction.pdf
+ [28 <../img/vortex_coherence_length.pdf> <../img/vortex_wavefunction.pdf
 
 pdfTeX warning: pdflatex (file ../img/vortex_wavefunction.pdf): PDF inclusion: 
 multiple pdfs with page group included in a single page
->] [25]
+>] [29]
 
-LaTeX Warning: Empty `thebibliography' environment on input line 1564.
+LaTeX Warning: Empty `thebibliography' environment on input line 1704.
 
 
 Package caption Warning: Unused \captionsetup[subfigure] on input line 52.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1566.
-[26
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1706.
+[30
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1566.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1706.
  (./mitschrift.aux
 Package cleveref Info: loaded `english' language definitions on input line 22.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1566.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1566.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1706.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1706.
 
 Package rerunfilecheck Info: File `mitschrift.out' has not changed.
-(rerunfilecheck)             Checksum: ABFB7E82F84068A3FB8E0F674DE27991;3230.
+(rerunfilecheck)             Checksum: AB28623274ADF001ADB560F631E07BDD;3341.
 
 
 LaTeX Warning: There were undefined references.
@@ -2354,11 +2363,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 25215 strings out of 493029
- 462671 string characters out of 6136234
- 707560 words of memory out of 5000000
- 28120 multiletter control sequences out of 15000+600000
- 21206 words of font info for 128 fonts, out of 8000000 for 9000
+ 25261 strings out of 493029
+ 463356 string characters out of 6136234
+ 709555 words of memory out of 5000000
+ 28136 multiletter control sequences out of 15000+600000
+ 21955 words of font info for 131 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  53i,17n,92p,10370b,836s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
@@ -2381,13 +2390,14 @@ type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
-m10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
-7.pfb>
-Output written on mitschrift.pdf (31 pages, 449117 bytes).
+mti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
+Output written on mitschrift.pdf (35 pages, 471279 bytes).
 PDF statistics:
- 954 PDF objects out of 1000 (max. 8388607)
- 732 compressed objects within 8 object streams
- 197 named destinations out of 1000 (max. 500000)
- 28089 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 1022 PDF objects out of 1200 (max. 8388607)
+ 794 compressed objects within 8 object streams
+ 224 named destinations out of 1000 (max. 500000)
+ 29129 words of extra memory for PDF output out of 29859 (max. 10000000)
 

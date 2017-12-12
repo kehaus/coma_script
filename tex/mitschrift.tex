@@ -95,7 +95,7 @@
 %% Angaben für die PDF-Eigenschaften
 \hypersetup{
   pdfauthor = {Kevin Hauser},
-  pdftitle = {QM1 - Zusamenfassung},
+  pdftitle = {KOMA Mitschrift},
   pdfsubject = {LaTeX},
   pdfkeywords = {LaTeX, Beispiel}
 }
@@ -168,6 +168,12 @@
 
 \DeclareMathOperator{\sign}{sign}
 
+%=======================================================================
+% TODO:
+%=======================================================================
+%   * find alternative for \underbrace{}. it does look ugly sometimes
+
+
 %========================================================================================================
 %========================================================================================================
 % Document
@@ -175,7 +181,7 @@
 %========================================================================================================
 
 %% Angaben für \maketitle
-\title{BA - rough sketch}
+\title{KOMA - Mitschrift}
 \author{Kevin Hauser}
 % \date{7. Mai 2013}             % ohne Angabe wird das heutig Datum verwendet
 
@@ -322,6 +328,131 @@ $S$ is the Fermi surface ($S=\pi k_F^2$.
 
 where $\Phi_0 = \frac{h}{2e} = \text{Flux Quantum}$
 
+%=======================================================================
+% Phonons
+%=======================================================================
+%
+% lec.notes 09.10.17 - first part
+
+\chapter{Second Quantization}
+
+\section{1D-Chain}
+
+To have a fitst insight into second quantization, we look at a phonons emerging in a one dimensional chain of atoms
+
+\textcolor{red}{skecht 1D lattice chain}
+
+
+In the sketch above $u_i$ referes to the distance from equilibrium of the $i$-th atom, $p_i$ stands for the momentum of the $i$-th atom, $K$ is the spring constant and the lattice constant $a$.
+The Hamiltonian of this system is given as
+
+\begin{equation} \label{eq:ham_phonon_chain}
+  H_\text{ph} ~~=~~ \sum_{j_1}^N \left\{ \frac{1}{2M} p_j^2 ~+~ \frac{1}{2} K (u_j - u_{j-1})^2 \right\}
+\end{equation}
+
+Since our problem has one dimension in real space it has also one dimension in the reciprocal space. We can introduce two length scales in the reciprocal space
+
+\begin{enumerate}
+  \item{The size of the one dim. unit cell defines the length of the reciprocal lattice vector $\vec{G}$ which is equal to the size of the Brillouin zone: $ G ~=~ 2\pi/a$}
+  \item{The length $L$ of the chain of atoms in real space defines the lowest possible distance two points in reciprocal space can have $\Delta k_\text{min} ~=~ 2\pi/L$.}
+\end{enumerate}
+
+
+\textcolor{red}{sketch 1D k-space}
+
+
+We now want to rewritte the Hamiltonian \refEq{eq:ham_phonon_chain} by replacing the distance from equilibrium and the momentum of the atoms by its fourer transformations
+
+\begin{align}
+  p_j ~=~ \frac{1}{\sqrt{N}} \sum_{k \in \text{BZ}} P_k e^{ikR^0_j} 
+  ~~~~~~& \Longleftrightarrow~~~~~~
+  P_k ~=~ \frac{1}{\sqrt{N}} \sum_{j} p_j e^{-ikR^0_j}\\
+  u_j ~=~ \frac{1}{\sqrt{N}} \sum_{k \in \text{BZ}} U_k e^{ikR^0_j} 
+  ~~~~~~& \Longleftrightarrow~~~~~~
+  U_k ~=~ \frac{1}{\sqrt{N}} \sum_{j} u_j e^{-ikR^0_j}
+\end{align}
+
+
+Since it is a cumbersome procedure we look at the calculate the different terms from \refEq{eq:ham_phonon_chain} seperatly.
+We start with $\sum_i p_j^2$:
+
+\begin{equation}\label{eq:phonon_momentum}
+  p_j ~~=~~ \frac{1}{\sqrt{N}} \sum_k P_k e^{ikR^0_j} ~~=~~ 
+  \frac{1}{2\sqrt{N}} \bigg\{ 
+  \underbrace{\sum_k P_k e^{ikR^0_j}}_\text{A} ~+~
+  \underbrace{\sum_{-k} P_{-k} e^{-ikR^0_j}}_\text{B} \bigg\}
+\end{equation}
+
+The second equality sign holds because summing two times and sum and dividing by two gives the same result. Additionaly in the second sum we replaced $k \rightarrow -k$. No we can write
+
+\begin{align}\label{eq:p_squared}
+  p_j^2 ~~& =~~~\frac{1}{4N} \left( A^2 ~+~ B^2 ~+~ 2AB \right)
+  ~~=~~ \frac{2}{4N} \sum_j AB \nonumber \\
+  ~~& =~~ \frac{1}{2N} \sum_j \sum_k \sum_{-k} P_k P_{-k}
+  ~~=~~ \sum_k P_k P_{-k}
+\end{align}
+\textcolor{red}{is this correct?}
+
+To get to this result $\sum_j = e^{ikR^0_j} = \delta(k)$ was used.
+For evaluating now $\sum_j (u_j - u_{j-1})^2$ we use
+
+\begin{equation}
+  u_j ~~=~~~\Bigg\{ \underbrace{\sum_k u_k e^{ikR_j^0}}_\text{A'} ~+~
+  \underbrace{\sum_{-k} u_{-k} e^{-ikR_j^0}}_\text{B'} \Bigg\}
+\end{equation}
+\begin{align}
+  u_{j-1} ~~& =~~ \frac{1}{\sqrt{N}} \sum_k u_k e^{ikR_j^0} e^{-ika}\nonumber \\
+  ~~& =~~ \frac{1}{2\sqrt{N}} \Bigg\{ \sum_k u_k e^{ikR_j^0} e^{-ika} ~+~
+  \sum_{-k} u_{-k} e^{-ikR_j^0} e^{ika} \Bigg\}
+\end{align}
+
+To get the final expression for $u_{j-1}$ we used $R_{j-1}^0=r_j^0-a$.
+
+\begin{align}
+  \sum_j (u_j ~-~ u_{j-i})^2 ~~& =~~ \sum_j (u_j^2 ~+~ u_{j-1}^2 ~+~ 2u_j u_{j-1})\nonumber \\
+  ~~& =~~ \sum_k \left\{ u_k u_{-k} ~+~ u_k u_{-k} ~-~ 2u_k u_{-k} \frac{e^{-ika} ~+~ e^{ika}}{2} \right\}\nonumber \\ 
+  ~~& =~~ \sum_k 2 u_k u_{-k} \left\{1 ~-~ \cos(ka) \right\}\nonumber \\
+  ~~& =~~ \sum_k 2 u_k u_{-k} \sin^2(ka/2)
+\end{align}
+
+In the step were the summing over $j$ changed to a summing over $k$ the same arguments as for \refEq{eq:p_squared} were used. As we already know from the \textit{introduction to solid state phyiscs} class, we can assign the argument of the sum in the final expression as the square of the phonon dispersion relation $\omega(k)$
+
+\begin{equation}\label{eq:dispersion_relation}
+  \omega(k) ~~=~~ \omega_k ~~=~~  \sqrt{\frac{2K}{M}(1-\cos(ka)} ~~=~~ 
+  \sqrt{\frac{4K}{M}} |\sin(ka/2)|
+\end{equation}
+
+Pluggin our solutions for $\sum_j p_j^2$ and $\sum_j (u_j-u_{j-1})^2$ into \refEq{eq:ham_phonon_chain} yields
+
+\begin{equation}\label{eq:ham_phonon_chain2}
+  H_\text{ph} ~~=~~ \sum_{j=1}^N \left\{ \frac{1}{2M} P_k P_{-k} ~+~ \frac{M \omega_k^2}{2} u_k u_{-k} \right\} 
+\end{equation}
+
+This expression similar to the Hamilatonian from the harmonic oscillator. We therefore define the latter operators $b_k$ and $b_k^\dag$
+
+\begin{align}
+  b_k ~~& =~~ \frac{1}{\sqrt{2}} \left( \frac{u_k}{l_k} ~+~ i \frac{p_k}{\hbar/l_k} \right)\\
+  b_k^\dag ~~& =~~ \frac{1}{\sqrt{2}} \left( \frac{u_k}{l_k} ~-~ i\frac{p_k}{\hbar/l_k} \right)
+\end{align}
+
+and rewrite $H_\text{ph}$ as 
+
+\begin{equation}
+  H_\text{ph} ~~=~~ \sum_k \hbar \omega_k (b^\dag_k b_k ~+~ 1)
+\end{equation}
+
+This analogy between the Hamiltonian from the harmonic oscillations and \refEq{eq:ham_phonon_chain2} emphasises that we can describe the state if excited phonons in a solid as a combination of different modes similar to the different modes of oscillations of an excited harmonic oscillator. Further we can use the latter operators applied to the vacuum state to describe the excited states mathematically.
+
+\textcolor{red}{picture single atom phonon dispersion relation}
+\textcolor{red}{picture two atom basis phonon dispersion relation}
+\textcolor{red}{...if going down in temperature peierl transition occurs -> kohn anomaly}
+
+\textcolor{red}{why is neutron scattering good for probing accustic bands? - check lecture notes for explanation}
+
+\textcolor{red}{...neutrons only probe lattice and neglect electronic structure}
+
+
+
 
 
 %=======================================================================
@@ -331,7 +462,8 @@ where $\Phi_0 = \frac{h}{2e} = \text{Flux Quantum}$
 % lec.notes 10.10.17 - first part
 % lec-notes 16.10.17 - second part
 
-\subsubsection{Second quantisation: Free electron gas} % 10.10.17 - first part
+
+\subsubsection{Second quantization: Free electron gas} % 10.10.17 - first part
 
 Hamiltonian of a free electron gas can be written as. 
 
@@ -1437,6 +1569,14 @@ We assume, that the magnetic field penetration the superconductor has at least t
 
 \textcolor{red}{sketch - condition for creating one vortex}
 
+\begin{align}
+  \mathscr{F}\{p,u\}\\
+  \mathcal{F}\{p,u\}\\
+  \mathscr{F}^\mathit{pu}\\
+  {F^p}_u\\
+  f_{pu}\\
+  \psi \pi \upsilon
+\end{align}
 
 
 %========================================================================================================
