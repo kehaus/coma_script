@@ -178,7 +178,19 @@ def arrow_array(fig=None, ax=None,
 
 
 
+def remove_axes(fig, ax):
+    """removes axes from given axes object"""
+    for side in ['bottom', 'right', 'top', 'left']:
+        ax.spines[side].set_visible(False)
 
+    # remove axis ticks
+    ax.set_xticks([])
+    ax.set_yticks([])
+    ax.xaxis.set_ticks_position('none')  # tick marker
+    ax.yaxis.set_ticks_position('none')
+    
+    
+    return fig, ax
 
 
 

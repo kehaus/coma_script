@@ -4,36 +4,36 @@
 \BOOKMARK [2][-]{section*.3}{Onsager Relation}{section.1.2}% 4
 \BOOKMARK [0][-]{chapter.2}{Second Quantization}{}% 5
 \BOOKMARK [1][-]{section.2.1}{1D-Chain}{chapter.2}% 6
-\BOOKMARK [2][-]{section*.4}{Second quantization: Free electron gas}{section.2.1}% 7
-\BOOKMARK [3][-]{section*.7}{Electron Tight Binding Model}{section*.4}% 8
+\BOOKMARK [1][-]{section.2.2}{Second quantization: Free electron gas}{chapter.2}% 7
+\BOOKMARK [2][-]{section*.6}{Electron Tight Binding Model}{section.2.2}% 8
 \BOOKMARK [0][-]{chapter.3}{Magnetism}{}% 9
 \BOOKMARK [1][-]{section.3.1}{Paramagnetism}{chapter.3}% 10
-\BOOKMARK [2][-]{section*.8}{Magnetic Moment}{section.3.1}% 11
-\BOOKMARK [3][-]{section*.9}{Example: Hydrogen Atom}{section*.8}% 12
-\BOOKMARK [3][-]{section*.10}{Magnetic Moment of Atoms}{section*.8}% 13
-\BOOKMARK [3][-]{section*.11}{Magnetisation}{section*.8}% 14
-\BOOKMARK [3][-]{section*.13}{Magnetic Moment in a -Field}{section*.8}% 15
-\BOOKMARK [3][-]{section*.14}{Magnetic susceptibility}{section*.8}% 16
-\BOOKMARK [3][-]{section*.15}{Diamagnetism}{section*.8}% 17
-\BOOKMARK [3][-]{section*.16}{Simplest Case: e- only}{section*.8}% 18
+\BOOKMARK [2][-]{section*.7}{Magnetic Moment}{section.3.1}% 11
+\BOOKMARK [3][-]{section*.8}{Example: Hydrogen Atom}{section*.7}% 12
+\BOOKMARK [3][-]{section*.9}{Magnetic Moment of Atoms}{section*.7}% 13
+\BOOKMARK [3][-]{section*.10}{Magnetisation}{section*.7}% 14
+\BOOKMARK [3][-]{section*.12}{Magnetic Moment in a -Field}{section*.7}% 15
+\BOOKMARK [3][-]{section*.13}{Magnetic susceptibility}{section*.7}% 16
+\BOOKMARK [3][-]{section*.14}{Diamagnetism}{section*.7}% 17
+\BOOKMARK [3][-]{section*.15}{Simplest Case: e- only}{section*.7}% 18
 \BOOKMARK [2][-]{subsection.3.1.1}{How to fill the valence shell}{section.3.1}% 19
-\BOOKMARK [3][-]{section*.17}{Hund's rules}{subsection.3.1.1}% 20
-\BOOKMARK [3][-]{section*.18}{Crystal field effects}{subsection.3.1.1}% 21
-\BOOKMARK [3][-]{section*.19}{Octahedral crystal environment}{subsection.3.1.1}% 22
-\BOOKMARK [3][-]{section*.20}{Tetrahedral crystal environment}{subsection.3.1.1}% 23
-\BOOKMARK [3][-]{section*.21}{Variation of crystal field environment}{subsection.3.1.1}% 24
-\BOOKMARK [3][-]{section*.22}{Jahn-Teller Distortion}{subsection.3.1.1}% 25
-\BOOKMARK [3][-]{section*.23}{Resonant inelastic x-ray scattering \(RIXS\)}{subsection.3.1.1}% 26
+\BOOKMARK [3][-]{section*.16}{Hund's rules}{subsection.3.1.1}% 20
+\BOOKMARK [3][-]{section*.17}{Crystal field effects}{subsection.3.1.1}% 21
+\BOOKMARK [3][-]{section*.18}{Octahedral crystal environment}{subsection.3.1.1}% 22
+\BOOKMARK [3][-]{section*.19}{Tetrahedral crystal environment}{subsection.3.1.1}% 23
+\BOOKMARK [3][-]{section*.20}{Variation of crystal field environment}{subsection.3.1.1}% 24
+\BOOKMARK [3][-]{section*.21}{Jahn-Teller Distortion}{subsection.3.1.1}% 25
+\BOOKMARK [3][-]{section*.22}{Resonant inelastic x-ray scattering \(RIXS\)}{subsection.3.1.1}% 26
 \BOOKMARK [1][-]{section.3.2}{Ferromagnetism}{chapter.3}% 27
 \BOOKMARK [2][-]{subsection.3.2.1}{H2 Molecule}{section.3.2}% 28
-\BOOKMARK [3][-]{section*.24}{Wave Function Considerations}{subsection.3.2.1}% 29
-\BOOKMARK [3][-]{section*.25}{Quantum mechanical Spin-Operators}{subsection.3.2.1}% 30
-\BOOKMARK [3][-]{section*.26}{Consider weak Coulomb interaction}{subsection.3.2.1}% 31
-\BOOKMARK [3][-]{section*.27}{What is HSpinint}{subsection.3.2.1}% 32
-\BOOKMARK [3][-]{section*.28}{Ferromagnetism}{subsection.3.2.1}% 33
-\BOOKMARK [3][-]{section*.29}{Conjecture}{subsection.3.2.1}% 34
-\BOOKMARK [3][-]{section*.30}{Solution}{subsection.3.2.1}% 35
-\BOOKMARK [3][-]{section*.33}{Landau Theory}{subsection.3.2.1}% 36
+\BOOKMARK [3][-]{section*.23}{Wave Function Considerations}{subsection.3.2.1}% 29
+\BOOKMARK [3][-]{section*.24}{Quantum mechanical Spin-Operators}{subsection.3.2.1}% 30
+\BOOKMARK [3][-]{section*.25}{Consider weak Coulomb interaction}{subsection.3.2.1}% 31
+\BOOKMARK [3][-]{section*.26}{What is HSpinint}{subsection.3.2.1}% 32
+\BOOKMARK [3][-]{section*.27}{Ferromagnetism}{subsection.3.2.1}% 33
+\BOOKMARK [3][-]{section*.28}{Conjecture}{subsection.3.2.1}% 34
+\BOOKMARK [3][-]{section*.29}{Solution}{subsection.3.2.1}% 35
+\BOOKMARK [3][-]{section*.32}{Landau Theory}{subsection.3.2.1}% 36
 \BOOKMARK [2][-]{subsection.3.2.2}{Exchange Interaction J}{section.3.2}% 37
 \BOOKMARK [2][-]{subsection.3.2.3}{Ferromagnetic Magnons}{section.3.2}% 38
 \BOOKMARK [0][-]{chapter.4}{Superconductivity}{}% 39
