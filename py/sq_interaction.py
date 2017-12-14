@@ -129,10 +129,20 @@ ax1.patch.set_alpha(0)
 
 
 # textboxes
-#txt1 = ax1.annotate(r'$ J > 0 $', (0.22, 0.87), xycoords='figure fraction', color='k',
-#                    **font_dict_txt)
-#txt2 = ax1.annotate(r'$ J < 0 $', (0.69, 0.87), xycoords='figure fraction', color='k',
-#                    **font_dict_txt)
+txt1 = ax1.annotate(r'$ k_1, \sigma_1 $', (0.05, 0.15), xycoords='figure fraction', color='k',
+                    **font_dict_txt)
+txt2 = ax1.annotate(r'$ k_1+q, \sigma_1 $', (0.03, 0.74), xycoords='figure fraction', color='k',
+                    **font_dict_txt)
+
+txt3 = ax1.annotate(r'$ k_2, \sigma_2 $', (0.78, 0.25), xycoords='figure fraction', color='k',
+                    **font_dict_txt)
+txt4 = ax1.annotate(r'$ k_2-q, \sigma_2 $', (0.81, 0.72), xycoords='figure fraction', color='k',
+                    **font_dict_txt)
+
+txt5 = ax1.annotate(r'$ V_q $', (0.47, 0.59), xycoords='figure fraction', color='k',
+                    **font_dict_txt)
+
+
 
 fig1.savefig('../img/sq_interaction.pdf', transparent=True)
 

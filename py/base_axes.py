@@ -193,7 +193,13 @@ def remove_axes(fig, ax):
     return fig, ax
 
 
-
+def circle_outline(x, y, radius, pos):
+    """returns X,Y coordinates of the outline of circle with radius and center
+    
+    """
+    X = pos[0]+radius*np.cos(x)
+    Y = pos[1]+radius*np.sin(x)
+    return X,Y
 
 #==============================================================================
 # Main function

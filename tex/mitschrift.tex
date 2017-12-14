@@ -525,6 +525,73 @@ To get to the final expression we used the electron density from \refEq{eq:el_de
 
 
 
+\subsubsection{Electron-Electron Interaction term}
+
+The electron-electron interaction term in a material is given as
+
+\begin{equation}
+  V_\text{el-el} ~~=~~ \frac{1}{2V} \sum_{\sigma_1, \sigma_2} \sum_{k_1, k_2, q} 
+  V_q c^\dag_{k_1, \sigma_1} c^\dag_{k_2, \sigma_2} c_{k_1+q, \sigma_1}, c_{k_2-q, \sigma_2} 
+\end{equation}
+
+
+To understand this expression better we look first at one single interaction between two electrons with initial momentum and spin $k_1, \sigma_1$ and $k_2, \sigma_2$. The spin doesn't change. When colliding the exchanged momentum due to the interaction term $V_q$, were we assume $q \neq 0$. The electron momenta in the final state are related by $k_1 + q = k_2$.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{../img/sq_interaction.pdf}
+  \caption{illustration of an $e$-$e$ Interaction were the incoming electrons have initial momentum $k_1$, $k_2$ and spin $\sigma_1$, $\sigma_2$. The interaction $V_q$ causes them to exchange a momentum $q$.}
+\end{figure}
+
+
+The interaction is due to the coulomb repulsion, therefore we can write the interaction term in reciprocal space as 
+
+\begin{equation}
+  V_q ~~=~~ \int d^3r e^{i\mathbf{q} \cdot \mathbf{r}} V(\mathbf{r}) 
+  ~~=~~ \int d^3r \frac{e^2}{r} e^{i \mathbf{q} \cdot \mathbf{r}} 
+  ~~=~~ \frac{4\pi e^2}{q^2}
+\end{equation}
+
+Calculating the change in energy resultng from the coulomb interaction between the electrons gives
+
+\begin{equation}
+  \frac{E_1}{N} ~~=~~ \frac{\langle \text{FS} | V_\text{el-el} | \text{FS} \rangle}{N} 
+  ~~=~~ \frac{1}{2VN} \sum_q \sum_{\mathbf{k}_1, \mathbf{k}_2} \sum_{\sigma_1, \sigma_2}
+  \frac{4\pi^2}{q^2} 
+  \langle \text{FS} | c^\dag_{\mathbf{k}_1+q} c^\dag_{\mathbf{k}_2-q} c_{\mathbf{k}_2} c_{\mathbf{k}_1} | \text{FS} \rangle  
+\end{equation}
+
+\begin{align}
+  \langle \text{FS} | c^\dag_{\mathbf{k}_1+q, \sigma_1} c^\dag_{\mathbf{k}_2-q, \sigma_2} c_{\mathbf{k}_2, \sigma_2} c_{\mathbf{k}_1, \sigma_2} | \text{FS} \rangle 
+  ~~& =~~ \delta_{\sigma_1 \sigma_2} \delta_{\mathbf{k}_1+q, \mathbf{k}_2} 
+  \langle \text{FS} | c^\dag_{\mathbf{k}_1+q} c^\dag_{\mathbf{k}_2-q} c_{\mathbf{k}_2} c_{\mathbf{k}_1} | \text{FS} \rangle \nonumber \\
+  ~~& =~~ -\delta_{\sigma_1 \sigma_2} \delta_{\mathbf{k}_1+q, \mathbf{k}_2} 
+  \langle \text{FS} | c^\dag_{\mathbf{k}_1+q} c_{\mathbf{k}_1+q} c^\dag_{\mathbf{k}_1} c_{\mathbf{k}_1} | \text{FS} \rangle \nonumber \\
+  ~~& =~~ -\delta_{\sigma_1 \sigma_2} \delta_{\mathbf{k}_1+q, \mathbf{k}_2}
+  \theta(k_F - |\mathbf{k}_1+q |) \theta(k_F - | \mathbf{k}_1|)
+\end{align}
+
+
+The two delta functions impose the fact that the spin does not change during the interaction and that the momentum is conserved in the process. Furthermore since we can relate $\mathbf{k}_1$ and $\mathbf{k}_2$ we replaced the latter one in the latter operator index.
+
+Here we see the benefit which comes along with this notation. By only using commuation relation for fermion-latter operators we were able to change the rathre complicated expression to one that can easily be integrated.
+
+
+\begin{figure}
+  \centering
+  \includegraphics[width=1.0\textwidth]{../img/sq_graph_integration.pdf}
+  \caption{illustration of an $e$-$e$ Interaction were the incoming electrons have initial momentum $k_1$, $k_2$ and spin $\sigma_1$, $\sigma_2$. The interaction $V_q$ causes them to exchange a momentum $q$.}
+  \label{fig:sq_graph_integration}
+\end{figure}
+
+The way to perform this integration can be illustrated graphically \myRef{fig:sq_graph_integration}. 
+
+How to choose the boundaries of integration can be illustrated. 
+
+
+
+
+
 
 
 
