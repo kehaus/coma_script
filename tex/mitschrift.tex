@@ -781,7 +781,7 @@ This differential equation can be solved by transforming it to the Fourier space
 
 Using the definitions for the dielectric function $\epsilon$ and the electric susceptibility $\chi$
 
-\begin{align}
+\begin{align}  \label{eq:screen_dielect}
   \frac{1}{\epsilon(\mathbf{q})} ~~=~~ \frac{\phi(\mathbf{q})}{\phi^\text{Ext}(\mathbf{q})} \\
   \label{eq:screen_suscept}
   \chi(\mathbf{q}) ~~=~~ \frac{\rho^\text{Ind}(\mathbf{q})}{\phi(\mathbf{q})}
@@ -808,7 +808,7 @@ Charge density of an electron gas can be expressed in terms of the electron dens
 
 The electron density itself is then given as the integral over the Fermi-Dirac distribution. We can write the Schrodinger Equation as 
 
-\begin{equation}
+\begin{equation} \label{eq:screen_hamiltonian}
   -\frac{\hbar^2}{2m} \nabla^2 \Psi_k ~-~ e\phi^\text{Total}\ \Psi_k ~~=~~ \varepsilon_k\ \Psi_k
 \end{equation}
 
@@ -831,7 +831,7 @@ With this new expression for the electron energy $\varepsilon_k$ we are able to 
 As we know from \refEq{eq:tot_charge_dens} the induced charge density is given as the difference between the total charge density $n(\mathbf{r}$ and the external charge density $n_0$. Therfore we can write
 
 \begin{equation} \label{eq:thomas_fermi}
-  \rho^\text{Ind}(\mathbf{r} ~~=~~ -e \left[ n(\mu + \varepsilon') ~-~ n(\mu) \right] 
+  \rho^\text{Ind}(\mathbf{r}) ~~=~~ -e \left[ n(\mu + \varepsilon') ~-~ n(\mu) \right] 
   ~~=~~ -e \cdot \varepsilon'\ \frac{dn}{d\mu}
 \end{equation}
 
@@ -844,7 +844,7 @@ The difference of the two electron density was replaced by de derivative by usin
 
 Comparing this to \refEq{eq:screen_suscept} we found for the susceptibility and the dielectric function
 
-\begin{equation}
+\begin{equation} \label{eq:thomas_fermi_function}
   \chi ~~=~~ -e^2 \frac{dn}{d \mu} ~~~~~~\text{and}~~~~~~~ 
   \epsilon(\mathbf{q}) ~~=~~ 1 + \frac{e^2\ dn/d\mu}{\epsilon_0 q^2}
 \end{equation}
@@ -853,6 +853,65 @@ It is important to note that the susceptibility does here not depend on the wave
 
 
 \subsubsection{Thomas-Fermi Wavevector}
+
+Defining the Thomas-Fermi Wavevector $\mathbf{k}_0 ~~=~~ \frac{e^2 dn/d\mu}{\epsilon_0}$ allows us to write \refEq{eq:thomas_fermi_function} as 
+
+\begin{equation} \label{eq:screening_dielect_new}
+  \epsilon(\mathbf{q}) ~~=~~ 1 ~+~ \frac{\mathbf{k}_0^2}{\mathbf{q}^2}
+\end{equation}
+
+From this expression it is visible that we can define a characteristic lengthscale of the electron screening. This lengthscale is given as $1/\mathbf{k}_0$ and we refer to it as \textbf{Thomas-Fermi Screening Length}. For copper we have a screening length of $1/\mathbf{k}_0 = \SI{0.55}{\AA}$.
+
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.6\textwidth]{../img/screening_yukawa.pdf}
+  \caption{Illustration of bare coulomb potential ($r^{-1}$) and the Yukawa potential.}
+  \label{fig:screening_yukawa}
+\end{figure}
+
+
+
+\subsubsection{Example: Coulomb Potential}
+
+Looking at a point charge $Q$ placed in a sea of conduction eletrons, as illustrated in \myRef{fig:screening_charge_box}.b we can express the externel potential generated from the point charge as $\phi^\text{Ext}(\mathbf{r}) = Q/r$ with its Fouriere transform  $\phi^\text{Ext}(\mathbf{q}) = 4\pi\ Q/q^2$. Rearanging \refEq{eg:screnn_dielect} and replacing the dielectric function by \myRef{eq:screening_dielect_new}, we obtain
+
+\begin{equation}
+  \phi(\mathbf{q}) ~~=~~~\frac{\phi^\text{Ext}(\mathbf{q}}{\epsilon(\mathbf{q}} 
+  ~~=~~ \frac{4\pi\ Q}{q^2 + k^2_0}
+\end{equation}
+
+Fourier transform this back to real space leads to the well known \textbf{Yukawa Potential} 
+
+\begin{equation}
+  \phi(\mathbf{r}) ~~=~~ Q \frac{e^{-i k_0 r}}{r}
+\end{equation}
+
+The difference between the Coulomb- and Yukawa potential are displayed in \myRef{fig:screening_yukawa}. The screening effect added point charge by the surrounding negative charges is clearly visible in the faster convergence to zero of the Yukawa Potential. The screening also weakens the longe range interaction of the charges in the solid.
+
+
+\subsection{Lindhard Potential}
+
+A more sophisticated approach is provided by the Lindhard Theory from which the Thomas-Fermi screening is a special case ($\mathbf{q} \ll \mathbf{k}_0$).
+
+As we know, the charge density for one electron with momentum $\mathbf{k}$ is given as $\rho_\mathbf{l}(\mathbf{r}) = e|\psi_\mathbf{k}(\mathbf{r})|^2$. Describing the the overall charge density of a crystal, assuming it is in its groundstate we have to sum the one electron charge density multiplied with the fermi function $f_\mathbf{k}$ over all momenta $\mathbf{k}$
+
+\begin{equation} \label{eq:lindh_charge}
+  \rho(\mathbf{r}) ~~=~~ -e \sum_\mathbf{k} f_\mathbf{k} | \Psi_\mathbf{k}(\mathbf{r}) |^2
+\end{equation}
+
+Assuming the additional term $e\phi$ in our Hamiltonian (\refEq{eq:screen_hamiltonian}, introduced throught the external charge, can be treated as a pertubation, we can express the one electron wavevector $\psi_\mathbf{k}$ as
+
+\begin{equation} \label{eq_lindh_wf}
+  \psi_\mathbf{k} ~~=~~ | \mathbf{k}_0 \rangle ~+~ \sum_\mathbf{k}' \frac{\langle \mathbf{k}' e\phi | \mathbf{k}_0 \rangle}{\varepsilon_{\mathbf{k}_0} - \varepsilon_{\mathbf{k}'}}
+\end{equation}
+
+
+Plugging now our ansatz for $\psi$ into \refEq{eq_lindh_charge} leads to
+
+%\begin{equation}
+%  
+%\end{equation}
 
 
 
