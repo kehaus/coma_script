@@ -201,6 +201,15 @@ def circle_outline(x, y, radius, pos):
     Y = pos[1]+radius*np.sin(x)
     return X,Y
 
+
+def plot_box(x0, y0, width, height, ax, **line_style):
+    """plots rectangular box in given axes object ax"""
+    ax.plot([x0, x0+width],[y0, y0], **line_style)
+    ax.plot([x0, x0+width],[y0+height, y0+height], **line_style)
+    ax.plot([x0+width, x0+width], [y0, y0+height], **line_style)
+    ax.plot([x0, x0], [y0, y0+height], **line_style)
+    return ax
+
 #==============================================================================
 # Main function
 #==============================================================================

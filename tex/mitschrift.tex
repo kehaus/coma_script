@@ -632,9 +632,236 @@ Bohr Radius: $a_0 = \frac{\hbar}{m e^2}$
 \end{equation}
 
 
+
+\subsubsection{Fermi Liquid Theory}
+
 \subsubsection{Electron Tight Binding Model}
 % lec-notes 17.10.17
+%
 
+%An approximation for an electron wavefunction over the whole crystal can be given as a linear combination of atomic orbitals $\varphi(\mathbf{r})$ of an isolated atom.
+
+
+An approximation for an electron wavefunction over the whole crystal can be given as
+
+\begin{equation}
+  \Psi_k ~~=~~ \sum_j c_{kj} \varphi(\mathbf{r}-\mathbf{r}_j)
+\end{equation}
+
+Where $\varphi(\mathbf{r})$ is the ground state wavefunction (atomic orbital) of an electron in the potential $V(\mathbf{r})$ of an isolated atom. This approximation is only valid if the interaction between neighborign atoms is small. The sum goes over all lattice points.
+
+
+Using
+
+\begin{equation}
+  c_{kj} ~~=~~ N^{-1/2} e^{i \mathbf{k} \mathbf{r}_j}
+\end{equation}
+
+The factor $N^{-1/2}$ ensures the wavefunction to meet the normalization criterion
+We can express the over all wavefunction of an electron in the crystal
+
+\begin{equation} \label{eq:el_wf}
+  \Psi_k(\mathbf{r}) 
+  ~~=~~ N^{-1/2} \sum_j e^{i\mathbf{k} \mathbf{r}_j} \varphi(\mathbf{r} - \mathbf{r}_j)
+\end{equation}
+
+
+Recalling the \textbf{Bloch Theorem} which states, that the wavefunction of an electron in a periodic potential ($V(\mathbf{r}) = V(\mathbf{r} + \mathbf{a})$) with the periodicity $a$ is given by
+
+\begin{equation} \label{eq:bloch_theorem}
+  \phi_k(\mathbf{r}) ~~=~~ u_k(\mathbf{r}) \cdot e^{i\mathbf{k} \mathbf{r}}
+\end{equation}
+
+where $u_k(\mathbf{r})$ has the periodicity of the crystal ($u_k(\mathbf{r} + \mathbf{a}) = u_k(\mathbf{r})$). Since the tightbinding ansatz is meant to describe the electrons in a perodic potential, so it also have to be a bloch wave. 
+
+
+%Applying the Bloch Theorem to our electron wavefunction \refEq{eq:el_wf}, we get
+We can show, that our electron wavefunction \refEq{eq:el_wf} fulfills the Bloch criterion
+
+
+\begin{align}
+  \Psi_k(\mathbf{r} + \mathbf{a}) 
+  ~~& =~~ N^{-1/2} \sum_j e^{i \mathbf{k} \mathbf{r}_j} \varphi(\mathbf{r} + \mathbf{a} - \mathbf{r}_j) \nonumber \\
+  ~~& =~~ N^{-1/2} e^{i\mathbf{k} \mathbf{a}} 
+  \sum_j e^{i\mathbf{k} (\mathbf{r}_j - \mathbf{a})} \varphi(\mathbf{r} - (\mathbf{r}_j-\mathbf{a})) \nonumber \\
+  ~~& =~~ N^{-1/2} e^{i\mathbf{k} \mathbf{a}}
+  \sum_n e^{i\mathbf{k} \mathbf{r}_n} \varphi(\mathbf{r} - \mathbf{r}_n) \nonumber \\
+  ~~& =~~ e^{i\mathbf{k} \mathbf{a}} \Psi_k(\mathbf{r})
+\end{align}
+
+To get to this result we used the fact, that the summation goes over all lattice points and we therefore can replace the dummy variables $j$ with $n$ by writting $\mathbf{r}_j - \mathbf{a}$ as $\mathbf{r}_n$. This is allowed since $\mathbf{a}$ describes a lattice vector connecting two lattice points.
+
+We can compute now for the energy levels of the tight-binding ansatz
+
+\begin{align}
+  \epsilon_k ~~& =~~ \langle \mathbf{k} | H | \mathbf{k} \rangle ~~=~~
+  N^{-1} \sum_j \sum_m e^{i\mathbf{k} (\mathbf{r}_j - \mathbf{r}_m)} 
+  \langle \varphi_m | H | \varphi_j \rangle 
+\end{align}
+
+The double sum can be understood in the following sense: to get the total energy, we have to sum over all the electrons ($\sum_j$), whereas every electron feels a contribution from the potential of every atom in the crystal ($\sum_m$). Since we assum, that the electrons on an atom site mainly feel interactions on the atom site itself and the nearest neightbors, we can neglect all terms with $j \neq m$ of the first sum. We also define $\mathbf{\rho}_m = \mathbf{r}_m - \mathbf{r}_j$
+
+\begin{align} \label{eq:tb_der}
+  \epsilon_k ~~& =~~ \sum_m e^{-i\mathbf{k} \mathbf{\rho}_m} \langle \varphi(\mathbf{r}-\mathbf{\rho}_m) | H | \varphi(\mathbf{r}) \rangle \nonumber \\
+  ~~& =~~ \langle \varphi(\mathbf{r}) |H| \varphi(\mathbf{r}) \rangle 
+  ~+~ \sum_{\rho_m \in \text{NN}} \langle \varphi(\mathbf{r} - \mathbf{\rho_m}) |H| \varphi(\mathbf{r}) \rangle
+\end{align}
+
+Defining the coefficients 
+
+\begin{align}
+  \epsilon_0 ~~& =~~ \langle \varphi(\mathbf{r}) | H | \varphi(\mathbf{r}) \rangle  ~~=~~
+  \int d^3\mathbf{r}\ \varphi^*(\mathbf{r}) H \varphi(\mathbf{r}) \\
+  t ~~& =~~ \langle \varphi(\mathbf{r} - \mathbf{\rho_m}) |H| \varphi(\mathbf{r}) \rangle 
+  ~~=~~ \int d^3\mathbf{r}\ \varphi^*(\mathbf{r} - \mathbf{\rho_m}) H \varphi(\mathbf{r})
+\end{align}
+
+allows us to write \refEq{eq:tb_der} in the abbreviated way
+
+\begin{equation} \label{eq:tb}
+  \epsilon_k ~~=~~ \epsilon_0 ~-~ t \sum_{\rho_m} e^{-i\mathbf{k} \mathbf{\rho}_m}
+\end{equation}
+
+where $\epsilon_0$, the energy level of the singel atom, defines the position of the energy band and $t$, defined through the overlap of neighboring atoms, defines the width of the energy band.
+
+
+\subsubsection{Example: cubic lattice structure}
+
+For a cubic lattice structure, taking only the nearest neighbors into account we have to sum over the following lattice sites in the sum of \refEq{eq:tb}
+
+\begin{equation}
+  \mathbf{\rho}_m ~~\in~~ \left\{ (\pm a,0 ,0),~ (0, \pm a, 0),~ (0, 0, \pm a) \right\}
+\end{equation}
+
+This leads to the following expression for the energy bands
+
+\begin{equation}
+  \epsilon_k ~~=~~ E(\mathbf{k}) ~~=~~ \epsilon_0 ~+~ 2t \left[ \cos(k_xa) + \cos(k_ya) + \cos(k_za) \right]
+\end{equation}
+
+The position ($\epsilon_0$) and width $W=12t$ is determined by the particulare single atom orbital wavefunction.
+
+
+%\begin{itemize}
+%  \item{The Width of the band is porportional to the strength of the overlap interaction between neighboting atoms.}
+%  \item{Tight binding approximation is good for inner electrons. It isn't a good approximation when considering conduction electrons.}
+%\end{itemize}
+%
+
+
+\subsection{Charge Ordering}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=1.0\textwidth]{../img/screening_charge_box.pdf}
+  \caption{Sketch of boxes filled with charged particles. \textbf{a.} equally distributed negatively charged particles. \textbf{b.} negativel charges with one positive charge without interactions. \textbf{c.} negative charged particles are attracted by positive charge.}
+  \label{fig:screening_charge_box}
+\end{figure}
+
+\begin{equation} \label{eq:tot_charge_dens}
+  \rho(r) ~~=~~ \rho^\text{Total}(\mathbf{r}) ~~=~~ \rho^\text{Ext}(\mathbf{r}) ~+~ \rho^\text{Ind}(\mathbf{r})
+\end{equation}
+
+
+With the poisson equation we can determine the electric potential $\phi$ produced by the charge density
+
+\begin{align}
+  \nabla^2 \phi^\text{Ext} ~~& =~~ -\frac{1}{\epsilon_0} \rho^\text{Ext}(\mathbf{r}) \\
+  \nabla^2 \phi	~~& =~~ -\frac{1}{\epsilon_0} \rho(\mathbf{r})
+\end{align}
+
+
+This differential equation can be solved by transforming it to the Fourier space
+
+\begin{align}
+  q^2 \phi^\text{Ext}(\mathbf{q}) ~~& =~~ \frac{1}{\epsilon_0} \rho^\text{Ext}(\mathbf{q}) \\
+  q^2 \phi (\mathbf{q}) ~~&=~~ \frac{1}{\epsilon_0}  \rho(\mathbf{q})
+\end{align}
+
+
+Using the definitions for the dielectric function $\epsilon$ and the electric susceptibility $\chi$
+
+\begin{align}
+  \frac{1}{\epsilon(\mathbf{q})} ~~=~~ \frac{\phi(\mathbf{q})}{\phi^\text{Ext}(\mathbf{q})} \\
+  \label{eq:screen_suscept}
+  \chi(\mathbf{q}) ~~=~~ \frac{\rho^\text{Ind}(\mathbf{q})}{\phi(\mathbf{q})}
+\end{align}
+
+We can relate the dielectric function and the susceptebility  by using the formulas for the electric potential from above
+
+\begin{equation}
+  \epsilon(\mathbf{q}) ~~=~~ 1 ~-~ \frac{\chi(\mathbf{q})}{\epsilon_0 q^2}
+\end{equation}
+
+
+\subsubsection{Thomas-Fermi Screening}
+
+Calculate $\chi(\mathbf{q})$
+
+
+Charge density of an electron gas can be expressed in terms of the electron density $n(\mathbf{r})$
+
+\begin{equation}
+  \rho_0 ~~=~~ -e n(\mu) ~~~~~~\text{with}~~~~ 
+  n(\mu) ~~=~~ \int \frac{d \mathbf{k}}{4\pi^3}\ f_k(\mu)
+\end{equation}
+
+The electron density itself is then given as the integral over the Fermi-Dirac distribution. We can write the Schrodinger Equation as 
+
+\begin{equation}
+  -\frac{\hbar^2}{2m} \nabla^2 \Psi_k ~-~ e\phi^\text{Total}\ \Psi_k ~~=~~ \varepsilon_k\ \Psi_k
+\end{equation}
+
+Using the Thomas-Fermi approximation in which we assume for the total electric potential to be constance on the length scale of our problem. Then we can write
+
+\begin{equation}
+  \varepsilon_k ~~=~~ \frac{(\hbar \mathbf{k})^2}{2m} ~+~ \varepsilon' ~~~~~\text{where}~~~~
+  \varepsilon' ~=~ e\ \phi(\mathbf{r})
+\end{equation}
+
+With this new expression for the electron energy $\varepsilon_k$ we are able to write an expression for the electron density $n(\mathbf{r})$ of the whole system
+
+\begin{align}
+  n^\text{Total} ~~& =~~ \int \frac{d \mathbf{k}}{4\pi^3} \left(e^{(E_k + \mu)/k_BT} ~+~ 1 \right)^{-1} \nonumber \\
+  ~~& =~~ \int \frac{d \mathbf{k}}{4\pi^3} \left(e^{(\frac{(\hbar \mathbf{k})^2}{2m} + \varepsilon' + \mu)/k_BT} ~+~ 1 \right)^{-1} 
+  ~~=~~ n(\mu + \varepsilon')
+\end{align}
+
+
+As we know from \refEq{eq:tot_charge_dens} the induced charge density is given as the difference between the total charge density $n(\mathbf{r}$ and the external charge density $n_0$. Therfore we can write
+
+\begin{equation} \label{eq:thomas_fermi}
+  \rho^\text{Ind}(\mathbf{r} ~~=~~ -e \left[ n(\mu + \varepsilon') ~-~ n(\mu) \right] 
+  ~~=~~ -e \cdot \varepsilon'\ \frac{dn}{d\mu}
+\end{equation}
+
+The difference of the two electron density was replaced by de derivative by using the defintion of derivaties $df/dx = (f(x+\Delta x) - f(x))/\Delta x$.
+\refEq{eq:thomas_fermi} is known as the basic equation of the Thomas-Fermi Theory. Replacing $\varepsilon'$ by the electric potential again and Fourier transforming \refEq{eq:thomas_fermi} gives
+
+\begin{equation}
+  \rho^\text{Ind}(\mathbf{q}) ~~=~~ -e^2 \frac{dn}{d \mu} \phi(\mathbf{q})
+\end{equation}
+
+Comparing this to \refEq{eq:screen_suscept} we found for the susceptibility and the dielectric function
+
+\begin{equation}
+  \chi ~~=~~ -e^2 \frac{dn}{d \mu} ~~~~~~\text{and}~~~~~~~ 
+  \epsilon(\mathbf{q}) ~~=~~ 1 + \frac{e^2\ dn/d\mu}{\epsilon_0 q^2}
+\end{equation}
+
+It is important to note that the susceptibility does here not depend on the wavevector $\mathbf{q}$. This is a result of our approximation that $\phi(\mathbf{r})$ does not vary much over $\mathbf{r}$.
+
+
+\subsubsection{Thomas-Fermi Wavevector}
+
+
+
+
+%Considering the analogy between $(\phi^\text{Ext}, \phi^\text{Total})$ and the macroscopic quantities $(\mathbf{D}, \mathbf{E})$ we can write a similar equation as it is known for $\mathbf{D}$ and $\mathbf{E}$.
+
+%\begin{equation} \label{eq:dielectric_relation}
+%  \phi^\text{Ext}(\mathbf{q}) ~~=~~ \epsilon(\mathbf{q})\ \phi^\text{Total}(\mathbf{q})
+%\end{equation}
 
 
 
