@@ -1,56 +1,64 @@
 \select@language {english}
-\contentsline {chapter}{\numberline {1}Charge Order}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Peierl Transition}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}From Causality to Kramer-Kronig relation}{1}{section.1.2}
-\contentsline {subsubsection}{Onsager Relation}{1}{section*.3}
-\contentsline {chapter}{\numberline {2}Second Quantization}{3}{chapter.2}
-\contentsline {section}{\numberline {2.1}1D-Chain}{3}{section.2.1}
-\contentsline {section}{\numberline {2.2}Second quantization: Free electron gas}{6}{section.2.2}
-\contentsline {subsubsection}{Electron-Electron Interaction term}{7}{section*.4}
-\contentsline {subsubsection}{Fermi Liquid Theory}{10}{section*.9}
-\contentsline {subsubsection}{Electron Tight Binding Model}{10}{section*.10}
-\contentsline {subsubsection}{Example: cubic lattice structure}{11}{section*.11}
-\contentsline {subsection}{\numberline {2.2.1}Charge Ordering}{12}{subsection.2.2.1}
-\contentsline {subsubsection}{Thomas-Fermi Screening}{13}{section*.13}
-\contentsline {subsubsection}{Thomas-Fermi Wavevector}{14}{section*.14}
-\contentsline {subsubsection}{Example: Coulomb Potential}{14}{section*.16}
-\contentsline {subsection}{\numberline {2.2.2}Lindhard Potential}{15}{subsection.2.2.2}
-\contentsline {chapter}{\numberline {3}Magnetism}{17}{chapter.3}
-\contentsline {section}{\numberline {3.1}Paramagnetism}{17}{section.3.1}
-\contentsline {subsubsection}{Magnetic Moment}{17}{section*.17}
-\contentsline {subsubsection}{Example: Hydrogen Atom}{17}{section*.18}
-\contentsline {subsubsection}{Magnetic Moment of Atoms}{18}{section*.19}
-\contentsline {subsubsection}{Magnetisation}{18}{section*.20}
-\contentsline {subsubsection}{Magnetic Moment in a $\mathaccentV {vec}17E{B}$-Field}{18}{section*.22}
-\contentsline {subsubsection}{Magnetic susceptibility}{19}{section*.23}
-\contentsline {subsubsection}{Diamagnetism}{19}{section*.24}
-\contentsline {subsubsection}{Simplest Case: $e^-$ only}{20}{section*.25}
-\contentsline {subsection}{\numberline {3.1.1}How to fill the valence shell}{22}{subsection.3.1.1}
-\contentsline {subsubsection}{Hund's rules}{22}{section*.26}
-\contentsline {subsubsection}{Crystal field effects}{22}{section*.27}
-\contentsline {subsubsection}{Octahedral crystal environment}{22}{section*.28}
-\contentsline {subsubsection}{Tetrahedral crystal environment}{22}{section*.29}
-\contentsline {subsubsection}{Variation of crystal field environment}{22}{section*.30}
-\contentsline {subsubsection}{Jahn-Teller Distortion}{22}{section*.31}
-\contentsline {subsubsection}{Resonant inelastic x-ray scattering (RIXS)}{23}{section*.32}
-\contentsline {section}{\numberline {3.2}Ferromagnetism}{23}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}H\textsubscript {2} Molecule}{23}{subsection.3.2.1}
-\contentsline {subsubsection}{Wave Function Considerations}{23}{section*.33}
-\contentsline {subsubsection}{Quantum mechanical Spin-Operators}{23}{section*.34}
-\contentsline {subsubsection}{Consider weak Coulomb interaction}{24}{section*.35}
-\contentsline {subsubsection}{What is H\textsuperscript {Spin}\textsubscript {int}}{25}{section*.36}
-\contentsline {subsubsection}{Ferromagnetism}{25}{section*.37}
-\contentsline {subsubsection}{Conjecture}{25}{section*.38}
-\contentsline {subsubsection}{Solution}{25}{section*.39}
-\contentsline {subsubsection}{Landau Theory}{27}{section*.42}
-\contentsline {subsection}{\numberline {3.2.2}Exchange Interaction J}{27}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Ferromagnetic Magnons}{28}{subsection.3.2.3}
-\contentsline {chapter}{\numberline {4}Superconductivity}{30}{chapter.4}
-\contentsline {section}{\numberline {4.1}Conventional superconducters}{30}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Link $\rho $ \& Meissner Effect}{30}{subsection.4.1.1}
-\contentsline {section}{\numberline {4.2}London Equation}{30}{section.4.2}
-\contentsline {section}{\numberline {4.3}Coherence Length}{33}{section.4.3}
-\contentsline {section}{\numberline {4.4}Ginzburg-Landau Theory}{34}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Orderparameter in the Ginzburg-Landau Model}{35}{subsection.4.4.1}
-\contentsline {section}{\numberline {4.5}Classification of different superconductors}{36}{section.4.5}
-\contentsline {section}{\numberline {4.6}Vorteces}{36}{section.4.6}
+\contentsline {chapter}{\numberline {1}Peierls Instability \& Charge Order}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Peierl Instability}{1}{section.1.1}
+\contentsline {chapter}{\numberline {2}Charge Order}{2}{chapter.2}
+\contentsline {section}{\numberline {2.1}From Causality to Kramer-Kronig relation}{2}{section.2.1}
+\contentsline {subsubsection}{Example: Damped Harmonic Oscillator}{3}{section*.3}
+\contentsline {chapter}{\numberline {3}Quantum Oscillations \& ARPES}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Quantum Oscillations}{5}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Onsager Relation}{5}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}Angle Resolved Photoemission Spectroscopy}{5}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Scattering Experiment}{5}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Fermis Golder Rule}{6}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Angle Resolved Photoemission spectroscopy}{6}{subsection.3.2.3}
+\contentsline {chapter}{\numberline {4}Second Quantization}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}1D-Chain}{7}{section.4.1}
+\contentsline {section}{\numberline {4.2}Second quantization: Free electron gas}{10}{section.4.2}
+\contentsline {subsubsection}{Electron-Electron Interaction term}{11}{section*.4}
+\contentsline {subsubsection}{Fermi Liquid Theory}{14}{section*.9}
+\contentsline {subsubsection}{Electron Tight Binding Model}{14}{section*.10}
+\contentsline {subsubsection}{Example: cubic lattice structure}{15}{section*.11}
+\contentsline {subsection}{\numberline {4.2.1}Charge Ordering}{16}{subsection.4.2.1}
+\contentsline {subsubsection}{Thomas-Fermi Screening}{17}{section*.13}
+\contentsline {subsubsection}{Thomas-Fermi Wavevector}{18}{section*.14}
+\contentsline {subsubsection}{Example: Coulomb Potential}{18}{section*.16}
+\contentsline {subsection}{\numberline {4.2.2}Lindhard Potential}{19}{subsection.4.2.2}
+\contentsline {chapter}{\numberline {5}Magnetism}{22}{chapter.5}
+\contentsline {section}{\numberline {5.1}Paramagnetism}{22}{section.5.1}
+\contentsline {subsubsection}{Magnetic Moment}{22}{section*.17}
+\contentsline {subsubsection}{Example: Hydrogen Atom}{22}{section*.18}
+\contentsline {subsubsection}{Magnetic Moment of Atoms}{23}{section*.19}
+\contentsline {subsubsection}{Magnetisation}{23}{section*.20}
+\contentsline {subsubsection}{Magnetic Moment in a $\mathaccentV {vec}17E{B}$-Field}{23}{section*.22}
+\contentsline {subsubsection}{Magnetic susceptibility}{24}{section*.23}
+\contentsline {subsubsection}{Diamagnetism}{24}{section*.24}
+\contentsline {subsubsection}{Simplest Case: $e^-$ only}{25}{section*.25}
+\contentsline {subsection}{\numberline {5.1.1}How to fill the valence shell}{27}{subsection.5.1.1}
+\contentsline {subsubsection}{Hund's rules}{27}{section*.26}
+\contentsline {subsubsection}{Crystal field effects}{27}{section*.27}
+\contentsline {subsubsection}{Octahedral crystal environment}{27}{section*.28}
+\contentsline {subsubsection}{Tetrahedral crystal environment}{27}{section*.29}
+\contentsline {subsubsection}{Variation of crystal field environment}{27}{section*.30}
+\contentsline {subsubsection}{Jahn-Teller Distortion}{27}{section*.31}
+\contentsline {subsubsection}{Resonant inelastic x-ray scattering (RIXS)}{28}{section*.32}
+\contentsline {section}{\numberline {5.2}Ferromagnetism}{28}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}H\textsubscript {2} Molecule}{28}{subsection.5.2.1}
+\contentsline {subsubsection}{Wave Function Considerations}{28}{section*.33}
+\contentsline {subsubsection}{Quantum mechanical Spin-Operators}{28}{section*.34}
+\contentsline {subsubsection}{Consider weak Coulomb interaction}{29}{section*.35}
+\contentsline {subsubsection}{What is H\textsuperscript {Spin}\textsubscript {int}}{30}{section*.36}
+\contentsline {subsubsection}{Ferromagnetism}{30}{section*.37}
+\contentsline {subsubsection}{Conjecture}{30}{section*.38}
+\contentsline {subsubsection}{Solution}{30}{section*.39}
+\contentsline {subsubsection}{Landau Theory}{32}{section*.42}
+\contentsline {subsection}{\numberline {5.2.2}Exchange Interaction J}{32}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Ferromagnetic Magnons}{33}{subsection.5.2.3}
+\contentsline {chapter}{\numberline {6}Superconductivity}{35}{chapter.6}
+\contentsline {section}{\numberline {6.1}Conventional superconducters}{35}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Link $\rho $ \& Meissner Effect}{35}{subsection.6.1.1}
+\contentsline {section}{\numberline {6.2}London Equation}{35}{section.6.2}
+\contentsline {section}{\numberline {6.3}Coherence Length}{38}{section.6.3}
+\contentsline {section}{\numberline {6.4}Ginzburg-Landau Theory}{39}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Orderparameter in the Ginzburg-Landau Model}{40}{subsection.6.4.1}
+\contentsline {section}{\numberline {6.5}Classification of different superconductors}{41}{section.6.5}
+\contentsline {section}{\numberline {6.6}Vorteces}{41}{section.6.6}

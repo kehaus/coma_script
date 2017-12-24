@@ -166,12 +166,32 @@
   Eq  \ref{#1}
 }
 
+\newcommand{\OO}{ % typeset of large 'O' to indicate negleting higher orders (e.q. O(2))
+  \mathcal{O}
+}
+
+\newcommand{\vc}[1]{ % typeset definition for vectors in math mode
+  \mathbf{#1}
+}
 \DeclareMathOperator{\sign}{sign}
+
+
+
+
 
 %=======================================================================
 % TODO:
 %=======================================================================
 %   * find alternative for \underbrace{}. it does look ugly sometimes
+
+
+% TODO: conecpts missing in script
+%	* description of different quasi particles
+%	* Kohn anomaly
+%	* Peierls transition
+%	* link of Kohn anomaly and Peierls transition to Lindhard potential
+%	* Quantum oscillations 
+%	* Onsager Relation
 
 
 %========================================================================================================
@@ -236,7 +256,7 @@
 
 
 %=======================================================================
-% Introduction
+% Content
 %=======================================================================
 
 
@@ -254,20 +274,32 @@
 \tableofcontents
 \thispagestyle{empty} % don't show (roman) page number on titlepage
 
-%=======================================================================
-% Charge Order
-%=======================================================================
 
-\chapter{Charge Order}
+%=======================================================================
+% Peierls Instability
+%=======================================================================
+%
+% 19.09.2017
+
+
+\chapter{Peierls Instability \& Charge Order}
 \pagenumbering{arabic}
 
-\section{Peierl Transition}
+\section{Peierl Instability}
 
+
+%=======================================================================
+% Derivation of Kramers Kronig relation
+%=======================================================================
+%
+% 25.09.2017
+
+\chapter{Charge Order}
 
 \section{From Causality to Kramer-Kronig relation}
 
 
-Looking at a causal function $\tilde{\chi}(t)$, we can split it, like every analytical function, in an even $\chi_{even}(t)$ and an odd $\chi_{odd}(t)$ part.
+Looking at a causal function $\tilde{\chi}(t)$, we can split it, like every analytical function, in an even $\chi_\text{even}(t)$ and an odd $\chi_\text{odd}(t)$ part.
 
 
 \begin{minipage}{0.45\textwidth}
@@ -288,29 +320,127 @@ Looking at a causal function $\tilde{\chi}(t)$, we can split it, like every anal
 %Every function $\tilde{\chi}(t)$ can be divided in an even $\chi_{even}(t)$ and an odd $\chi_{odd}(t)$ part.
 
 \begin{equation} \label{eq:even_odd}
-\tilde{\chi}(t) ~~ = ~~ \frac{\tilde{\chi}(t) + \tilde{\chi}(-t)}{2} + \frac{\tilde{\chi}(t) - \tilde{\chi}(-t)}{2} ~~ = ~~ \chi_{even}(t) + \chi_{odd}(t)
+\tilde{\chi}(t) ~~ = ~~ \frac{\tilde{\chi}(t) + \tilde{\chi}(-t)}{2} + \frac{\tilde{\chi}(t) - \tilde{\chi}(-t)}{2} ~~ = ~~ \chi_\text{even}(t) + \chi_\text{odd}(t)
 \end{equation}
 
 
 Multiplying the even part of this function with the signum function yields,
 
 \begin{equation}
-  \sign(t) \cdot \chi_{even} ~~ = ~~ \sign(t) \cdot \left\{ \frac{\tilde{\chi}(t)}{2} + \frac{\tilde{\chi}(-t)}{2} \right\} ~~ = ~~~\frac{\tilde{\chi}(t)}{2} - \frac{\tilde{\chi}(t)}{2} ~~ = ~~ \chi_{odd}(t)
+  \sign(t) \cdot \chi_\text{even} ~~ = ~~ \sign(t) \cdot \left\{ \frac{\tilde{\chi}(t)}{2} + \frac{\tilde{\chi}(-t)}{2} \right\} ~~ = ~~~\frac{\tilde{\chi}(t)}{2} - \frac{\tilde{\chi}(t)}{2} ~~ = ~~ \chi_\text{odd}(t)
 \end{equation}
 
 
-Using this relation to replace $\chi_{odd}(t)$ in \refEq{eq:even_odd}.
+Using this relation to replace $\chi_\text{odd}(t)$ in \refEq{eq:even_odd}.
 
 
 \begin{equation}
-\tilde{\chi}(t) ~~ = ~~ \chi_{eve} + \chi_{odd} ~~ = ~~ (1 + \sign(t)) \cdot \chi_{even}(t) ~~ = ~~ \sigma(t) \cdot \chi_{even}(t)
+\tilde{\chi}(t) ~~ = ~~ \chi_\text{even} + \chi_\text{odd} ~~ = ~~ \underbrace{(1 + \sign(t))}_\text{step function} \cdot \chi_\text{even}(t) ~~ = ~~ \sigma(t) \cdot \chi_\text{even}(t)
 \end{equation}
 
-%=======================================================================
-% 
-%=======================================================================
 
-\subsubsection{Onsager Relation}
+\begin{align}
+  \chi_\text{odd}(\omega) ~~& =~~ \int \chi_\text{odd}(t) \cdot e^{i\omega t}\ dt
+  ~~=~~ \int_{-\infty}^\infty \chi_\text{odd}(t) \cdot
+  \{ \underbrace{\cos(\omega t)}_\text{even} + i\underbrace{\sin(\omega t)}_\text{odd} \}\ dt \nonumber \\
+  ~~& =~~ i \int_{-\infty}^{\infty} \chi_\text{odd}(t) \cdot \sin(\omega t)\ dt ~~=~~ \chi''(\omega)
+\end{align}
+
+
+\subsubsection{Example: Damped Harmonic Oscillator}
+
+The differential equation of a driven damped harmonic oscillation is given as
+
+\begin{equation} \label{eq:damped_osc_DE}
+  \Ddot{x}(t) ~+~ \gamma \dot{x}(t) ~+~ \omega_0^2 x(t) ~~=~~ f(t)
+\end{equation}
+
+where $\gamma$ is the damping coefficient and $\omega_0$ is the resonsance frequency.
+The solution to this differential equation can be found rather easy by transforming it to the Fourier space.
+%Transforming this equatin to Fourier space the solution function can be found rather easy
+
+\begin{equation}
+  -\omega^2 x(\omega) ~-~ i \omega \gamma x(\omega) ~+~ \omega_0^2 x(\omega) ~~=~~ f(\omega)
+\end{equation}
+
+%Our system can be characterised by defining the response function in Fourier space as
+%We define the response function $\chi(t)$ and its Fourier transform
+
+We define the systems response function in Fourier space as
+
+\begin{equation} \label{eq:damped_osc_respond}
+  \chi(\omega) ~~\equiv~~ \frac{x(\omega)}{f(\omega)} ~~=~~ \frac{1}{\omega_0^2 - \omega^2 + i\gamma\omega} ~~=~~ | \chi(\omega)| \{\cos(\phi) + i\sin(\phi) \}
+\end{equation}
+
+The benefit of doing so lays in the fact, that $\chi(\omega)$ depends solely on the system specific 	quantities like the resonance frequency $\omega_0$ and the damping coefficient $\gamma$.
+
+In that sense the response function is characteristic to your system and doesn't depend on the applied driving force $f(\omega)$. This is handy because as soon as we have determined $\chi(\omega)$ for a given system, we can find the Fourier transform of the solution to \refEq{eq:damped_osc_DE} for various driving forces by just multipling the fourier transforms of the repsonse function and the driving force 
+
+\begin{equation}
+  x(\omega) ~~=~~ \chi(\omega) \cdot f(\omega) 
+  ~~=~~ f(\omega) |\chi(\omega)| \{\cos(\phi(\omega)) +i \sin(\phi(\omega))\}
+\end{equation}
+
+on the left side we described the repsonse function in terms of its magnitude $|\chi(\omega)|$ and its frequency dependent phase $\phi(\omega)$.
+
+
+%Because $\chi(\omega)$ is independent of the applied driving force $f(\omega)$, we have to calculate it only once for a given system. We are then able to determine the solution to \refEq{eg:damped_osc_DE} for different driving forces by just multiplying the Fourier transforms of the repsonse function and the driving force
+
+Splitting the response function up in a real and imaginary part we get
+
+\begin{align}
+  \Re\ \chi(\omega) ~& \equiv~ \chi'(\omega) ~=~ \frac{\omega^2_0 - \omega}{(\omega^2-\omega^2_0)^2 + \omega^2 \gamma^2} \\
+  \Im\ \chi(\omega) ~& \equiv~ \chi''(\omega) ~=~ \frac{\gamma \omega}{(\omega^2 - \omega^2_0)^2 + \omega^2 \gamma^2}
+\end{align}
+
+%The solution of this problem is then given in Fourier space as
+%Wit the help of the response function we can give an expression for the 
+
+
+To illustrate that this solution is correct, we look at the special case were the driving force is a harmonic oscillation
+
+\begin{equation}
+  f(t) ~=~ f_0 \cos(\omega_0 t) ~~~\Rightarrow~~~ f(\omega) 
+  ~=~ f_0 \left( \delta(\omega_0 - \omega) + \delta(\omega_0 + \omega) \right)
+\end{equation}
+
+
+As an ansatz for a solution of \refEq{eq:damped_osc_DE} we choose
+
+\begin{equation}
+  x(t) ~~=~~ f_0 | \chi(\omega) | \cos(\omega t - \phi)
+\end{equation}
+
+
+We check if this ansatz is correct by calculating its Fourier transform
+
+\begin{equation}
+  x(\omega) ~~=~~ \int x(t)\ e^{i\omega t}\ dt 
+  ~~=~~ f_0 |\chi(\omega)| \int \cos(\omega 1 - \phi)\ e^{i\omega t} dt 
+  ~~=~~ f_0 | \chi(\omega) \int \left\{... \right\} 
+\end{equation}
+
+\textcolor{red}{equation not complete}
+
+
+%=======================================================================
+% Quantum Oscillations & ARPES - Techniques to measure Fermi surface
+%=======================================================================
+%
+% 2.10.2017
+
+\chapter{Quantum Oscillations \& ARPES}
+
+
+
+%=======================================================================
+% Quantum Oscillations / Onsager Relations
+%=======================================================================
+%
+% 3.10.2017
+\section{Quantum Oscillations}
+
+\subsection{Onsager Relation}
 
 \begin{equation}
   S \cdot \left( \frac{1}{B_{n+1}} ~-~ \frac{1}{B_n} \right) ~~=~~ \frac{2 \pi e}{\hbar}
@@ -327,6 +457,40 @@ $S$ is the Fermi surface ($S=\pi k_F^2$.
 \end{equation}
 
 where $\Phi_0 = \frac{h}{2e} = \text{Flux Quantum}$
+
+
+
+
+%=======================================================================
+% Scattering experiment
+%=======================================================================
+%
+% 3.10.2017
+\section{Angle Resolved Photoemission Spectroscopy}
+
+\subsection{Scattering Experiment}
+
+\textcolor{red}{sketch scattering experiment}
+
+\subsection{Fermis Golder Rule}
+
+\begin{equation}
+  W ~~\propto~~ | \langle \vc{k}_f | V(\vc{r}) | \vc{k}_i \rangle |^2
+\end{equation}
+
+
+\subsection{Angle Resolved Photoemission spectroscopy}
+
+
+\textcolor{red}{adapt ARPES section from BA}
+
+
+
+
+
+
+
+
 
 %=======================================================================
 % Phonons
@@ -812,7 +976,7 @@ The electron density itself is then given as the integral over the Fermi-Dirac d
   -\frac{\hbar^2}{2m} \nabla^2 \Psi_k ~-~ e\phi^\text{Total}\ \Psi_k ~~=~~ \varepsilon_k\ \Psi_k
 \end{equation}
 
-Using the Thomas-Fermi approximation in which we assume for the total electric potential to be constance on the length scale of our problem. Then we can write
+Using the Thomas-Fermi approximation in which we assume for the total electric potential to be constant on the length scale of our problem. Then we can write
 
 \begin{equation}
   \varepsilon_k ~~=~~ \frac{(\hbar \mathbf{k})^2}{2m} ~+~ \varepsilon' ~~~~~\text{where}~~~~
@@ -892,7 +1056,7 @@ The difference between the Coulomb- and Yukawa potential are displayed in \myRef
 
 \subsection{Lindhard Potential}
 
-A more sophisticated approach is provided by the Lindhard Theory from which the Thomas-Fermi screening is a special case ($\mathbf{q} \ll \mathbf{k}_0$).
+A more sophisticated approach is provided by the Lindhard Theory from which the Thomas-Fermi screening is a special case ($\mathbf{q} \ll \mathbf{k}_0$). The basic idea here is to find a solution for the Schrodinger equation by treating the electrical potential $\phi^\text{Ext}(\mathbf{r})$ introduced by the external charge as a pertubation, which allows us then to use the methodology of pertubation theory.
 
 As we know, the charge density for one electron with momentum $\mathbf{k}$ is given as $\rho_\mathbf{l}(\mathbf{r}) = e|\psi_\mathbf{k}(\mathbf{r})|^2$. Describing the the overall charge density of a crystal, assuming it is in its groundstate we have to sum the one electron charge density multiplied with the fermi function $f_\mathbf{k}$ over all momenta $\mathbf{k}$
 
@@ -900,21 +1064,71 @@ As we know, the charge density for one electron with momentum $\mathbf{k}$ is gi
   \rho(\mathbf{r}) ~~=~~ -e \sum_\mathbf{k} f_\mathbf{k} | \Psi_\mathbf{k}(\mathbf{r}) |^2
 \end{equation}
 
-Assuming the additional term $e\phi$ in our Hamiltonian (\refEq{eq:screen_hamiltonian}, introduced throught the external charge, can be treated as a pertubation, we can express the one electron wavevector $\psi_\mathbf{k}$ as
+%Assuming the additional term $e\phi$ in our Hamiltonian (\refEq{eq:screen_hamiltonian}), introduced throught the external charge, can be treated as a pertubation, we can express the one electron wavevector $\psi_\mathbf{k}$ as
 
-\begin{equation} \label{eq_lindh_wf}
-  \psi_\mathbf{k} ~~=~~ | \mathbf{k}_0 \rangle ~+~ \sum_\mathbf{k}' \frac{\langle \mathbf{k}' e\phi | \mathbf{k}_0 \rangle}{\varepsilon_{\mathbf{k}_0} - \varepsilon_{\mathbf{k}'}}
+As mentioned above, assuming the term $e\phi$ as petubation, we can express the electron wavevector $\psi_\mathbf{k}$ as 
+
+\begin{equation} \label{eq:lindh_wf}
+  \psi_\mathbf{k} ~~=~~ | \mathbf{k}_0 \rangle ~+~ \sum_\mathbf{k}' \frac{\langle \mathbf{k}' | e\phi | \mathbf{k}_0 \rangle}{\varepsilon_{\mathbf{k}_0} - \varepsilon_{\mathbf{k}'}}
 \end{equation}
 
 
-Plugging now our ansatz for $\psi$ into \refEq{eq_lindh_charge} leads to
+To plug our ansatz for $\psi_\mathbf{k}$ into \refEq{eq:lindh_charge} we evaluate first
 
-%\begin{equation}
-%  
-%\end{equation}
+\begin{align} \label{eq:lindh_wf_squared}
+  | \psi_\mathbf{k} |^2 ~~& =~~ \left( |\mathbf{k}_0 \rangle ~+~ \sum_{\mathbf{k}'}\ ...\ |\mathbf{k}' \rangle \right) \left( \langle \mathbf{k}_0 | ~+~ \sum_{\mathbf{k}'}\ ...\ \langle \mathbf{k}' | \right) \nonumber \\
+  ~~& =~~ \langle \mathbf{k}_0 | \mathbf{k}_0 \rangle ~+~ 
+  \underbrace{\sum_{\mathbf{k}'}\ ...\ \langle \mathbf{k}_0 | \mathbf{k}' \rangle}_{A} ~+~ 
+  \underbrace{\sum_{\mathbf{k}'}\ ...\ \langle \mathbf{k}_0 | \mathbf{k}' \rangle}_{B} ~+~ \OO(2)
+\end{align}
+
+
+Using this equation we can write the charge density \refEq{eq:lindh_charge} in the following way
+
+\begin{equation}
+  \rho^\text{Ind}(\mathbf{r}) ~~=~~ -e \sum_{\mathbf{k}} f_\mathbf{k} (A+B)
+\end{equation}
+
+
+Simplifying this equation is easier in Fourier space
+
+\begin{equation}
+  \rho^\text{Ind}(\mathbf{q}) ~~=~~ \int \rho^\text{Ind}(\mathbf{r})\ e^{i\mathbf{q} \mathbf{r}} d^3\mathbf{r} 
+  ~~=~~ -e \int d^3\mathbf{r}\ \sum_\mathbf{k} f_\mathbf{k}\ (A+B) \cdot e^{i\mathbf{q} \mathbf{r}}
+\end{equation}
+
+Calculating the Fourier transform for the two variables $A$ and $B$ works similar. We set $\mathbf{k}' = \mathbf{k} + \mathbf{q}$. This gives
+
+\begin{align}
+  -e \int d^3\vc{r}\ \sum_\vc{k} f_\vc{k}\ A \cdot e^{i\vc{q}\vc{r}} 
+  ~~& =~~ -e \int d^3 \vc{r} \sum_{\vc{k}'} \sum_\vc{k} f_\vc{k}
+  \frac{\overbrace{\langle \vc{k}-\vc{q}| e\phi(\vc{r})|\vc{k}\rangle}^{\text{FT of } \phi(\vc{r})}}{\varepsilon_\vc{k} ~-~ \varepsilon_{\vc{k}-\vc{q}}} \nonumber \\
+  ~~& =~~ -e^2 \sum_{\vc{k}'} \sum_\vc{k} \frac{f_\vc{k}\ \phi(\vc{q})}{\varepsilon_\vc{k} - \varepsilon_{\vc{k}+\vc{q}}}
+\end{align}
+
+
+The same goes for the variable $B$
+
+\begin{equation}
+  -e \int d^3\vc{r}\ \sum_{\vc{k}'} f_\vc{k}\ B \cdot e^{i\vc{q}\vc{r}} 
+  ~~=~~ -e^2 \sum_{\vc{k}'} \sum_\vc{k} \frac{f_{\vc{k}'+\vc{q}}\ \phi(\vc{q})}{\varepsilon_{\vc{k}'+\vc{q}} - \varepsilon_{\vc{k}'}}
+\end{equation}
 
 
 
+With these expressions for $A$ and $B$ and the definition of the electric susceptibility $\chi(\vc{q})$ (\refEq{eq:screen_suscept} we can write
+
+\begin{equation}
+  \chi(\vc{q}) ~~\propto~~ \int \frac{d^2 \vc{k}}{(2\pi)^n}\ \frac{f_\vc{k} - f_{\vc{k}+\vc{q}}}{\varepsilon-\vc{k} - \varepsilon_{\vc{k}+\vc{q}}}
+  ~~~~~~~~\text{with the dimensionality}~ n \in \{1,2,3\} 
+\end{equation}
+
+
+By knowing the band structure one can now calculate $\chi{\vc{q})}$. In this way one is able to experminentaly measure the screening potential.
+
+
+
+\textcolor{red}{picture lindhard susceptibility for different dimensions}
 
 %Considering the analogy between $(\phi^\text{Ext}, \phi^\text{Total})$ and the macroscopic quantities $(\mathbf{D}, \mathbf{E})$ we can write a similar equation as it is known for $\mathbf{D}$ and $\mathbf{E}$.
 
