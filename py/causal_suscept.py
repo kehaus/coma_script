@@ -10,6 +10,7 @@ a Ferromagnet
 
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy.interpolate import interp1d
 
 
 
@@ -62,21 +63,35 @@ font_dict_txt = {
 }
 
 
+
+#==============================================================================
+# mathematical functions
+#==============================================================================
+
+x = np.arange(-0.4, 1-0, 0.1)
+y = np.concatenate((np.array([0, 0, 0, 0, 0,]), 
+                    [0.1, 0.3, 0.2, -0.1, 0.1, 0.6, 0.7, 0.8, 0.6]))
+
+f = interp1d(x, y, kind='cubic')
+
+X = np.linspace(0, x.max(), 101)
+Y = f(X)
 #==============================================================================
 # plot function
 #==============================================================================
-x = np.linspace(-2,2, 1001)
-
 fig1 = plt.figure(1); fig1.clf()
 ax1 = fig1.add_subplot(111)
 
-ax1.plot(x, np.polyval([0.2,0,0,0,0],x), **line_style1)
-ax1.plot(x, np.polyval([1,0,0],x), **line_style_red)
-ax1.plot(x, np.polyval([0.4,0,-0.7,0,0],x), **line_style_blue)
+
+
+#ax1.plot(x, np.polyval([0.2,0,0,0,0],x), **line_style1)
+#ax1.plot(x, np.polyval([1,0,0],x), **line_style_red)
+ax1.plot(X, Y, **line_style_blue)
+ax1.plot([x.min(), 0], [0, 0], **line_style_blue)
 #ax1.plot(x, np.polyval([0.8, -1.0], x), **line_style_blue)
 #ax1.plot(x, np.polyval([0.8, 0], x), **line_style_red)
-ax1.set_xlim([-1.6,1.6])
-ax1.set_ylim([-0.35,1.0])
+ax1.set_xlim([-0.4,1.0])
+ax1.set_ylim([-0.3,1.0])
 
 # changes axes to arrow head
 fig1, ax1 = put_arrowhead_axes(fig1, ax1)
@@ -89,23 +104,23 @@ ax1.patch.set_alpha(0)
 
 
 # axis label
-xlabel = ax1.annotate('m', (0.90, 0.25), xycoords='figure fraction',
+xlabel = ax1.annotate('t', (1.00, -0.1), xycoords='data',
                       **font_dict_label)
-ylabel = ax1.annotate('F', (0.46, 0.88), xycoords='figure fraction',
+ylabel = ax1.annotate(r'$ \tilde{\chi}(t)$', (-0.2, 0.95), xycoords='data',
                       **font_dict_label)
 
 # textboxes
-txt1 = ax1.annotate(r'$ T > T_C $', (0.62, 0.77), xycoords='figure fraction', color=khRed,
-                    **font_dict_txt)
-txt2 = ax1.annotate(r'$ T = T_C $', (0.72, 0.64), xycoords='figure fraction', color='k',
-                    **font_dict_txt)
-txt3 = ax1.annotate(r'$ T < T_C $', (0.87, 0.47), xycoords='figure fraction', color=khBlue,
-                    **font_dict_txt)
+txt1 = ax1.annotate(r'$ t_0 $', (-0.1, -0.1), xycoords='data', color='k',
+                    **font_dict_label)
+#txt2 = ax1.annotate(r'$ T = T_C $', (0.72, 0.64), xycoords='figure fraction', color='k',
+#                    **font_dict_txt)
+#txt3 = ax1.annotate(r'$ T < T_C $', (0.87, 0.47), xycoords='figure fraction', color=khBlue,
+#                    **font_dict_txt)
 
 
 
-
-fig1.savefig('../img/ferromag_landau.pdf', transparent=True)
+fig1.tight_layout()
+fig1.savefig('../img/causal_suscept.pdf', transparent=True)
 
 #==============================================================================
 # Main function

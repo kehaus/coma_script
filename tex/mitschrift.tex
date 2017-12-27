@@ -108,6 +108,7 @@
 %\usepackage[german]{cleveref}
 \usepackage[english, capitalise]{cleveref}
 
+%\usepackage{natbib}
 
 %================  for subfigure
 
@@ -260,17 +261,17 @@
 %=======================================================================
 
 
-\begin{abstract}
+%\begin{abstract}
+%
+%
+%
+%\setcounter{page}{3}
+%\end{abstract}
 
-
-
-\setcounter{page}{3}
-\end{abstract}
+%\setcounter{page}{4}
+\NewPage
 
 \setcounter{page}{4}
-\NewPage
-\setcounter{page}{5}
-
 \tableofcontents
 \thispagestyle{empty} % don't show (roman) page number on titlepage
 
@@ -299,10 +300,10 @@
 \section{From Causality to Kramer-Kronig relation}
 
 
-Looking at a causal function $\tilde{\chi}(t)$, we can split it, like every analytical function, in an even $\chi_\text{even}(t)$ and an odd $\chi_\text{odd}(t)$ part.
+\begin{minipage}{0.40\textwidth}
 
+  Looking at a causal function $\tilde{\chi}(t)$, we can split it, like every analytical function, in an even $\chi_\text{even}(t)$ and an odd $\chi_\text{odd}(t)$ part.
 
-\begin{minipage}{0.45\textwidth}
   \begin{equation*}
     \tilde{\chi}(t) ~~ = ~~ \left\{ \begin{array}{lc} 
       0        &  t < t_0 \\
@@ -311,10 +312,10 @@ Looking at a causal function $\tilde{\chi}(t)$, we can split it, like every anal
   \end{equation*}
 %   \includegraphics[width=0.8\textwidth]{img/uzh_logo}
 \end{minipage}
-\begin{minipage}{0.1\textwidth}
+\begin{minipage}{0.05\textwidth}
 \end{minipage}
-\begin{minipage}{0.45\textwidth}
-   \includegraphics[width=0.8\textwidth]{../img/uzh_logo}
+\begin{minipage}{0.55\textwidth}
+   \includegraphics[width=1.0\textwidth]{../img/causal_suscept.pdf}
 \end{minipage}
 
 %Every function $\tilde{\chi}(t)$ can be divided in an even $\chi_{even}(t)$ and an odd $\chi_{odd}(t)$ part.
@@ -355,7 +356,7 @@ The differential equation of a driven damped harmonic oscillation is given as
   \Ddot{x}(t) ~+~ \gamma \dot{x}(t) ~+~ \omega_0^2 x(t) ~~=~~ f(t)
 \end{equation}
 
-where $\gamma$ is the damping coefficient and $\omega_0$ is the resonsance frequency.
+where $\gamma$ is the damping coefficient and $\omega_0$ is the resonance frequency.
 The solution to this differential equation can be found rather easy by transforming it to the Fourier space.
 %Transforming this equatin to Fourier space the solution function can be found rather easy
 
@@ -374,14 +375,14 @@ We define the systems response function in Fourier space as
 
 The benefit of doing so lays in the fact, that $\chi(\omega)$ depends solely on the system specific 	quantities like the resonance frequency $\omega_0$ and the damping coefficient $\gamma$.
 
-In that sense the response function is characteristic to your system and doesn't depend on the applied driving force $f(\omega)$. This is handy because as soon as we have determined $\chi(\omega)$ for a given system, we can find the Fourier transform of the solution to \refEq{eq:damped_osc_DE} for various driving forces by just multipling the fourier transforms of the repsonse function and the driving force 
+In that sense the response function is characteristic to your system and doesn't depend on the applied driving force $f(\omega)$. This is handy because as soon as we have determined $\chi(\omega)$ for a given system, we can find the Fourier transform of the solution to \refEq{eq:damped_osc_DE} for various driving forces by just multiplying the Fourier transforms of the response function and the driving force 
 
 \begin{equation}
   x(\omega) ~~=~~ \chi(\omega) \cdot f(\omega) 
   ~~=~~ f(\omega) |\chi(\omega)| \{\cos(\phi(\omega)) +i \sin(\phi(\omega))\}
 \end{equation}
 
-on the left side we described the repsonse function in terms of its magnitude $|\chi(\omega)|$ and its frequency dependent phase $\phi(\omega)$.
+on the left side we described the response function in terms of its magnitude $|\chi(\omega)|$ and its frequency dependent phase $\phi(\omega)$.
 
 
 %Because $\chi(\omega)$ is independent of the applied driving force $f(\omega)$, we have to calculate it only once for a given system. We are then able to determine the solution to \refEq{eg:damped_osc_DE} for different driving forces by just multiplying the Fourier transforms of the repsonse function and the driving force
@@ -423,6 +424,15 @@ We check if this ansatz is correct by calculating its Fourier transform
 \textcolor{red}{equation not complete}
 
 
+\begin{align}
+  \int \cos(\omega_0 t)\ e^{i\omega t}\ dt 
+  ~~& =~~ \int \frac{e^{i\omega_0 t} + e^{-i\omega_0 t)}}{2}\ e^{i\omega t}\ dt
+  ~~=~~ \frac{1}{2} \int e^{i(\omega + \omega_0)t} + e^{i(\omega - \omega_0)t}\ dt\nonumber \\
+  ~~& =~~ \frac{1}{2} \delta(\omega + \omega_0) ~+~ \omega(\omega - \omega_0)
+\end{align}
+
+
+
 %=======================================================================
 % Quantum Oscillations & ARPES - Techniques to measure Fermi surface
 %=======================================================================
@@ -440,24 +450,140 @@ We check if this ansatz is correct by calculating its Fourier transform
 % 3.10.2017
 \section{Quantum Oscillations}
 
+\subsection{Landau Cylinder}
+
+Charged particles exposed to a magnetic field $B$ are forced to move on closed circles on which they have a quantized energy. For free electrons in a magnetic field along the $z$-axis this energy can be written as
+
+\begin{equation}
+  E ~~=~~ \left( n ~+~ \frac{1}{2} \right) \hbar \omega_c ~+~ \frac{\hbar^2}{2m} k_z^2
+\end{equation}
+
+
+This quantization of accessible states in reciprocal space is illustrated in \myRef{fig:QO_landau_level}. 
+The electrons are free to move along the corresponding axes in reciprocal space along which the magnetic field is applied. In the plane (in $\vc{k}$-space) perpendicular to the magnetic field, the energy states lie on circles (\myRef{fig:QO_landau_level} right, bottom). This restriction lead to the characteristic picture of the nested cylinders (left image in \myRef{fig:QO_landau_level}). These cylinders are called \textbf{Landau cylinders} and the energy scale of quantization of the radius of these cylinders is given by the \textbf{cyclotron frequency} $\omega_c = eB/mc$.
+
+
+
+\begin{figure}[t]
+  \begin{minipage}[c][8.00cm]{.60\textwidth}
+%    \vspace*{\fill}
+    \centering
+    \includegraphics[width=0.90\linewidth]{../img/QO_landau_zylinder.png}
+%   \captionsetup{width=6.9cm}
+    \captionsetup{width=.85\linewidth}
+  \end{minipage}%
+  \begin{minipage}[c][8.00cm]{.40\textwidth}
+%    \vspace*{\fill}
+    \centering
+    \includegraphics[width=0.75\linewidth]{../img/QO_landau_zylinder_2D_.png}
+    \captionsetup{width=.95\linewidth}
+  \end{minipage}
+  \captionof{figure}{\textbf{left}: Occupied states in reciprocal space of a free electron gas in a magnetic field. The accessible energy states are inside the sphere bound to lay on cylinders with radius $\vc{k}_\perp = \sqrt{(n+1/2)2m \omega_c/\hbar}$. \textbf{right}: top sketch shows accessible states of electrons in a plane in reciprocal space for $B=0$. Bottom picture shows accessible states now arranged in circles due to $B \neq 0$.}
+  \label{fig:QO_landau_level}
+\end{figure}
+
+\newpage
 \subsection{Onsager Relation}
 
-\begin{equation}
-  S \cdot \left( \frac{1}{B_{n+1}} ~-~ \frac{1}{B_n} \right) ~~=~~ \frac{2 \pi e}{\hbar}
-\end{equation}
-
-$S$ is the Fermi surface ($S=\pi k_F^2$.
+Starting from the Landau quantization condition, it can be shown that the surface in reciprocal space $s_n$ enclosed by the $n$-th cylinder can be linked to the magnetic field $B$ 
 
 \begin{equation}
-  F ~~\equiv~~ \left( \frac{1}{B_{n+1}} ~-~ \frac{1}{B_n} \right)^{-1}
+  S_n   ~~=~~ (n + \gamma) \frac{2\pi e}{\hbar} B
 \end{equation}
+
+
+here $\gamma$ is a correction term which would become important by a more detailed analysis. Since this term cancels out later we don't elaborate it further.
+
+Experimentally accessible for us are the $B$-field dependent oscillations of macroscopic quantities like resistivity and magnetization.
+These oscillations are caused by the variation of the number of electrons right at the Fermi surface due to the fact, that with increasing magnetic field the landau cylinders are pushed across the Fermi surface.
+Looking at the situation were the surface of the $n+1$-th Landau cylinder is equal to the Fermi surface $S_F$, we have a maximal electron concentration. 
+We refer to the applied field in this condition as $B_{n+1}$. 
+Increasing the magnetic field will reduce the electron concentration again until the electrons distributed over the $n$-th landau cylinder coming in proximity of the Fermi surface and start to populate it. 
+The electron concentration becomes then  maximal again, at the magnetic field $B_n$, when the surface of the $n$-th Landau cylinder matches the Fermi surface $(S_n = S_F)$.
+We can express these conditions in the following equations
 
 \begin{equation}
-  F ~~=~~ \frac{\Phi_0}{2 \pi^2} \cdot S
+  S_{n+1} ~~=~~ (n+1+\gamma) \frac{2\pi e}{\hbar} B_{n+1}, ~~~~~~~~~
+  S_n ~~=~~ (n+\gamma) \frac{2\pi e}{\hbar} B_n
 \end{equation}
 
-where $\Phi_0 = \frac{h}{2e} = \text{Flux Quantum}$
+Since we assume that $S_{n+1} = S_n = S_F$, we can relate the Fermi surface to the change in magnetic field
 
+\begin{equation} \label{eq:QO_measurement_period}
+  \left( \frac{1}{B_{n+1}} - \frac{1}{B_n} \right) ~~=~~ \Delta \left( \frac{1}{B} \right) 
+  ~~=~~ \frac{2\pi e}{\hbar S_F}
+\end{equation}
+
+$\Delta (1/B)$ can be understood as the period of the oscillation when plotting the measured quantity over $1/B$. In practice it is more convenient to define the frequency $F$ with which the inverse magnetic field oscillates $F=(\Delta (1/B))^{-1}$ which has the units of Tesla. Expressing \refEq{eq:QO_measurement_period} in terms of the frequency we get the \textbf{Onsager Relation}
+
+\begin{equation} \label{eq:onsager_relation}
+  F ~~=~~ \frac{\hbar}{2\pi e} S_F
+\end{equation} 
+
+
+Typical measurement data are shown in \myRef{fig:QO_measurement}. Once the oscillatory component of the raw measurement data is extracted one can perform a Fourier transformation to determine the frequency $F$ from which then the Fermi surface can be calculated (\myRef{fig:QO_measurement_FFT}).
+
+
+
+
+\begin{figure}[t]
+  \begin{minipage}[c][6.00cm]{.40\textwidth}
+    \vspace*{\fill}
+    \centering
+    \includegraphics[width=1.0\linewidth]{../img/QO_measurement_ab.png}
+%   \captionsetup{width=6.9cm}
+    \captionsetup{width=.95\linewidth}
+  \end{minipage}%
+  \begin{minipage}[c][6.00cm]{.60\textwidth}
+%    \vspace*{\fill}
+    \centering
+    \includegraphics[width=1.0\linewidth]{../img/QO_measurement_c.png}
+    \captionsetup{width=.95\linewidth}
+  \end{minipage}
+    \captionof{figure}{\textbf{a.} and \textbf{b.} show quantum oscillation measurements data on resistivity and magnetic torque. Oscillations of the measured quantities are clearly visible in the graphs inset. \textbf{c.} Oscillatory component of the data from \text{b} plotted over $1/B$. Figures are adapted from \cite{Vignolle2008}.}
+  \label{fig:QO_measurement}
+\end{figure}
+
+\vspace{6.0cm}
+\begin{figure}
+  \centering
+  \includegraphics[width=1.0\textwidth]{../img/QO_measurement_FFT.png}
+  \caption{\textbf{a.} Fourier transformation of the measurement data displayed in \myRef{fig:QO_measurement}. The oscillation frequency can easily deduced from here to be around \SI[mode=text]{18}{kT}. \textbf{b.} shows the temperature dependence of the oscillation amplitude. From this the effective electron mass $m^*$ can be calculated, using the Lifshitz-Kosevich formula. \textbf{c.} displays the decay of the oscillation amplitude in respect to the inverse magnetic field. This is also visible in subplot c. in \myRef{fig:QO_measurement}. From this the electron mean free path can be calculated. From \cite{Vignolle2008}.}
+  \label{fig:QO_measurement_FFT}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\textwidth]{../img/QO_measurement_temp.png}
+  \caption{Oscillatory part of the Hall resistivity at different temperature. The oscillation amplitude reduces with increasing temperature whereas the frequency stays constant. From \cite{Doiron-Leyraud2007}.}
+  \label{fig:QO_measurement_temp}
+\end{figure}
+
+
+\subsubsection{Effective mass and Mean Free Path}
+
+Using the Lifshitz-Kosevich Formula\footnote{Derivation can be found in chapter two of \textit{Magnetic oscillations in Metal} from D. Schoenberg \cite{Shoenberg1984}. More descriptive explanation can be found in the caption of figure 6. in \cite{Sebastian2015}.} further conclusion on the electrons effective mass $m^*$ and mean free path $\lambda_\text{mfp}$ can be drawn from the above measurement results. 
+By measuring the oscillations amplitudes temperature dependence one can calculate the electrons effective mass at the Fermi surface (\myRef{fig:QO_measurement}.b.). 
+
+Visible in \myRef{fig:QO_measurement}.c. we see a decay of the oscillation amplitude for going to lower magnetic fields. This can be described with the following formula
+
+\begin{equation}
+  \Delta \tau / B ~~\propto~~ e^{\left( -\frac{\pi \hbar k_F}{eB l} \right)}
+\end{equation}
+
+where $l$ is the mean free path of the electrons in the material. Estimating the maximal amplitudes and plot it in a semi log plot over $1/B$ allows then to estimate $l$ from the straight line slope. This is done in \myRef{fig:QO_measurement_FFT}.c.
+
+
+\subsubsection{De Haas-van Alphen effect and Shubnikov-de Hass effect}
+
+If we measure oscillations in the magnetization of a material we refer to it as the \textbf{de Haas-van Alphen effect}. Typical measurements are displayed in \myRef{fig:QO_measurement}.b where the magnetically induced torque $\tau$ on a sample is used to measure the samples magnetization. 
+The link between the variation of electron concentration at the Fermi surface and the oscillation of the magnetization can be exemplified in the following way: with changing electron concentration the inner energy also changes. 
+With the help of thermodynamics we can see, that a oscillation inner Energy $U$ should also lead to a oscillating magnetization.
+
+Observing oscillations in the electrical resistivity $\rho$ of a material is referred to as the \textbf{Shubnikov-de Hass effect} (\myRef{fig:QO_measurement}.a and \myRef{fig:QO_measurement_temp}). 
+Finding a explanation to link to the oscillation resistivity of varying electron concentration at the Fermi surface is more difficult since there is no thermodynamical relation between the inner energy and the resistivity. 
+On way of exemplifying this is that the scattering probability (and therefor the resistivity) is proportional to the density of states at the Fermi level. 
+A oscillation in the DOS leads therefore in an oscillating resistivity.
 
 
 
@@ -466,20 +592,20 @@ where $\Phi_0 = \frac{h}{2e} = \text{Flux Quantum}$
 %=======================================================================
 %
 % 3.10.2017
-\section{Angle Resolved Photoemission Spectroscopy}
+\section{Angle Resolved Photo Emission Spectroscopy}
 
 \subsection{Scattering Experiment}
 
 \textcolor{red}{sketch scattering experiment}
 
-\subsection{Fermis Golder Rule}
+\subsection{Fermi's Golder Rule}
 
 \begin{equation}
   W ~~\propto~~ | \langle \vc{k}_f | V(\vc{r}) | \vc{k}_i \rangle |^2
 \end{equation}
 
 
-\subsection{Angle Resolved Photoemission spectroscopy}
+\subsection{Angle Resolved Photo Emission spectroscopy}
 
 
 \textcolor{red}{adapt ARPES section from BA}
@@ -502,12 +628,12 @@ where $\Phi_0 = \frac{h}{2e} = \text{Flux Quantum}$
 
 \section{1D-Chain}
 
-To have a fitst insight into second quantization, we look at a phonons emerging in a one dimensional chain of atoms
+To have a first insight into second quantization, we look at a phonons emerging in a one dimensional chain of atoms
 
-\textcolor{red}{skecht 1D lattice chain}
+\textcolor{red}{skech 1D lattice chain}
 
 
-In the sketch above $u_i$ referes to the distance from equilibrium of the $i$-th atom, $p_i$ stands for the momentum of the $i$-th atom, $K$ is the spring constant and the lattice constant $a$.
+In the sketch above $u_i$ refers to the distance from equilibrium of the $i$-th atom, $p_i$ stands for the momentum of the $i$-th atom, $K$ is the spring constant and the lattice constant $a$.
 The Hamiltonian of this system is given as
 
 \begin{equation} \label{eq:ham_phonon_chain}
@@ -525,7 +651,7 @@ Since our problem has one dimension in real space it has also one dimension in t
 \textcolor{red}{sketch 1D k-space}
 
 
-We now want to rewritte the Hamiltonian \refEq{eq:ham_phonon_chain} by replacing the distance from equilibrium and the momentum of the atoms by its fourer transformations
+We now want to rewrite the Hamiltonian \refEq{eq:ham_phonon_chain} by replacing the distance from equilibrium and the momentum of the atoms by its Fourier transformations
 
 \begin{align}
   p_j ~=~ \frac{1}{\sqrt{N}} \sum_{k \in \text{BZ}} P_k e^{ikR^0_j} 
@@ -537,7 +663,7 @@ We now want to rewritte the Hamiltonian \refEq{eq:ham_phonon_chain} by replacing
 \end{align}
 
 
-Since it is a cumbersome procedure we look at the calculate the different terms from \refEq{eq:ham_phonon_chain} seperatly.
+Since it is a cumbersome procedure we look at the calculate the different terms from \refEq{eq:ham_phonon_chain} separately.
 We start with $\sum_i p_j^2$:
 
 \begin{equation}\label{eq:phonon_momentum}
@@ -547,7 +673,7 @@ We start with $\sum_i p_j^2$:
   \underbrace{\sum_{-k} P_{-k} e^{-ikR^0_j}}_\text{B} \bigg\}
 \end{equation}
 
-The second equality sign holds because summing two times and sum and dividing by two gives the same result. Additionaly in the second sum we replaced $k \rightarrow -k$. No we can write
+The second equality sign holds because summing two times and sum and dividing by two gives the same result. Additionally in the second sum we replaced $k \rightarrow -k$. No we can write
 
 \begin{align}\label{eq:p_squared}
   p_j^2 ~~& =~~~\frac{1}{4N} \left( A^2 ~+~ B^2 ~+~ 2AB \right)
@@ -579,20 +705,20 @@ To get the final expression for $u_{j-1}$ we used $R_{j-1}^0=r_j^0-a$.
   ~~& =~~ \sum_k 2 u_k u_{-k} \sin^2(ka/2)
 \end{align}
 
-In the step were the summing over $j$ changed to a summing over $k$ the same arguments as for \refEq{eq:p_squared} were used. As we already know from the \textit{introduction to solid state phyiscs} class, we can assign the argument of the sum in the final expression as the square of the phonon dispersion relation $\omega(k)$
+In the step were the summing over $j$ changed to a summing over $k$ the same arguments as for \refEq{eq:p_squared} were used. As we already know from the \textit{introduction to solid state physics} class, we can assign the argument of the sum in the final expression as the square of the phonon dispersion relation $\omega(k)$
 
 \begin{equation}\label{eq:dispersion_relation}
   \omega(k) ~~=~~ \omega_k ~~=~~  \sqrt{\frac{2K}{M}(1-\cos(ka)} ~~=~~ 
   \sqrt{\frac{4K}{M}} |\sin(ka/2)|
 \end{equation}
 
-Pluggin our solutions for $\sum_j p_j^2$ and $\sum_j (u_j-u_{j-1})^2$ into \refEq{eq:ham_phonon_chain} yields
+Plugging our solutions for $\sum_j p_j^2$ and $\sum_j (u_j-u_{j-1})^2$ into \refEq{eq:ham_phonon_chain} yields
 
 \begin{equation}\label{eq:ham_phonon_chain2}
   H_\text{ph} ~~=~~ \sum_{j=1}^N \left\{ \frac{1}{2M} P_k P_{-k} ~+~ \frac{M \omega_k^2}{2} u_k u_{-k} \right\} 
 \end{equation}
 
-This expression similar to the Hamilatonian from the harmonic oscillator. We therefore define the latter operators $b_k$ and $b_k^\dag$
+This expression similar to the Hamiltonian from the harmonic oscillator. We therefore define the latter operators $b_k$ and $b_k^\dag$
 
 \begin{align}
   b_k ~~& =~~ \frac{1}{\sqrt{2}} \left( \frac{u_k}{l_k} ~+~ i \frac{p_k}{\hbar/l_k} \right)\\
@@ -605,18 +731,19 @@ and rewrite $H_\text{ph}$ as
   H_\text{ph} ~~=~~ \sum_k \hbar \omega_k (b^\dag_k b_k ~+~ 1)
 \end{equation}
 
-This analogy between the Hamiltonian from the harmonic oscillations and \refEq{eq:ham_phonon_chain2} emphasises that we can describe the state if excited phonons in a solid as a combination of different modes similar to the different modes of oscillations of an excited harmonic oscillator. Further we can use the latter operators applied to the vacuum state to describe the excited states mathematically.
+This analogy between the Hamiltonian from the harmonic oscillations and \refEq{eq:ham_phonon_chain2} emphasis that we can describe the state if excited phonons in a solid as a combination of different modes similar to the different modes of oscillations of an excited harmonic oscillator. Further we can use the latter operators applied to the vacuum state to describe the excited states mathematically.
 
 \textcolor{red}{picture single atom phonon dispersion relation}
 \textcolor{red}{picture two atom basis phonon dispersion relation}
-\textcolor{red}{...if going down in temperature peierl transition occurs -> kohn anomaly}
+\textcolor{red}{...if going down in temperature Peierls transition occurs -> Kohn anomaly}
 
-\textcolor{red}{why is neutron scattering good for probing accustic bands? - check lecture notes for explanation}
+\textcolor{red}{why is neutron scattering good for probing acoustic bands? - check lecture notes for explanation}
 
 \textcolor{red}{...neutrons only probe lattice and neglect electronic structure}
 
 
-This way of decribing the physical processes in terms of latter operators can be extended much more. It turns out that it is a very convenient way of describing physical problems and is used broadly in all fields in condensed matter physics. We refere to this notation as \textbf{Second quantization}. In the next sections we will learn how to apply this formalism more generally. 
+This way of describing the physical processes in terms of latter operators can be extended much more. 
+It turns out that it is a very convenient way of describing physical problems and is used broadly in various fields in condensed matter physics. In the next sections we will learn how to apply this formalism more generally. 
 
 
 
@@ -632,17 +759,17 @@ This way of decribing the physical processes in terms of latter operators can be
 Hamiltonian of a free electron gas can be written as. 
 
 \begin{equation}
-  H ~~=~~ \sum_{k \sigma} \frac{(\hbar \hat{k})^2}{2m} c_{k \sigma}^\dag c_{k \sigma}
+  H ~~=~~ \sum_{k \sigma} \frac{(\hbar \vc{k})^2}{2m} c_{k \sigma}^\dag c_{k \sigma}
 \end{equation}
 
 
-The ground state at $T=0K$ is create by applying the electron-creation operators $c_{k_i \uparrow}$ of the $i-\text{th}$ electron $e_{i \uparrow}$ to the vacuum state $|0\rangle$ for every electron that is present in the electron gas. 
+The ground state at $T=0K$ is created by applying the electron-creation operators $c_{k_i \uparrow}$ of the $i-\text{th}$ electron to the vacuum state $|0\rangle$ for every electron that is present in the electron gas. 
 
 \begin{equation}
-  | \text{FS} \rangle ~~=~~ c_{k_{N/2} \uparrow} c_{k_{N/2} \downarrow} ... c_{k_1 \uparrow} c_{k_1 \downarrow} | 0 \rangle ~~=~~   
+  | \text{FS} \rangle ~~=~~ c_{k_{N/2} \uparrow} c_{k_{N/2} \downarrow} ... c_{k_1 \uparrow} c_{k_1 \downarrow} | 0 \rangle 
 \end{equation}
 
-To get the total number of electrons $N$ the number operator $\hat{N} = \sum_{k \sigma} c_{k\sigma}^\dag c_{k\sigma}$ can be applied on the ground state to the ground state $| \text{FS} \rangle$
+To get the total number of electrons $N$ the number operator $\hat{N} = \sum_{k \sigma} c_{k\sigma}^\dag c_{k\sigma}$ can be applied on the ground state $| \text{FS} \rangle$
 
 \begin{equation}\label{eq:number_operator}
   N ~~=~~ \langle \text{FS} | \hat{N} | \text{FS} \rangle 
@@ -650,9 +777,9 @@ To get the total number of electrons $N$ the number operator $\hat{N} = \sum_{k 
 \end{equation} 
 
 
-For the ground state at $T=0$ the 
+%For the ground state at $T=0$ the 
 
-Since we consider a free electron gas in its ground state at $T=0K$ the momentum values $k$ are limited to lay inside a sphere with radius $k_F$. Furthermore we have to take into account that in the system under consideration the orientation  of the spin $\sigma$ doesn't matter. Therefore we can replace the sum $\sum_\sigma$ by a factor two. 
+Since we consider a free electron gas in its ground state at $T=0K$ the momentum values $\vc{k}$ are limited to lay inside a sphere with radius $k_F$. Furthermore we have to take into account that in the system under consideration the orientation  of the spin $\sigma$ doesn't matter. Therefore we can replace the sum $\sum_\sigma$ by a factor two. 
 
 
 \begin{align}
@@ -716,7 +843,7 @@ The interaction is due to the coulomb repulsion, therefore we can write the inte
   ~~=~~ \frac{4\pi e^2}{q^2}
 \end{equation}
 
-Calculating the change in energy resultng from the coulomb interaction between the electrons gives
+Calculating the change in energy resulting from the coulomb interaction between the electrons gives
 
 \begin{equation}
   \frac{E_1}{N} ~~=~~ \frac{\langle \text{FS} | V_\text{el-el} | \text{FS} \rangle}{N} 
@@ -738,7 +865,7 @@ Calculating the change in energy resultng from the coulomb interaction between t
 
 The two delta functions impose the fact that the spin does not change during the interaction and that the momentum is conserved in the process. Furthermore since we can relate $\mathbf{k}_1$ and $\mathbf{k}_2$ we replaced the latter one in the latter operator index.
 
-Here we see the benefit which comes along with this notation. By only using commuation relation for fermion-latter operators we were able to change the rathre complicated expression to one that can easily be integrated.
+Here we see the benefit which comes along with this notation. By only using commutation relations for fermion-latter operators we were able to change the rather complicated expression to one that can easily be integrated.
 
 
 \begin{figure}
@@ -750,7 +877,7 @@ Here we see the benefit which comes along with this notation. By only using comm
 
 The way to perform this integration can be illustrated graphically \myRef{fig:sq_graph_integration}. 
 
-How to choose the boundaries of integration can be illustrated. 
+\textcolor{red}{How to choose the boundaries of integration can be illustrated. ...}
 
 
 
@@ -806,13 +933,13 @@ Bohr Radius: $a_0 = \frac{\hbar}{m e^2}$
 %An approximation for an electron wavefunction over the whole crystal can be given as a linear combination of atomic orbitals $\varphi(\mathbf{r})$ of an isolated atom.
 
 
-An approximation for an electron wavefunction over the whole crystal can be given as
+An approximation for an electron wave function over the whole crystal can be given as
 
 \begin{equation}
   \Psi_k ~~=~~ \sum_j c_{kj} \varphi(\mathbf{r}-\mathbf{r}_j)
 \end{equation}
 
-Where $\varphi(\mathbf{r})$ is the ground state wavefunction (atomic orbital) of an electron in the potential $V(\mathbf{r})$ of an isolated atom. This approximation is only valid if the interaction between neighborign atoms is small. The sum goes over all lattice points.
+Where $\varphi(\mathbf{r})$ is the ground state wave function (atomic orbital) of an electron in the potential $V(\mathbf{r})$ of an isolated atom. This approximation is only valid if the interaction between neighboring atoms is small. The sum goes over all lattice points.
 
 
 Using
@@ -821,8 +948,8 @@ Using
   c_{kj} ~~=~~ N^{-1/2} e^{i \mathbf{k} \mathbf{r}_j}
 \end{equation}
 
-The factor $N^{-1/2}$ ensures the wavefunction to meet the normalization criterion
-We can express the over all wavefunction of an electron in the crystal
+The factor $N^{-1/2}$ ensures the wave function to meet the normalization criterion
+We can express the over all wave function of an electron in the crystal
 
 \begin{equation} \label{eq:el_wf}
   \Psi_k(\mathbf{r}) 
@@ -830,17 +957,17 @@ We can express the over all wavefunction of an electron in the crystal
 \end{equation}
 
 
-Recalling the \textbf{Bloch Theorem} which states, that the wavefunction of an electron in a periodic potential ($V(\mathbf{r}) = V(\mathbf{r} + \mathbf{a})$) with the periodicity $a$ is given by
+Recalling the \textbf{Bloch Theorem} which states, that the wave function of an electron in a periodic potential ($V(\mathbf{r}) = V(\mathbf{r} + \mathbf{a})$) with the periodicity $a$ is given by
 
 \begin{equation} \label{eq:bloch_theorem}
   \phi_k(\mathbf{r}) ~~=~~ u_k(\mathbf{r}) \cdot e^{i\mathbf{k} \mathbf{r}}
 \end{equation}
 
-where $u_k(\mathbf{r})$ has the periodicity of the crystal ($u_k(\mathbf{r} + \mathbf{a}) = u_k(\mathbf{r})$). Since the tightbinding ansatz is meant to describe the electrons in a perodic potential, so it also have to be a bloch wave. 
+where $u_k(\mathbf{r})$ has the periodicity of the crystal ($u_k(\mathbf{r} + \mathbf{a}) = u_k(\mathbf{r})$). Since the tight binding ansatz is meant to describe the electrons in a periodic potential, so it also have to be a Bloch wave. 
 
 
 %Applying the Bloch Theorem to our electron wavefunction \refEq{eq:el_wf}, we get
-We can show, that our electron wavefunction \refEq{eq:el_wf} fulfills the Bloch criterion
+We can show, that our electron wave function \refEq{eq:el_wf} fulfills the Bloch criterion
 
 
 \begin{align}
@@ -853,7 +980,7 @@ We can show, that our electron wavefunction \refEq{eq:el_wf} fulfills the Bloch 
   ~~& =~~ e^{i\mathbf{k} \mathbf{a}} \Psi_k(\mathbf{r})
 \end{align}
 
-To get to this result we used the fact, that the summation goes over all lattice points and we therefore can replace the dummy variables $j$ with $n$ by writting $\mathbf{r}_j - \mathbf{a}$ as $\mathbf{r}_n$. This is allowed since $\mathbf{a}$ describes a lattice vector connecting two lattice points.
+To get to this result we used the fact, that the summation goes over all lattice points and we therefore can replace the dummy variables $j$ with $n$ by writing $\mathbf{r}_j - \mathbf{a}$ as $\mathbf{r}_n$. This is allowed since $\mathbf{a}$ describes a lattice vector connecting two lattice points.
 
 We can compute now for the energy levels of the tight-binding ansatz
 
@@ -863,7 +990,7 @@ We can compute now for the energy levels of the tight-binding ansatz
   \langle \varphi_m | H | \varphi_j \rangle 
 \end{align}
 
-The double sum can be understood in the following sense: to get the total energy, we have to sum over all the electrons ($\sum_j$), whereas every electron feels a contribution from the potential of every atom in the crystal ($\sum_m$). Since we assum, that the electrons on an atom site mainly feel interactions on the atom site itself and the nearest neightbors, we can neglect all terms with $j \neq m$ of the first sum. We also define $\mathbf{\rho}_m = \mathbf{r}_m - \mathbf{r}_j$
+The double sum can be understood in the following sense: to get the total energy, we have to sum over all the electrons ($\sum_j$), whereas every electron feels a contribution from the potential of every atom in the crystal ($\sum_m$). Since we assume, that the electrons on an atom site mainly feel interactions on the atom site itself and the nearest neighbors, we can neglect all terms with $j \neq m$ of the first sum. We also define $\mathbf{\rho}_m = \mathbf{r}_m - \mathbf{r}_j$
 
 \begin{align} \label{eq:tb_der}
   \epsilon_k ~~& =~~ \sum_m e^{-i\mathbf{k} \mathbf{\rho}_m} \langle \varphi(\mathbf{r}-\mathbf{\rho}_m) | H | \varphi(\mathbf{r}) \rangle \nonumber \\
@@ -886,7 +1013,7 @@ allows us to write \refEq{eq:tb_der} in the abbreviated way
   \epsilon_k ~~=~~ \epsilon_0 ~-~ t \sum_{\rho_m} e^{-i\mathbf{k} \mathbf{\rho}_m}
 \end{equation}
 
-where $\epsilon_0$, the energy level of the singel atom, defines the position of the energy band and $t$, defined through the overlap of neighboring atoms, defines the width of the energy band.
+where $\epsilon_0$, the energy level of the single atom, defines the position of the energy band and $t$, defined through the overlap of neighboring atoms, defines the width of the energy band.
 
 
 \subsubsection{Example: cubic lattice structure}
@@ -903,7 +1030,7 @@ This leads to the following expression for the energy bands
   \epsilon_k ~~=~~ E(\mathbf{k}) ~~=~~ \epsilon_0 ~+~ 2t \left[ \cos(k_xa) + \cos(k_ya) + \cos(k_za) \right]
 \end{equation}
 
-The position ($\epsilon_0$) and width $W=12t$ is determined by the particulare single atom orbital wavefunction.
+The position ($\epsilon_0$) and width $W=12t$ is determined by the particular single atom orbital wave function.
 
 
 %\begin{itemize}
@@ -927,7 +1054,7 @@ The position ($\epsilon_0$) and width $W=12t$ is determined by the particulare s
 \end{equation}
 
 
-With the poisson equation we can determine the electric potential $\phi$ produced by the charge density
+With the Poisson equation we can determine the electric potential $\phi$ produced by the charge density
 
 \begin{align}
   \nabla^2 \phi^\text{Ext} ~~& =~~ -\frac{1}{\epsilon_0} \rho^\text{Ext}(\mathbf{r}) \\
@@ -951,7 +1078,7 @@ Using the definitions for the dielectric function $\epsilon$ and the electric su
   \chi(\mathbf{q}) ~~=~~ \frac{\rho^\text{Ind}(\mathbf{q})}{\phi(\mathbf{q})}
 \end{align}
 
-We can relate the dielectric function and the susceptebility  by using the formulas for the electric potential from above
+We can relate the dielectric function and the susceptibility  by using the formulas for the electric potential from above
 
 \begin{equation}
   \epsilon(\mathbf{q}) ~~=~~ 1 ~-~ \frac{\chi(\mathbf{q})}{\epsilon_0 q^2}
@@ -970,7 +1097,7 @@ Charge density of an electron gas can be expressed in terms of the electron dens
   n(\mu) ~~=~~ \int \frac{d \mathbf{k}}{4\pi^3}\ f_k(\mu)
 \end{equation}
 
-The electron density itself is then given as the integral over the Fermi-Dirac distribution. We can write the Schrodinger Equation as 
+The electron density itself is then given as the integral over the Fermi-Dirac distribution. We can write the Schroedinger Equation as 
 
 \begin{equation} \label{eq:screen_hamiltonian}
   -\frac{\hbar^2}{2m} \nabla^2 \Psi_k ~-~ e\phi^\text{Total}\ \Psi_k ~~=~~ \varepsilon_k\ \Psi_k
@@ -992,14 +1119,14 @@ With this new expression for the electron energy $\varepsilon_k$ we are able to 
 \end{align}
 
 
-As we know from \refEq{eq:tot_charge_dens} the induced charge density is given as the difference between the total charge density $n(\mathbf{r}$ and the external charge density $n_0$. Therfore we can write
+As we know from \refEq{eq:tot_charge_dens} the induced charge density is given as the difference between the total charge density $n(\mathbf{r}$ and the external charge density $n_0$. Therefore we can write
 
 \begin{equation} \label{eq:thomas_fermi}
   \rho^\text{Ind}(\mathbf{r}) ~~=~~ -e \left[ n(\mu + \varepsilon') ~-~ n(\mu) \right] 
   ~~=~~ -e \cdot \varepsilon'\ \frac{dn}{d\mu}
 \end{equation}
 
-The difference of the two electron density was replaced by de derivative by using the defintion of derivaties $df/dx = (f(x+\Delta x) - f(x))/\Delta x$.
+The difference of the two electron density was replaced by the derivative by using the definition of derivatives $df/dx = (f(x+\Delta x) - f(x))/\Delta x$.
 \refEq{eq:thomas_fermi} is known as the basic equation of the Thomas-Fermi Theory. Replacing $\varepsilon'$ by the electric potential again and Fourier transforming \refEq{eq:thomas_fermi} gives
 
 \begin{equation}
@@ -1013,18 +1140,18 @@ Comparing this to \refEq{eq:screen_suscept} we found for the susceptibility and 
   \epsilon(\mathbf{q}) ~~=~~ 1 + \frac{e^2\ dn/d\mu}{\epsilon_0 q^2}
 \end{equation}
 
-It is important to note that the susceptibility does here not depend on the wavevector $\mathbf{q}$. This is a result of our approximation that $\phi(\mathbf{r})$ does not vary much over $\mathbf{r}$.
+It is important to note that the susceptibility does here not depend on the wave vector $\mathbf{q}$. This is a result of our approximation that $\phi(\mathbf{r})$ does not vary much over $\mathbf{r}$.
 
 
-\subsubsection{Thomas-Fermi Wavevector}
+\subsubsection{Thomas-Fermi Wave vector}
 
-Defining the Thomas-Fermi Wavevector $\mathbf{k}_0 ~~=~~ \frac{e^2 dn/d\mu}{\epsilon_0}$ allows us to write \refEq{eq:thomas_fermi_function} as 
+Defining the Thomas-Fermi wave vector $\mathbf{k}_0 ~~=~~ \frac{e^2 dn/d\mu}{\epsilon_0}$ allows us to write \refEq{eq:thomas_fermi_function} as 
 
 \begin{equation} \label{eq:screening_dielect_new}
   \epsilon(\mathbf{q}) ~~=~~ 1 ~+~ \frac{\mathbf{k}_0^2}{\mathbf{q}^2}
 \end{equation}
 
-From this expression it is visible that we can define a characteristic lengthscale of the electron screening. This lengthscale is given as $1/\mathbf{k}_0$ and we refer to it as \textbf{Thomas-Fermi Screening Length}. For copper we have a screening length of $1/\mathbf{k}_0 = \SI{0.55}{\AA}$.
+From this expression it is visible that we can define a characteristic length scale of the electron screening. This length scale is given as $1/\mathbf{k}_0$ and we refer to it as \textbf{Thomas-Fermi Screening Length}. For copper we have a screening length of $1/\mathbf{k}_0 = \SI{0.55}{\AA}$.
 
 
 \begin{figure}
@@ -1038,7 +1165,7 @@ From this expression it is visible that we can define a characteristic lengthsca
 
 \subsubsection{Example: Coulomb Potential}
 
-Looking at a point charge $Q$ placed in a sea of conduction eletrons, as illustrated in \myRef{fig:screening_charge_box}.b we can express the externel potential generated from the point charge as $\phi^\text{Ext}(\mathbf{r}) = Q/r$ with its Fouriere transform  $\phi^\text{Ext}(\mathbf{q}) = 4\pi\ Q/q^2$. Rearanging \refEq{eg:screnn_dielect} and replacing the dielectric function by \myRef{eq:screening_dielect_new}, we obtain
+Looking at a point charge $Q$ placed in a sea of conduction electrons, as illustrated in \myRef{fig:screening_charge_box}.b we can express the external potential generated from the point charge as $\phi^\text{Ext}(\mathbf{r}) = Q/r$ with its Fourier transform  $\phi^\text{Ext}(\mathbf{q}) = 4\pi\ Q/q^2$. Rearranging \refEq{eg:screnn_dielect} and replacing the dielectric function by \myRef{eq:screening_dielect_new}, we obtain
 
 \begin{equation}
   \phi(\mathbf{q}) ~~=~~~\frac{\phi^\text{Ext}(\mathbf{q}}{\epsilon(\mathbf{q}} 
@@ -1051,14 +1178,14 @@ Fourier transform this back to real space leads to the well known \textbf{Yukawa
   \phi(\mathbf{r}) ~~=~~ Q \frac{e^{-i k_0 r}}{r}
 \end{equation}
 
-The difference between the Coulomb- and Yukawa potential are displayed in \myRef{fig:screening_yukawa}. The screening effect added point charge by the surrounding negative charges is clearly visible in the faster convergence to zero of the Yukawa Potential. The screening also weakens the longe range interaction of the charges in the solid.
+The difference between the Coulomb- and Yukawa potential are displayed in \myRef{fig:screening_yukawa}. The screening effect added point charge by the surrounding negative charges is clearly visible in the faster convergence to zero of the Yukawa Potential. The screening also weakens the long range interaction of the charges in the solid.
 
 
 \subsection{Lindhard Potential}
 
-A more sophisticated approach is provided by the Lindhard Theory from which the Thomas-Fermi screening is a special case ($\mathbf{q} \ll \mathbf{k}_0$). The basic idea here is to find a solution for the Schrodinger equation by treating the electrical potential $\phi^\text{Ext}(\mathbf{r})$ introduced by the external charge as a pertubation, which allows us then to use the methodology of pertubation theory.
+A more sophisticated approach is provided by the Lindhard Theory from which the Thomas-Fermi screening is a special case ($\mathbf{q} \ll \mathbf{k}_0$). The basic idea here is to find a solution for the Schroedinger equation by treating the electrical potential $\phi^\text{Ext}(\mathbf{r})$ introduced by the external charge as a perturbation, which allows us then to use the methodology of perturbation theory.
 
-As we know, the charge density for one electron with momentum $\mathbf{k}$ is given as $\rho_\mathbf{l}(\mathbf{r}) = e|\psi_\mathbf{k}(\mathbf{r})|^2$. Describing the the overall charge density of a crystal, assuming it is in its groundstate we have to sum the one electron charge density multiplied with the fermi function $f_\mathbf{k}$ over all momenta $\mathbf{k}$
+As we know, the charge density for one electron with momentum $\mathbf{k}$ is given as $\rho_\mathbf{l}(\mathbf{r}) = e|\psi_\mathbf{k}(\mathbf{r})|^2$. Describing the the overall charge density of a crystal, assuming it is in its ground state we have to sum the one electron charge density multiplied with the Fermi function $f_\mathbf{k}$ over all momenta $\mathbf{k}$
 
 \begin{equation} \label{eq:lindh_charge}
   \rho(\mathbf{r}) ~~=~~ -e \sum_\mathbf{k} f_\mathbf{k} | \Psi_\mathbf{k}(\mathbf{r}) |^2
@@ -1066,7 +1193,7 @@ As we know, the charge density for one electron with momentum $\mathbf{k}$ is gi
 
 %Assuming the additional term $e\phi$ in our Hamiltonian (\refEq{eq:screen_hamiltonian}), introduced throught the external charge, can be treated as a pertubation, we can express the one electron wavevector $\psi_\mathbf{k}$ as
 
-As mentioned above, assuming the term $e\phi$ as petubation, we can express the electron wavevector $\psi_\mathbf{k}$ as 
+As mentioned above, assuming the term $e\phi$ as perturbation, we can express the electron wave vector $\psi_\mathbf{k}$ as 
 
 \begin{equation} \label{eq:lindh_wf}
   \psi_\mathbf{k} ~~=~~ | \mathbf{k}_0 \rangle ~+~ \sum_\mathbf{k}' \frac{\langle \mathbf{k}' | e\phi | \mathbf{k}_0 \rangle}{\varepsilon_{\mathbf{k}_0} - \varepsilon_{\mathbf{k}'}}
@@ -1124,11 +1251,11 @@ With these expressions for $A$ and $B$ and the definition of the electric suscep
 \end{equation}
 
 
-By knowing the band structure one can now calculate $\chi{\vc{q})}$. In this way one is able to experminentaly measure the screening potential.
+By knowing the band structure one can now calculate $\chi{\vc{q})}$. In this way one is able to experimentally measure the screening potential.
 
 
 
-\textcolor{red}{picture lindhard susceptibility for different dimensions}
+\textcolor{red}{picture Lindhard susceptibility for different dimensions}
 
 %Considering the analogy between $(\phi^\text{Ext}, \phi^\text{Total})$ and the macroscopic quantities $(\mathbf{D}, \mathbf{E})$ we can write a similar equation as it is known for $\mathbf{D}$ and $\mathbf{E}$.
 
@@ -1162,16 +1289,16 @@ If $\vec{A}$ is the area inside the loop and $I$ the current, the magnetic momen
 
 \textcolor{red}{insert picture - hydrogen atom and orbiting electron}
 
-The magnetic moment of a hydrogen atom can be described semi-classically by assuming the electron to be on a fixed trajectory orbiting the hydrogen nucleus with constant radius $r$ and velocity $v$. The current $I$ produced by the moving electron can be written as $I = -e/\tau$ with the orbital period $\tau = 2\pi r/v$. For the loop area we use the formula $A= \pi r^2$. This leads the magnetic moment to be
+The magnetic moment of a hydrogen atom can be described semi-classically by assuming the electron to be on a fixed trajectory orbiting the hydrogen nucleus with constant radius $r$ and velocity $v$. The current $I$ produced by the moving electron can be written as $I = -e/\tau$ with the orbital period $\tau = 2\pi r/v$. For the loop area we use the formula $A= \pi r^2$. This leads to the magnetic moment
 
 \begin{equation} \label{eq:dev_mag_mom}
   \mu ~~=~~ \frac{-e v \pi r^2}{2 \pi r} ~~=~~ \frac{-evr}{2} ~~=~~ \frac{-e m v r}{2m}
 \end{equation}
 
-We can identify the classical definition of the angular momentum  $\vec{l} = \vec{r} \times m \vec{v}$ in the numerator. Taking the quantisation of angular momentum $|\hat{l}| = n \hbar$ in quantum mechanics into account we can rewritte expression \ref{eq:dev_mag_mom} for $n=1$
+We can identify the classical definition of the angular momentum  $\vec{l} = \vec{r} \times m \vec{v}$ in the numerator. Taking the quantization of angular momentum $|\hat{l}| = n \hbar$ in quantum mechanics into account we can rewrite expression \ref{eq:dev_mag_mom} for $n=1$
 
 \begin{equation} \label{eq:bohr_mag}
-  \mu ~≃ ~~ \frac{-e \hbar}{2m} ~~ \equiv ~~ -\mu_B
+  \mu ~~=~~ \frac{-e \hbar}{2m} ~~ \equiv ~~ -\mu_B
 \end{equation}
 
 Which we define as the Bohr magneton $\mu_B$.
@@ -1182,21 +1309,21 @@ Which we define as the Bohr magneton $\mu_B$.
 The total angular momentum in an atom is given as the sum of total orbital angular Momentum $\hat{L}$  and total spin angular momentum $\hat{S}$
 
 \begin{equation}
-  \hat{J} ~~≃~~ \hat{L} ~+~ \hat{S}
+  \hat{J} ~~=~~ \hat{L} ~+~ \hat{S}
 \end{equation}
 
-\subsubsection{Magnetisation}
+\subsubsection{Magnetization}
 
 Considering a solid with $N$ atoms each having a magnetic moment $\vec{\mu}$. We define the magnetization as 
 
 \begin{equation}
-  \vec{M} ~~\equiv~~ \frac{\text{Magnetic moment}}{\text{Volume}}
+  \vec{M} ~~\equiv~~ \frac{\text{Sum over all magnetic moments}}{\text{Volume}}
 \end{equation}
 
 \begin{figure}
   \centering
   \includegraphics[width=0.8\linewidth]{../img/mag_in_solid.pdf}
-  \caption{hohohoh}
+  \caption{\textcolor{red}{hohohoh}}
 \end{figure}
 
 \subsubsection{Magnetic Moment in a $\vec{B}$-Field}
@@ -1208,7 +1335,7 @@ From classical electrodynamics we know that the potential energy $E$ of a magnet
   E ~~=~~ - \vec{\mu} ~\cdot~ \vec{B}
 \end{equation}
 
-To get a feeling for the order of magnitudes of magnetic energy of atomic scale we 
+To get a feeling for the order of magnitudes of magnetic energy of atomic scale we look at the following example
 
 \begin{equation*}
   \mu_B ~\times~ 1 \text{Tesla} ~~\simeq~~ \SI{0.05}{meV}
@@ -1227,14 +1354,14 @@ We can look at the magnetic susceptibility $\chi$ as response function. $\chi$ d
 To simplify things in the calculations we will make the following constraints on $\vec{B}$.
 
 \begin{align*}
-  \vec{B} \text{is static} ~~~~ &  \Rightarrow  ~~~~ \text{no time dependence}\\
-  \vec{B} \text{is homogeneous} ~~~~ & \Rightarrow  ~~~~ \text{no depencence on}\ \vec{r}
+  \vec{B} \text{ is static} ~~~~ &  \Rightarrow  ~~~~ \text{no time dependence}\\
+  \vec{B} \text{ is homogeneous} ~~~~ & \Rightarrow  ~~~~ \text{no depencence on}\ \vec{r}
 \end{align*}
 
 
-The definition of the susceptibility allows us now to classify materials depending on how the respond to an external magnetic field. We calc materials to be \textit{paramagnetic} if they align there spin parallel to the applied $\vec{B}$-Field. This is the case if $\chi > 0$. On the contrary we refer to materials as \textit{diamagnetic} if their inner magnetic moments align anti-parallel in respect to an applied field $\vec{B}$. This results in a negativ value for the susceptibility $\chi < 0$.
+The definition of the susceptibility allows us now to classify materials depending on how they respond to an external magnetic field. We call materials to be \textit{paramagnetic} if they align their spin parallel to the applied $\vec{B}$-Field. This is the case if $\chi > 0$. On the contrary we refer to materials as \textit{diamagnetic} if their inner magnetic moments align anti-parallel with respect to an applied field $\vec{B}$. This results in a negative value for the susceptibility $\chi < 0$.
 
-In reality, the response of systems is composed of multiple differenent responses which can have different origins.
+In reality, the response of systems is composed of multiple different responses which can have different origins.
 
 \begin{equation}
   \chi_{total} ~~≃~~ \chi_\text{paramagnetic} ~+~ \chi_\text{diamagnetic} ~+~ ...
@@ -1244,7 +1371,7 @@ Paramagnetism and diamagnetism can also have different origins. For example:
 
 \begin{align*}
   \chi_\text{paramagnetic} ~~& ≃~~ \chi_\text{Langevin} ~+~ \chi_\text{Van Vleck} ~+~ \chi_\text{Pauli} ~+~ ....\\
-  \chi_\text{diamagnetic} ~~& ≃~~ \chi_\text{electronic} ~+~ \chi_{superconductivity} ~+~ ...  
+  \chi_\text{diamagnetic} ~~& ≃~~ \chi_\text{electronic} ~+~ \chi_\text{superconductivity} ~+~ ...  
 \end{align*}
 
 
@@ -1253,9 +1380,12 @@ Paramagnetism and diamagnetism can also have different origins. For example:
 
 \textcolor{red}{insert picture - loop current to illustrate lens law}
 
-To symbolize diamagnetic behaviour we recall lens law. It states, that a a changing magnetic field induces a current which creates for itself a magnetic field that points in the opposit direction as the initial magnetic field change. In that way the system tries to compensate the externaly induced field changes.
+To symbolize diamagnetic behavior we recall lenz's law. 
+It states, that a changing magnetic field induces a current which creates a magnetic field that points in the opposite direction as the initial magnetic field change. 
+In that way the system tries to compensate the externally induced field changes.
 
-To describe that, we use \ref{eq:mag_mom}, with the area $\vec{A} = \pi <r^2>$ and the current $I = -Z e/ \tau$ with the number of electrons $Z$ per atom and the orbit period $\tau$. expression the orbit period in terms of the \textit{cyclotron frequency} $\omega = eB/2m$ shows the dependency on the magnetic field.
+To describe that, we use \ref{eq:mag_mom}, with the area $\vec{A} = \pi <r^2>$ and the current $I = -Z e/ \tau$ with the number of electrons $Z$ per atom and the orbit period $\tau$. 
+Expressing the orbit period in terms of the \textit{cyclotron frequency} $\omega = eB/2m$ shows the dependency on the magnetic field.
 
 \begin{equation}
   \tau ~~=~~ \frac{2\pi}{\omega} ~~=~~ \frac{4\pi m}{e B}
@@ -1267,7 +1397,7 @@ Putting everything together we get the following expression to approximate the m
   \vec{\mu} ~~=~~ -\frac{Z e^2 B}{4\pi m} \pi <r^2> ~~=~~ -\frac{Ze^2B}{4m} <r^2>
 \end{equation}
 
-The magnetisation of a macroscopic material can be written as the sum over all the magnetic moments of its atoms resulting in
+The magnetization of a macroscopic material can be written as the sum over all the magnetic moments of its atoms resulting in
 
 \begin{equation}
   \vec{M} ~~=~~ \mu_0 N \vec{\mu}
@@ -1290,18 +1420,16 @@ Consider a system consisting of atoms with only one electron
   \rightarrow ~~ \hat{L} ~~=~~0, ~~~~ \hat{S} ~~≃~~ 1/2 ~~~~~~~~~\Rightarrow ~~ \hat{J} ~~=~~ 1/2
 \end{equation}
 
-Further more we asume for the spin g-factor $g \simeq 2$ (not proved). This system has only to states: \textit{spin-up} and \textit{spin-down}.
-
-
-Consider the energy of these two states leads to
+Furthermore we assume for the spin g-factor $g \simeq 2$ (not proved). This system has only two states: \textit{spin-up} and \textit{spin-down}.
+The Energy of this states in an external magnetic field is given by
 
 \begin{equation}
   E ~~=~~ - \vec{\mu} \cdot \vec{B} ~~=~~ \pm \mu_B \cdot |\vec{B}|
 \end{equation}
 
-\textcolor{red}{ vector diagram nergy consideration of magnetic moment in B-field}
+\textcolor{red}{ vector diagram energy consideration of magnetic moment in B-field}
 
-As stated before, the Energy resulting from magnetic moments of the order of magnituted of a bohr magneton $\mu_B$ to magentic fields to several Tesla are in the same the energy range of some Kelvin ( some $k_B T$). Therefore we use Boltzman statistics to describe the \textbf{population distribution} of the system. The probability of energy level $E_1$ to be populated can be written as
+As stated before, the Energy resulting from magnetic moments of the order of magnitude of a Bohr magneton $\mu_B$ to magnetic fields to several Tesla are in the same energy range of some Kelvin ( some $k_B T$). Therefore we use Boltzmann statistics to describe the \textbf{population distribution} of the system. The probability of energy level $E_1$ to be populated can be written as
 
 \begin{equation}
   p_\alpha ~~=~~ \frac{e^{\beta E_\alpha}}{\mathcal{Z}} ~~=~~ \frac{e^{\beta E_\alpha}}{e^{\beta E_1} + e^{\beta E_2}}, ~~~~ \text{with} ~~ \alpha = \{1,2\}
@@ -1316,12 +1444,12 @@ where $\beta = 1/k_BT$ and the partition function $\mathcal{Z} = \sum_i e^{\beta
   p_2 ~~=~~ \frac{e^{-\beta E_1}}{e^{\beta E_1} + e^{-\beta E_1}}
 \end{equation}
 
-This has to be equatl to $p_1 = N_1/N$ and $p_2 = N_2/N$ with $N_1$ ($N_2$) being the number of electrons in the energy state $E_1$ ($E_2$) and $N = N_1 + N_2$ being the total number of electrons in the system. Futhermore we subtitute $\Bar{x} = \beta E_1 = \mu_B b/k_B T$.
+This has to be equal to $p_1 = N_1/N$ and $p_2 = N_2/N$ with $N_1$ ($N_2$) being the number of electrons in the energy state $E_1$ ($E_2$) and $N = N_1 + N_2$ being the total number of electrons in the system. Furthermore we substitute $\Bar{x} = \beta E_1 = \mu_B B/k_B T$.
 
-\textcolor{red}{plots energy level polulation}
+\textcolor{red}{plots energy level population}
 
 
-The magnetisation $M$ can now be written as the difference in the number of electrons with opposite magnetic moment
+The magnetization $M$ can now be written as the difference in the number of electrons with opposite magnetic moment
 
 \begin{align}
   M ~~& =~~ (N_1 - N_2) \mu_B ~~=~~ N \mu_B (\frac{N_1}{N} - \frac{N_2}{N}) ~~=~~ 
@@ -1330,7 +1458,7 @@ The magnetisation $M$ can now be written as the difference in the number of elec
 \end{align}
 
 
-Looking at the case $\Bar{x} \ll 1$, which stands for having large Temperatures and/or low magnetic fields. We get for the magnetisation
+Looking at the case $\Bar{x} \ll 1$, which stands for having large temperatures and/or low magnetic fields. We get for the magnetization
 
 \begin{equation}
   M ~~\simeq~~ N \mu_B \Bar{x} ~~=~~ N \frac{\mu_B^2 B}{k_B T}
@@ -1349,7 +1477,7 @@ We refer to this formula as \textit{Curie law} and we call the introduced consta
 
 \subsubsection{Hund's rules}
 
-The hund's rules provide simply rules which give an idea about the total spin-, total orbital- and total angular momentum of an atom in its ground state
+The Hund's rules provide simply rules which give an idea about the total spin-, total orbital- and total angular momentum of an atom in its ground state
 
 \begin{enumerate}
   \item{Maximize $S$ to minimize the Coulomb energy}
@@ -1359,9 +1487,9 @@ The hund's rules provide simply rules which give an idea about the total spin-, 
 
 \subsubsection{Crystal field effects}
 
-Atoms arranged in a lattice feel the presence of the atoms around. This happens in a way, that the valence electrons of the atom under consideration are experiencing the electric field from the ligands surrounding the atom. That causes the energy degenerecy, apparent in a free atom, to be lifted. This splitting of energy levels has impact on the occupation of the different orbitals when "filling" the atom with electrons.
+Atoms arranged in a lattice feel the presence of the atoms around. This happens in a way, that the valence electrons of the atom under consideration are experiencing the electric field from the ligands surrounding the atom. That causes the energy degeneracy, apparent in a free atom, to be lifted. This splitting of energy levels has impact on the occupation of the different orbitals when "filling" the atom with electrons.
 For studying this effect now we will consider the valence electrons to partially fill the $3d$-orbital because this is also the case in a variety of materials in nature. Partially filled $3d$-bands can especially be found in the \textit{Transition metals}. 
- We now exemplify that at at systems with ligands arranged octahedraly and tetragonal. 
+ We now exemplify that at at systems with ligands arranged octahedral and tetragonal. 
 
 
 \subsubsection{Octahedral crystal environment}
@@ -1423,7 +1551,7 @@ Consider now spin wave function:
   \end{array}
 \end{equation}
 
-Where to the $\chi_S$ is refered to as \textbf{Triplet state} and to the wave function $\chi_A$ is refered to as textbf{Singlet state}.
+Where to the $\chi_S$ is referred to as \textbf{Triplet state} and to the wave function $\chi_A$ is referred to as \textbf{singlet state}.
 
 
 \subsubsection{Quantum mechanical Spin-Operators}
@@ -1450,10 +1578,10 @@ Calculating $\langle \hat{S}_\alpha \cdot \hat{S}_\beta \rangle$ leads to $1/4$ 
 
 
 \begin{equation}
-  H ~~=~~ H_\text{signel-H} ~+~ H_\text{int} ~~=~~ H_0 ~+~ H_\text{int}
+  H ~~=~~ H_\text{single-H} ~+~ H_\text{int} ~~=~~ H_0 ~+~ H_\text{int}
 \end{equation}
 
-Where the interaction Hamiltonian $H_\text{int}$ inlcudes the proton-proton, electron-electron, proton 1 - electron 2 and electron 1 - proton 2 interactions.
+Where the interaction Hamiltonian $H_\text{int}$ includes the proton-proton, electron-electron, proton 1 - electron 2 and electron 1 - proton 2 interactions.
 
 \begin{equation}
   H_{int} ~~=~~ \frac{e^2}{d_{pp}} ~+~ \frac{e^2}{d_{ee}} ~-~ \frac{e^2}{d_{ep}} ~-~ \frac{e^2}{d_{pe}}
@@ -1469,13 +1597,7 @@ Furthermore contains $H_\text{single-H}$ both Hamiltonians of the single hydroge
 \end{equation}
 
 
-%\begin{equation}
-%  E_+ ~=~E_S ~~=~~ \langle \Psi_S | H_\text{int} | \Psi_S \rangle ~~=~~
-%  \int \left( \psi_\alpha \psi_\beta + \psi_beta \psi_\alpha \right)^* H_\text{int} 
-%  \left( \psi_alpha \psi_\beta + \psi_\beta \psi_\alpha \right) d^3r
-%\end{equation}
-
-\begin{equation}
+\begin{equation} \label{eq:interaction_energy_plus}
   E_+ ~=~E_S ~~=~~ \langle \Psi_S | H_\text{int} | \Psi_S \rangle ~~=~~
   \int ( \psi_\alpha \overbracket[0.5pt][3pt]{ \psi_\beta + \psi_\beta \overbracket[0.5pt][3pt]{ \psi_\alpha )^* H_\text{int} 
   ( \psi_\alpha }^{J_2} \psi_\beta + \psi_\beta}^{J_1}  \psi_\alpha ) d^3r
@@ -1483,7 +1605,7 @@ Furthermore contains $H_\text{single-H}$ both Hamiltonians of the single hydroge
 
 
 
-\begin{equation}
+\begin{equation} \label{eq:interaction_energy_minus}
   E_- ~=~E_A ~~=~~ \langle \Psi_S | H_\text{int} | \Psi_S \rangle ~~=~~
   \int ( \psi_\alpha \overbracket[0.5pt][3pt]{ \psi_\beta - \psi_\beta \overbracket[0.5pt][3pt]{ \psi_\alpha )^* H_\text{int} 
   ( \psi_\alpha }^{J_2} \psi_\beta - \psi_\beta}^{J_1} \psi_\alpha ) d^3r
@@ -1492,32 +1614,42 @@ Furthermore contains $H_\text{single-H}$ both Hamiltonians of the single hydroge
 % connect different terms with each other
 % https://tex.stackexchange.com/questions/265787/connecting-parts-of-equations-with-lines
 
-By defining $C \equiv C_1+C_2$ and $J \equiv J_1+J_2$ one can write the the two energies as
+Introducing the terms $J_1$, $J_2$, $C_1$ and $C_2$ indicated in \refEq{eq:interaction_energy_plus} and \refEq{eq:interaction_energy_minus}
+
+\begin{align}
+  J_1 ~\equiv~ \int \psi_\alpha^* \psi_\beta^* H_\text{int} \psi_\beta \psi_\alpha d^3r ~,~~~~
+  J_2 ~\equiv~ \int \psi_\beta^* \psi_\alpha^* H_\text{int} \psi_\alpha \psi_\beta d^3r \\
+  C_1 ~\equiv~ \int \psi_\alpha^* \psi_\beta^* H_\text{int} \psi_\alpha \psi_\beta d^3r ~,~~~~
+  C_2 ~\equiv~ \int \psi_\beta^* \psi_\alpha^* H_\text{int} \psi_\beta \psi_\alpha d^3r
+\end{align}
+
+
+By further defining $C \equiv C_1+C_2$ and $J \equiv J_1+J_2$ one can write the two energies as
 
 \begin{equation}
   E_\pm ~~=~~ C ~\pm~ J
 \end{equation}
 
-Furthermore for the difference of the singlett- and triplett energy we get
+Furthermore for the difference of the singlet- and triplet energy we get
 
 \begin{equation}
-  E_+ - E_- ~~=~~~2J \int \psi^*_\alpha \psi^*_\beta H_\text{int} \psi_\alpha \psi_\beta d^3r
+  E_+ - E_- ~~=~~~2J ~~=~~ 4 \int \psi^*_\alpha \psi^*_\beta H_\text{int} \psi_\alpha \psi_\beta d^3r
 \end{equation}
 
-From this equatoin we can associate the introduced variable $J$ as the \textbf{Exchange Integral}.
+From this equation we can associate the introduced variable $J$ as the \textbf{Exchange Integral}.
 
 \begin{equation}
-  J ~~=~~ \frac{E_+-E_-}{2} ~~=~~ \int \psi^*_\alpha \psi^*_\beta H_\text{int} \psi_\alpha \psi_\beta d^3r
+  J ~~=~~ \frac{E_+-E_-}{2} ~~=~~ 2 \int \psi^*_\alpha \psi^*_\beta H_\text{int} \psi_\alpha \psi_\beta d^3r
 \end{equation}
 
 
 \subsubsection{What is H\textsuperscript{Spin}\textsubscript{int}}
 
 \begin{equation}
-  E_\pm ~~=~~ C ~\pm~ J ~~=~~ C ~+~ J/2 ~+~ 2J ~+~ \cdot \rangle \hat{S}_\alpha \cdot \hat{S}_\beta \langle ~~=~~ \text{constant} ~+~ 2J \rangle \hat{S}_\alpha \cdot \hat{S}_\beta \rangle
+  E_\pm ~~=~~ C ~\pm~ J ~~=~~ C ~+~ J/2 ~+~ 2J ~+~ \cdot \langle \hat{S}_\alpha \cdot \hat{S}_\beta \rangle ~~=~~ \text{constant} ~+~ 2J \langle \hat{S}_\alpha \cdot \hat{S}_\beta \rangle
 \end{equation}
 
-The constant contribution to the energies $E_\pm$ can be neglected since absolute energies values arbitrary. The interesting term for us is the second one on the right-most side. It gives us a quantitative measure of how large the energy difference between the two spin configurations is
+The constant contribution to the energies $E_\pm$ can be neglected since absolute energies values are arbitrary. The interesting term for us is the second one on the right-most side. It gives us a quantitative measure of how large the energy difference between the two spin configurations is
 
 \begin{equation}
   \Rightarrow ~~ H^\text{Spin}_\text{int} ~~=~~ - 2J \hat{S}_\alpha \cdot \hat{S}_\beta ~~~~ \left\{
@@ -1528,7 +1660,7 @@ The constant contribution to the energies $E_\pm$ can be neglected since absolut
 \end{equation}
 
 
-From the upper formula we see that $J$ us if $\chi_S$ or $\chi_A$ is prefered. Therefore it can be seen as an indication if ferro- or antiferromagnetism is present in a material.
+From the upper formula we see that $J$ us if $\chi_S$ or $\chi_A$ is preferred. Therefore it can be seen as an indication if ferro- or antiferromagnetism is present in a material.
 
 
 \subsubsection{Ferromagnetism}
@@ -1536,14 +1668,14 @@ From the upper formula we see that $J$ us if $\chi_S$ or $\chi_A$ is prefered. T
 \begin{align}
   H ~~& =~~ - \sum_{ij} J_{ij} \vec{S}_i \cdot \vec{S}_j ~+~ g \mu_B \cdot \sum_j \vec{S}_j \cdot \vec{B}\nonumber \\  
       & =~~ - \sum_j \sum_i j_{ij} \vec{S}_i \cdot \vec{S}_j ~+~ g \mu_B \sum_j \vec{S}_j \cdot \vec{B}\nonumber \\
-      & =~~ g \mu_B \sum_j \vec{S}_j \cdot ( \underbrace{\vec{B}_{mf}}_\text{interal} ~+~ \underbrace{\vec{B}}_\text{external})
+      & =~~ g \mu_B \sum_j \vec{S}_j \cdot ( \underbrace{\vec{B}_{mf}}_\text{internal} ~+~ \underbrace{\vec{B}}_\text{external})
 \end{align}
 
-Using a mean field approximation we rewrite the interaction from all spins on $\vec{S}_j$ from the first term as with a mean magnetic field $\vec{B}_{mf}$ wheresa we dfined $\vec{B}_{mf} \equiv -2/g \mu_B \sum_i J_{ij} \vec{S}_i$. 
+Using a mean field approximation we rewrite the interaction from all spins on $\vec{S}_j$ from the first term as with a mean magnetic field $\vec{B}_{mf}$ whereas we defined $\vec{B}_{mf} \equiv -2/g \mu_B \sum_i J_{ij} \vec{S}_i$. 
 
 \subsubsection{Conjecture}
 
-By making an educated guess one could assume, that the mean magnetic field $\vec{B}_{mf}$ can be approximated macroscopicaly with the following expression.
+By making an educated guess one could assume, that the mean magnetic field $\vec{B}_{mf}$ can be approximated macroscopically with the following expression.
 
 \begin{equation}
   \vec{B}_{mf} ~~≃~~ \lambda \cdot \vec{M}
@@ -1558,7 +1690,7 @@ Solution can be adapted from the results about paramagnetism we gained last week
   M ~~≃~~~ N \mu_B \tanh(x) ~~~~ \text{with} ~~~~ x ~~=~~\frac{\mu_B}{k_BT} (\vec{B} + \lambda \vec{M})
 \end{equation}
 
-Since the argument of the tangent hyperbolicus depends also on the magnetisation $\vec{M}$ we have a implicit equation. A solution of this equation is illustrated in \ref{fig:ferromag_graph_sol} as the crossing point between the hyperbolic tangent and the straight line. In this graph it is also visible, that above a certain Temperature $T>T_C$ there only exists one solution for of the implicit equation which can be associated with the paramagnetic phase of the material. On the other hand for $T<T_C$ we see that there are exists multiple solution of \ref{eq:ferromag_graph_sol} which is in accordance with the magnetisation curve of a ferromagnet. We can determine the Transition temperature $T_C$ by comparing the slopes of the two curves at the origin
+Since the argument of the hyperbolic tangent depends also on the magnetization $\vec{M}$ we have an implicit equation. A solution of this equation is illustrated in \myRef{fig:ferromag_graph_sol} as the crossing point between the hyperbolic tangent and the straight line. In this graph it is also visible, that above a certain Temperature $T>T_C$ there only exists one solution for the implicit equation which can be associated with the paramagnetic phase of the material. On the other hand for $T<T_C$ we see that there are exists multiple solution of \ref{eq:ferromag_graph_sol} which is in accordance with the magnetization curve of a ferromagnet. We can determine the Transition temperature $T_C$ by comparing the slopes of the two curves at the origin
 
 \begin{equation}
   \frac{d}{dx} N \mu_B \tanh(x) ~~ = ~~ \frac{d}{dx} \frac{k_BT}{\mu_B \lambda} x ~~~~ \Rightarrow ~~~~
@@ -1574,6 +1706,7 @@ Since the argument of the tangent hyperbolicus depends also on the magnetisation
 %   \captionsetup{width=6.9cm}
     \captionsetup{width=.95\linewidth}
     \captionof{figure}{Illustration of the grafical solution of \ref{eq:ferromag_graph_sol}. the straight lines refer to different values of of $T$.}
+    \label{fig:ferromag_graph_sol}
   \end{minipage}%
   \begin{minipage}[c][6.00cm]{.5\textwidth}
     \vspace*{\fill}
@@ -1583,17 +1716,8 @@ Since the argument of the tangent hyperbolicus depends also on the magnetisation
  %   \captionsetup{width=6.9cm}
     \captionof{figure}{Illustration of susceptibility $\chi$ of a Para- and Ferromagnet.}
   \end{minipage}
-  \label{fig:2:tests}
+  
 \end{figure}
-
-
-%\begin{figure}
-%  \centering
-%  \includegraphics[width=0.5\linewidth]{../img/ferromag_graph_sol.pdf}
-%  \caption{Illustration of the grafical solution of \ref{eq:ferromag_graph_sol}. the straight lines refer to different values of of $T$.}
-%  \label{fig:ferromag_graph_sol}
-%\end{figure}
-
 
 
 
@@ -1615,7 +1739,7 @@ Looking at the limit $ x \ll 1$
 \end{equation*}
 
 
-Checking the magnetisation $M(T)$ at zero field $\vec{B} = 0$. Using \ref{eq:ferromag_graph_sol} with zero field and the definitinos $m = M/N \mu_B$ and $t = k_BT/N \mu_B^2 \lambda = T/T_C$ we get
+Checking the magnetization $M(T)$ at zero field $\vec{B} = 0$. Using \ref{eq:ferromag_graph_sol} with zero field and the definitions $m = M/N \mu_B$ and $t = k_BT/N \mu_B^2 \lambda = T/T_C$ we get
 
 \begin{equation}
   m ~~=~~ \tanh(\frac{m}{t})
@@ -1644,7 +1768,7 @@ Checking the magnetisation $M(T)$ at zero field $\vec{B} = 0$. Using \ref{eq:fer
 
 \subsubsection{Landau Theory}
 
-According to the Landau theory of phase transisiton the free energy $F$ can be expressed
+According to the Landau theory of phase transition the free energy $F$ can be expressed
 
 \begin{equation} \label{eq:ferromag_landau}
   F ~~=~~ F_0 ~+~ a(T) m^2 ~+~ b m^4 + ... 
@@ -1679,7 +1803,7 @@ We find the thermodynamical state of our system by minimizing the free energy
 \end{figure}
 
 
-Analog to the susceptibility of ferromagnets $\chi_{FM} = C/(T-T_C)$, we can define the susceptibility for anti-ferromagnets
+Analog to the susceptibility of ferromagnets $\chi_{FM} = C/(T-T_C)$, we can define the susceptibility for antiferromagnets
 
 \begin{equation}
   \chi_{AFM} ~~=~~ \frac{C}{T+T_N}
@@ -1711,7 +1835,7 @@ Where we refer to the Transition Temperature $T_N$ as Neel-Temperature.
 
 \subsection{Ferromagnetic Magnons}
 
-Consider a linear FM chain $ | \text{FM} \rangle ~=~ | \uparrow~ \uparrow~ \uparrow~ ...~ \rangle$. Applying the latter operator $ s^-_j$ onto this expression leads to
+Consider a linear FM chain $ | \text{FM} \rangle ~=~ | \uparrow~ \uparrow~ \uparrow~ ...~ \rangle$. Applying the latter operator $ s^-_j$ on  $| \text{FM} \rangle$ leads to
 
 \begin{equation}
   | j \rangle ~~=~~ s^-_j | \text{FM} \rangle ~~=~~ 
@@ -1725,7 +1849,7 @@ Defining
   | q \rangle ~~=~~ \frac{1}{\sqrt{N}} \sum_j e^{i q R_j} | j \rangle
 \end{equation}
 
-The Hamilton is given as 
+The Hamiltonian is given by
 
 \begin{align}
   H ~~& =~~ - \sum_{ij} J_{ij} \hat{S}_i \cdot \hat{S}_j ~~=~~ -2J \sum_i \hat{S}_i \cdot \hat{S}_{i+1}\nonumber \\
@@ -1733,12 +1857,17 @@ The Hamilton is given as
       \frac{1}{2} \left[ \hat{S}^+_i \hat{S}^-_{i+1} + \hat{S}^-_i \hat{S}^+_{i+1} \right]  \right\}
 \end{align}
 
-By taking only nearest neighbour interactions into account we get the 
-The second equality sign holds if we only take neares neighbour interactions into account. To get the final expression we used the substitution
+The second equality sign holds if we only take nearest neighbor interactions into account. To get the final expression we used the substitution
+
+% with indices but incomplete
+%\begin{equation}
+%  \hat{S}^2 ~~=~~ \hat{S}^{z^2} ~+~ \frac{1}{2} \left[ \hat{S}^+_i \hat{S}^-_{i+1} + \hat{S}^-_i \hat{S}^+_{i+1} \right]
+%\end{equation}
 
 \begin{equation}
-  \hat{S}^2 ~~=~~ \hat{S}^{z^2} ~+~ \frac{1}{2} \left[ \hat{S}^+_i \hat{S}^-_{i+1} + \hat{S}^-_i \hat{S}^+_{i+1} \right]
+  \hat{S}^2 ~~=~~ \hat{S}^{z^2} ~+~ \frac{1}{2} \left[ \hat{S}^+ \hat{S}^- + \hat{S}^- \hat{S}^+ \right]
 \end{equation}
+
 
 
 \begin{equation}
@@ -1759,7 +1888,7 @@ The second equality sign holds if we only take neares neighbour interactions int
 %%%% one equation not transcripted from lecture notes %%%
 
 
-Since we are consindering an infinit long 1D chain of spin states we can rewrite the expression
+Since we are considering an infinite long one dimensional chain of spin states we can rewrite the expression
 
 \begin{equation}
   H |q\rangle ~~=~~ E_0 |q\rangle + 2JS \left\{ 2 - 2\cos(qa) \right\} |q\rangle
@@ -1771,11 +1900,14 @@ which leads to
   H |q\rangle ~~=~~ E(q) |q\rangle ~~~~~ \text{with} ~~~~ E(q) ~≃~ E_0 + 2JS(2 - 2\cos(qa))
 \end{equation}
 
-This is the dispersion relation for ferromagnets. For anti-ferromagnets we have a similar relation (not derived)
+This is the dispersion relation for ferromagnets. For antiferromagnets we have a similar relation (not derived)
 
 \begin{equation}
   \hbar \omega ~~=~~ 2J | \sin(qa) |
 \end{equation}
+
+
+\textcolor{red}{add qualitative discussion about dispersion relation. mention differences between FM and AFM. Similarities between AFM and phonons.}
 
 
 %===============================================================================================================
@@ -1796,7 +1928,7 @@ This is the dispersion relation for ferromagnets. For anti-ferromagnets we have 
 \end{figure}
 
 
-As we know, superconductors are characterised by vanishing resistvity ($\rho=0$) for undergoing a critical temperature $T_C$ (\myRef{fig:sc_res_drop}).
+As we know, superconductors are characterized by vanishing resistivity ($\rho=0$) for undergoing a critical temperature $T_C$ (\myRef{fig:sc_res_drop}).
 Recalling Ohm's law, 
 
 \begin{equation} \label{eq:ohms_law}
@@ -1804,7 +1936,7 @@ Recalling Ohm's law,
 \end{equation}
 
 
-which relates the electron current density $\vec{j}$ and the electric field inside a conductor $\vec{E}$ by introductin the material dependent conductivity $\sigma$.
+which relates the electron current density $\vec{j}$ and the electric field inside a conductor $\vec{E}$ by introduction the material dependent conductivity $\sigma$.
 
 Looking at the case of superconductors, we can emphasize, by rearranging Ohm's law, that the electric field vanishes.
 
@@ -1820,8 +1952,8 @@ By using one of the Maxwell equation $\nabla \times \vec{E} = - d\vec{B}/ dt$ we
 
 \section{London Equation}
 
-The lonodon equation is a macroscopic theory that was one of the first theories which allowed to describe effects like the Meissner-Ochsenfeld effect quantitatively.
-We know want to qualitiatively derive the london equation. For that consider a current oscillating if the frequency $\omega$
+The Lonodon equation is a macroscopic theory that was one of the first theories which allowed to describe effects like the Meissner-Ochsenfeld effect quantitatively.
+We now want to qualitatively derive the London equation. For that consider a current oscillating if the frequency $\omega$
 
 \begin{equation}\label{eq:osc_curr}
   \vec{j} e^{-i \omega t} ~~=~~ \sigma(\omega) \vec{E} e^{-i \omega t}
@@ -1840,7 +1972,7 @@ Using the expression for the conductivity $\sigma(\omega)$ from the Drude model 
 %  \frac{ne^2 \tau}{m}
 %\end{equation}
 
-From this we get, as already proven in a previous excercise, that the real part of the conductivity can be written in the limit of $\tau \rightarrow \infty$ as
+From this we get, as already proven in a previous exercise, that the real part of the conductivity can be written in the limit of $\tau \rightarrow \infty$ as
 
 \begin{equation}\label{eq:real_conduct}
   \Re(\sigma(\omega)) ~~=~~ \frac{\pi n e^2}{m} \delta(\omega)
@@ -1873,23 +2005,23 @@ $\sigma(\omega) = \sigma_N(\omega) + \sigma_S(\omega)$, were only $\sigma_S(\ome
 Taking the curl of the oscillating current
 
 \begin{align}\label{eq:curl_curr}
-  \nabla \times (\vec{j} e^{-i\omega t}) & ~~=~~ -\sigma(\omega) \nabla \times (\vec{E}\cdot e^{-i\omega t}) ~~=~~
+  \nabla \times (\vec{j} e^{-i\omega t}) & ~~=~~ \sigma(\omega) \nabla \times (\vec{E}\cdot e^{-i\omega t}) ~~=~~
   -\sigma(\omega) \frac{d}{dt} (\vec{B} \cdot e^{-i\omega t})\nonumber \\
     & ~~=~~ - \frac{n_Se^2}{m} \vec{B} \cdot e^{-i\omega t}
 \end{align}
 
-Here we used \myEq{eq:osc_curr} in the first and farradays law ($\nabla \times \vec{E} = d/dt \vec{B}$) in the second step. Furthermore is only the \textit{super electron} density $n_S$ contributing to the conductivity $\sigma(\omega)$. From this equation we can deduce that
+Here we used \myEq{eq:osc_curr} in the first and Farraday's law ($\nabla \times \vec{E} = -d/dt \vec{B}$) in the second step. Furthermore is only the \textit{super electron} density $n_S$ contributing to the conductivity $\sigma(\omega)$. From this equation we can deduce that
 
 \begin{equation}\label{eq:london_eq}
   \nabla \times \vec{j} ~~\propto~~ \vec{B} ~~~~~~\text{and thereof}~~~~ \vec{j} = -\frac{n_Se^2}{m} \vec{A}
 \end{equation}
 
-with $\vec{A}$ being the vector potential. The equation describing this proprtionality between the current density $\vec{j}$ and the vector potential $\vec{A}$ is the London equation.
+with $\vec{A}$ being the vector potential. The equation describing this proportionality between the current density $\vec{j}$ and the vector potential $\vec{A}$ is the London equation.
 
 
 %The london equation allows us now to set up a differential equation for the magnetic field $\vec{B}$. 
 %
-Together with Ampere's law ($\nabla \times \vec{B} = \mu_0 \vec{j}$) allows us the London equation (\myEq{eq:london_eq}) now to set up a differential equation for the magentic field $\vec{B}$.
+Together with Ampere's law ($\nabla \times \vec{B} = \mu_0 \vec{j}$) allows us the London equation (\myEq{eq:london_eq}) now to set up a differential equation for the magnetic field $\vec{B}$.
 
 \begin{equation} \label{eq:deq_B_0}
   \nabla \times \nabla \times \vec{B} ~~=~~ -\frac{1}{\lambda^2} \vec{B}, ~~~~~~ \text{where}~~ 
@@ -1903,9 +2035,10 @@ This equation can also be written as
 \end{equation}
 
 
-To exemplify the solution of this differential equation we look at it in one dimension. Then \myEq{eq:deq_B} becomes $d^2/dx^2 B_z(x) = 1/\lambda^2 B_x$.
+%To exemplify the solution of this differential equation we look at it in one dimension. Then \myEq{eq:deq_B} becomes $d^2/dx^2 B_z(x) = 1/\lambda^2 B_x$.
 
-To exemplify the solution of this differential equation we look at a situation were we have a superconductor filling the space for all values $x\geq 0$ correspinding to that we have vacuum at $x<0$. Applyling now a magnetic field in the vacuum region aligned along the z-axis $\vec{B} = (0,0,B_0)$. in this case the differential equation \myEq{eq:deq_B} simplifies to 
+To exemplify the solution of this differential equation we look at a situation were we have a superconductor filling the space for all values $x\geq 0$ corresponding to that we have vacuum at $x<0$. Applying now a magnetic field in the vacuum region aligned along the z-axis $\vec{B} = (0,0,B_0)$. 
+In this case the differential equation \myEq{eq:deq_B} simplifies to 
 
 \begin{equation}
   \frac{d^2}{dx^2} B_z(x) ~~=~~ \frac{1}{\lambda^2} B_z(x)
@@ -1929,7 +2062,7 @@ Looking at the definition of the London penetration depth we see that $n_{S_1} <
     \includegraphics[width=0.916\linewidth]{../img/london_B_1dim.pdf}
 %   \captionsetup{width=6.9cm}
     \captionsetup{width=.95\linewidth}
-    \captionof{figure}{Illustration of the magnetic field decrease inside the superconductor according to \myEq{eq:B_decrease}. The magnetic field is pictorially drawn as blue vectors. Adapted from \text{red}{Kittel - include citation}}
+    \captionof{figure}{Illustration of the magnetic field decrease inside the superconductor according to \myEq{eq:B_decrease}. The magnetic field is pictorially drawn as blue vectors. Adapted from \cite{Kittel2004}}
     \label{fig:london_B_1dim}
   \end{minipage}%
   \begin{minipage}[c][6.00cm]{.5\textwidth}
@@ -1938,7 +2071,7 @@ Looking at the definition of the London penetration depth we see that $n_{S_1} <
     \includegraphics[width=1.0\linewidth]{../img/london_lambda.pdf}
     \captionsetup{width=0.95\linewidth}
  %   \captionsetup{width=6.9cm}
-    \captionof{figure}{Illustration of \myEq{eq:B_decrease} for two different values for the london penetration depth.}
+    \captionof{figure}{Illustration of \myEq{eq:B_decrease} for two different values for the London penetration depth.}
     \label{fig:london_lambda}
   \end{minipage}
 \end{figure}
@@ -1948,33 +2081,33 @@ Looking at the definition of the London penetration depth we see that $n_{S_1} <
 
 \section{Coherence Length}
 
-Another lengthscale that helps us to classify the different types of superconductors is the \textit{coherence length} $\xi$. The coherence length is a measure of the distance within which the superconducting electron concentration cannot change drastically in a spatially-varying magnetic field.
+Another length scale that helps us to classify the different types of superconductors is the \textit{coherence length} $\xi$. The coherence length is a measure of the distance within which the superconducting electron concentration cannot change drastically in a spatially-varying magnetic field.
 
 \begin{equation} \label{eq:coherence_length}
   \xi ~~=~~ \frac{\hbar v_F}{\pi \Delta}
 \end{equation}
 
-Where $v_F$ stands for the fermi velocity and $\Delta$ for superconducting gap being present at the fermi surface in the SC state. $\xi$ is a parameter in the \textit{Ginzburg-Landau Theory} and can be derived there.
+Where $v_F$ stands for the Fermi velocity and $\Delta$ for superconducting gap being present at the Fermi surface in the SC state. $\xi$ is a parameter in the \textit{Ginzburg-Landau Theory} and can be derived there.
 
 The two length scales, penetration depth and coherence length, allow us now, to categorize the superconductors in the groups \textit{Type 1} and \textit{Type 2}. This goes as follows:
 
-By defining $\kappa \equiv \xi/\lambda$ we say a Superconductor contains to the group of \textit{Type 1} (\textit{Type 2}) if $\kappa ~<~ (>)~ 1/\sqrt{2} \simeq 0.707 $. 
+By defining $\kappa \equiv \xi/\lambda$ we say a Superconductor belongs to the group of \textit{Type 1} (\textit{Type 2}) if $\kappa ~<~ (>)~ 1/\sqrt{2} \simeq 0.707 $. 
 
-Values of $\kappa$ for some materials are given in \textcolor{red}{lenght scale table}. The classification of SC into Type 1 and Type 2 does not fully coincide with the classification of conventional and unconvential. Although a lot of the conventional (elementary) supperconductors are of Type 1, there are also some expetions like Niobium (Nb) which is a conventional Type 2 Superconductor.
+Values of $\kappa$ for some materials are given in \textcolor{red}{length scale table}. The classification of SC into Type 1 and Type 2 does not fully coincide with the classification of conventional and unconventional. Although a lot of the conventional (elementary) superconductors are of Type 1, there are also some exceptions like Niobium (Nb) which is a conventional Type 2 Superconductor.
 
 \textcolor{red}{include table from PPP}
 
 
 \section{Ginzburg-Landau Theory}
 
-The Landau Theory of Phase Transtition can also be used in the case of the transition from normal to superconducting state. The free energy per volume of the system in the superconducting state is given as
+The Landau Theory of Phase Transition can also be used in the case of the transition from normal to superconducting state. The free energy per volume of the system in the superconducting state is given as
 
-\begin{equation}
+\begin{equation} \label{eq:f_SC}
   f_\text{SC} ~~=~~ f_\text{NS} ~+~ a(T) |\psi(T)|^2 ~+~ \frac{1}{2} b(T) |\psi(T)|^4 ~+~ ...
 \end{equation}
 
 $|\psi|$ is treated as the order parameter. 
-To find the temperature dependence of the free energy per volumne we make the following assumptions: near the transition temperature $T_C$ has $a$ to be linear in temperature ($a(T)=a_0(T-T_C) +...$) and $b$ given as $b(T)=b_0+...$ with $a_0, b_0$ being constant and larger than zero.
+To find the temperature dependence of the free energy per volume we make the following assumptions: near the transition temperature $T_C$, the coefficient $a$ has to be linear in temperature ($a(T)=a_0(T-T_C) +...$) and the coefficient $b$has to be given as $b(T)=b_0+...$ with $a_0, b_0$ being constants and larger than zero.
 
 Looking for the extrema of $(f_\text{SC}-f_\text{NS})$
 
@@ -1993,7 +2126,7 @@ We find the following condition for $|\psi|$ to minimize $(f_\text{SC}-f_\text{N
   \end{array} \right.
 \end{equation}
 
-Plugging \myEq{eq:psi_condition} into \myEq{eq:f_SC_derived} leads to
+Plugging \myEq{eq:psi_condition} into \myEq{eq:f_SC} leads to
 
 \begin{equation}
   (f_\text{SC} - f_\text{NS}) ~~=~~ -\frac{a^2(T)}{b(T)} ~+~ \frac{1}{2} \frac{a^2(T)}{b(T)} ~~=~~
@@ -2022,16 +2155,16 @@ Plugging \myEq{eq:psi_condition} into \myEq{eq:f_SC_derived} leads to
   \end{minipage}
 \end{figure}
 
-Since $f_\text{SC}$ is the free energy, we can write
+Since $f_\text{SC}$ is the free energy, we can write the entropy per volume $s$ and the heat capacity $C$ as
 
 \begin{equation}
-  S ~~\equiv~~ -\frac{df}{dT} ~~~~~~\text{and}~~~~~~ C ~~\equiv~~ T \cdot \frac{dS}{dT}
+  s ~~\equiv~~ -\frac{df}{dT} ~~~~~~\text{and}~~~~~~ C ~~\equiv~~ T \cdot \frac{ds}{dT}
 \end{equation}
 
 This gives for the difference in the heat capacity
 
 \begin{equation} \label{eq:diff_heat_cap}
-  \Delta C ~~\equiv~~ C_\text{SC} ~-~ C_\text{NS} ~~=~~ -T \frac{d^2(f_\text{SC}-f_\text{NS})}{dT^2} 
+  \Delta C ~~\equiv~~ C_\text{SC} ~-~ C_\text{NS} ~~=~~ -T_C \frac{d^2(f_\text{SC}-f_\text{NS})}{dT^2} 
   ~~=~~ T \frac{a_0^2}{b_0}
 \end{equation}
 
@@ -2061,7 +2194,7 @@ Here we assign
   n_S ~~=~~ 2|\psi|^2 ~~=~~ 2 \frac{a_0(T_C-T)}{b_0}
 \end{equation}
 
-This allows us now to express the penetretion depth $\lambda$ from \myEq{eq:deq_B_0} as explicitly temperature dependent
+This allows us now to express the penetration depth $\lambda$ from \myEq{eq:deq_B_0} as explicitly temperature dependent
 
 \begin{equation} \label{eq:penetration_depth_temp_dep}
   \lambda(T) ~~=~~ \sqrt{\frac{b_0 m}{2 \mu_0 e^2 a_0 (T_C-T)}}
@@ -2070,9 +2203,9 @@ This allows us now to express the penetretion depth $\lambda$ from \myEq{eq:deq_
 \section{Classification of different superconductors}
 
 
-\section{Vorteces}
+\section{Vortices}
 
-To define the appearance of vorteces from Type 2 Superconductors into into our formalism we define the free energy per volumne as
+To define the appearance of vortices from Type 2 Superconductors into our formalism we define the free energy per volume as
 
 \begin{equation} \label{eq:vortex_free_energy}
   f_\text{SC} - f_\text{NS} ~~≃~~ a(T) |\psi(r)|^2 ~+~ b(T)|\psi(r)|^4 ~+~ 
@@ -2085,13 +2218,13 @@ To get the total Free energy we integrate \myEq{eq:vortex_free_energy} over all 
   F_\text{SC} - F_\text{NS} ~~=~~ \int d^3r (f_\text{SC} - f_\text{NS})
 \end{equation}
 
-We are interested now in finding the wavefunction $\psi(r)$ for which the Free energy is minimized. Since $\psi(r)$ is a function, this condition is formulated in a functional of the following form
+We are interested now in finding the wave function $\psi(r)$ for which the Free energy is minimized. Since $\psi(r)$ is a function, this condition is formulated in a functional of the following form
 
 \begin{equation}
   \frac{\delta F_\text{SC}}{\delta \psi(r)} ~~\overset{!}{=}~~ 0
 \end{equation}
 
-This is a differential equation for $\psi(r)$. In one dimnesion this DEG looks like the following
+This is a differential equation for $\psi(r)$. In one dimension this DEG looks like the following
 
 \begin{equation} \label{eq:vortex_wave_function_deg}
   -\frac{\hbar^2}{2m} \frac{d^2\psi(x)}{dx^2} ~+~ a(T) \psi(x) ~+~ b(T) \psi^3(x) ~~=~~ 0
@@ -2112,7 +2245,7 @@ The coherence length $\xi(T)$ introduces a temperature dependent length scale an
   t = \frac{T-T_C}{T_C}
 \end{equation}
 
-Here we used the same expression for $a(T)$ as in the ginzburg-Landau Theory.
+Here we used the same expression for $a(T)$ as in the Ginzburg-Landau Theory.
 
 \begin{figure}[t]
   \begin{minipage}[c][6.50cm]{.5\textwidth}
@@ -2130,12 +2263,12 @@ Here we used the same expression for $a(T)$ as in the ginzburg-Landau Theory.
     \includegraphics[width=1.0\linewidth]{../img/vortex_wavefunction.pdf}
     \captionsetup{width=0.95\linewidth}
  %   \captionsetup{width=6.9cm}
-    \captionof{figure}{Wavefunction in one dimension according to \myEq{eq:vortex_wave_function}. Comparing the the blue and red curve shows that the wave function gets \textit{pushed down} for increasing coherence length ($\xi_2 > \xi_1$).}
+    \captionof{figure}{Wave function in one dimension according to \myEq{eq:vortex_wave_function}. Comparing the blue and red curves shows that the wave function gets \textit{pushed down} for increasing coherence length ($\xi_2 > \xi_1$).}
     \label{fig:london_lambda}
   \end{minipage}
 \end{figure}
 
-We can now use our expressions for the penetration depth (\myEq{eq:penetration_depth_temp_dep}) and the coherence length (\myEq{eq:vortex_coherence_length}) to express the Ginzburg-Landau paramater $\kappa$ as
+We can now use our expressions for the penetration depth (\myEq{eq:penetration_depth_temp_dep}) and the coherence length (\myEq{eq:vortex_coherence_length}) to express the Ginzburg-Landau parameter $\kappa$ as
 
 \begin{equation}
   \kappa ~~\equiv~~ \frac{\lambda(T)}{\xi(t)}
@@ -2143,13 +2276,14 @@ We can now use our expressions for the penetration depth (\myEq{eq:penetration_d
 
 Since the temperature dependence of both characteristic length scales cancels out, \textbf{$\kappa$ is independent of $T$}.
 
-Each vortex has one flux quantum $\Phi_0$. The diameter of a vortex is given by the coherence length $\xi$. Looking at a cut through a superconductor with edge length $L$,  we can define the total surface of the material covered by vorteces as
+Each vortex has one flux quantum $\Phi_0$. The diameter of a vortex is given by the coherence length $\xi$. Looking at a cut through a superconductor with edge length $L$,  we can define the total surface of the material covered by vortices as
 
 \begin{equation}
   2\pi \xi^2 N ~~=~~ A_\text{vortex}
 \end{equation}
 
-where $N$ is the number of vorteces in the material an. Looking for the situation where $A_\text{vortex} = L$ we can say, that the superconducting state is fully repressed by the vortex inherent magnetic field. 
+where $N$ is the number of vortices in the material. 
+Looking for the situation where $A_\text{vortex} = L^2$ we can say, that the superconducting state is fully repressed by the vortex inherent magnetic field. 
 The magnetic field inside the superconductor can then be written as
 
 \begin{equation}
@@ -2163,7 +2297,7 @@ This allows us to set up a relation between the upper critical field $H_{c_2}$ f
 \end{equation}
 
 
-Since one vortex has exactly one flux quantum, we can set up a relation between the penetration depth $\lambda$ and a lower critical field $H_{c_1}$. This lower critical field marks the point when vorteces start to be \textit{produced} at the materials surface. 
+Since one vortex has exactly one flux quantum, we can set up a relation between the penetration depth $\lambda$ and a lower critical field $H_{c_1}$. This lower critical field marks the point when vortices start to be \textit{produced} at the materials surface. 
 We assume, that the magnetic field penetration the superconductor has at least to be as strong as one flux quantum to be able to create a vortex
 
 \begin{equation}
@@ -2173,142 +2307,15 @@ We assume, that the magnetic field penetration the superconductor has at least t
 
 
 
-\textcolor{red}{sketch - vorteces in the material}
+\textcolor{red}{sketch - vortices in the material}
 
 \textcolor{red}{sketch - condition for creating one vortex}
 
-\begin{align}
-  \mathscr{F}\{p,u\}\\
-  \mathcal{F}\{p,u\}\\
-  \mathscr{F}^\mathit{pu}\\
-  {F^p}_u\\
-  f_{pu}\\
-  \psi \pi \upsilon
-\end{align}
-
-
 %========================================================================================================
 %========================================================================================================
 %========================================================================================================
 
-
-\begin{thebibliography}{9}
-
-%\bibitem{bednorz86}
-%  J.G. Bednorz and K.A. Müller,
-%  Possible High T\textsubscript{c} Superconductivity in the Ba-La-Cu-O System
-%  \textit{Condens. Matter}, \textbf{64}:189-,
-%  1986.
-%
-%\bibitem{schilling93}
-%  A. Schilling, M. Cantoni, J.D. Guo and H.R. Ott,
-%  Superconductivity above 130 K in the Hg-Ba-Ca-Cu-O system
-%  \textit{Nature}, \textbf{363}:56-,
-%  1993.
-%  
-%\bibitem{ray15}
-%  Pia J. Ray,
-%  \textit{Master Thesis: Structural investigation of La\textsubscript{2-x}Sr\textsubscript{x}CuO\textsubscript{4}},
-%  University of Copenhagen,
-%  2015.
-%
-%
-%
-%\bibitem{lee06}
-%  P. A. Lee, \textit{et. al},
-%  Doping a Mott Insulator: Physics of high-temperature superconductivity,
-%  \textit{Rev. Mod. Phys.}, \textbf{78}:17-,
-%  2006.
-%
-%\bibitem{tokura00}
-%  Y. Tokura, N. Nagaosa,
-%  Orbital Physics in Transition-Metal Oxides,    
-%  \textit{Science}, \textbf{288}:462-468,
-%  2000.
-%
-%\bibitem{pickett89}
-%  W. E. Pickett,
-%  Electronic structure of the high-temperature oxid superconductors
-%  \textit{Rev. Mod. Phys.}, \textbf{61}:433-,
-%  1989.
-%  
-%\bibitem{emery87}
-%  V. J. Emery,
-%  Theory of High-$T_c$ Superconductivity in Oxides,
-%  \textit{Phys. Rev. Lett.}, \textbf{58}:2794-,
-%  1987.
-%  
-%\bibitem{zhang88}
-%  F. C. Zhang and T. M. Rice,
-%  Effective Hamiltonian for the superconducting Cu oxides,
-%  \textit{Phys. Rev. B}, \textbf{37}:3759-,
-%  1988.
-%
-%\bibitem{tanaka06}
-%  S. Tanaka,
-%  High-Temperature Superconductivity,
-%  \textit{Jpn. J. Appl. Phys.}, \textbf{Vol.45, No.12}:9011-9024,
-%  2006.
-%  
-%\bibitem{rhaman15}
-%  Md. A. Rhaman \textit{et al.},
-%  A Review on Cuprate Based Superconducting Materials Including Characteristics and Applications,
-%  \textit{American Journal of Physics and Applications}, \textbf{Vol.3, No.2}:39-56,
-%  2015.
-%
-%\bibitem{jahn37}
-%  H. A. Jahn and E. Teller,
-%  Stability of Polyatomic Molecules in Degenerate Electronic States,
-%  \textit{Proc. R. Soc. London, Ser. A}, \textbf{161}:200-,
-%  1937.
-%
-%\bibitem{damascelli03}
-%  A. Damascelli \textit{et. al},
-%  Angle-resolved photoemission studies on the cuprate superconductors,
-%  \textit{Rev. Mod. Phys.}, \textbf{75}:473-,
-%  2003.
-%
-%
-%\bibitem{damascelli04}
-%  A. Damascelli,
-%  Probing the Electronic Structure of Complex Systems by ARPES,
-%  \textit{Physica Scripta}, \textbf{T109}:61-,
-%  2004.
-%  
-%\bibitem{hufner95}
-%  S. H\"ufner,
-%  Photoelectron Spectroscopy, 2nd Edition,
-%  \textit{Springer-Verlag} New York,
-%  1995.
-%
-%\bibitem{nolting7-7}
-%  W. Nolting,
-%  Viel-Teilchen-Theorie, 7th Edition,
-%  \textit{Springer-Verlag} Berlin Heidelberg,
-%  2009.
-%
-%\bibitem{wang12}
-%  W.-P. Wang, \textit{et. al},
-%  Orbital characters determined from Fermi surface intensity patterns using angle-resolved photoemission spectroscopy,
-%  \textit{Physical Review B}, \textbf{85}:214518,
-%  2012.
-%
-%\bibitem{osterwalder_pes}
-%  J. Osterwalder,
-%  \textit{Notes from electron spectroscopy lecture},
-%  UZH.
-%  
-%\bibitem{matt12}
-%  Christian Matt, 
-%  \textit{Master Thesis: The Pseudogap phase in high-temperature superconductors},
-%  ETH Zurich,
-%  2012.
-%  
-%\bibitem{matt17}
-%  Christian Matt, \textit{et. al},
-%  High-temperature Superconductivity Restrained by Orbital Hybridisation,
-%  \textit{to be published.}
-
-\end{thebibliography}
+\bibliographystyle{plain}
+\bibliography{bibtex/bibtex}
 
 \end{document}
