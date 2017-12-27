@@ -210,6 +210,22 @@ def plot_box(x0, y0, width, height, ax, **line_style):
     ax.plot([x0, x0], [y0, y0+height], **line_style)
     return ax
 
+def light_beam(X, amplitude, frequency, angle):
+    """ """
+    Y = amplitude*np.sin(2*np.pi*frequency*X)
+    X_ = np.zeros(len(X))
+    Y_ = np.zeros(len(Y))
+    
+    phi = np.pi/2 - angle
+    rot = np.matrix([[np.cos(phi), -np.sin(phi)],
+                     [np.sin(phi),  np.cos(phi)]])
+
+    for idx in range(len(X)):
+        X_[idx], Y_[idx] = rot * np.matrix([X[idx], Y[idx]]).T    
+    return X_, Y_
+
+
+
 #==============================================================================
 # Main function
 #==============================================================================

@@ -2,65 +2,67 @@
 \BOOKMARK [1][-]{section.1.1}{Peierl Instability}{chapter.1}% 2
 \BOOKMARK [0][-]{chapter.2}{Charge Order}{}% 3
 \BOOKMARK [1][-]{section.2.1}{From Causality to Kramer-Kronig relation}{chapter.2}% 4
-\BOOKMARK [2][-]{section*.3}{Example: Damped Harmonic Oscillator}{section.2.1}% 5
-\BOOKMARK [0][-]{chapter.3}{Quantum Oscillations \046 ARPES}{}% 6
-\BOOKMARK [1][-]{section.3.1}{Quantum Oscillations}{chapter.3}% 7
-\BOOKMARK [2][-]{subsection.3.1.1}{Landau Cylinder}{section.3.1}% 8
-\BOOKMARK [2][-]{subsection.3.1.2}{Onsager Relation}{section.3.1}% 9
-\BOOKMARK [3][-]{section*.8}{Effective mass and Mean Free Path}{subsection.3.1.2}% 10
-\BOOKMARK [3][-]{section*.9}{De Haas-van Alphen effect and Shubnikov-de Hass effect}{subsection.3.1.2}% 11
-\BOOKMARK [1][-]{section.3.2}{Angle Resolved Photo Emission Spectroscopy}{chapter.3}% 12
-\BOOKMARK [2][-]{subsection.3.2.1}{Scattering Experiment}{section.3.2}% 13
-\BOOKMARK [2][-]{subsection.3.2.2}{Fermi's Golder Rule}{section.3.2}% 14
-\BOOKMARK [2][-]{subsection.3.2.3}{Angle Resolved Photo Emission spectroscopy}{section.3.2}% 15
-\BOOKMARK [0][-]{chapter.4}{Second Quantization}{}% 16
-\BOOKMARK [1][-]{section.4.1}{1D-Chain}{chapter.4}% 17
-\BOOKMARK [1][-]{section.4.2}{Second quantization: Free electron gas}{chapter.4}% 18
-\BOOKMARK [2][-]{section*.10}{Electron-Electron Interaction term}{section.4.2}% 19
-\BOOKMARK [3][-]{section*.15}{Fermi Liquid Theory}{section*.10}% 20
-\BOOKMARK [3][-]{section*.16}{Electron Tight Binding Model}{section*.10}% 21
-\BOOKMARK [3][-]{section*.17}{Example: cubic lattice structure}{section*.10}% 22
-\BOOKMARK [2][-]{subsection.4.2.1}{Charge Ordering}{section.4.2}% 23
-\BOOKMARK [3][-]{section*.19}{Thomas-Fermi Screening}{subsection.4.2.1}% 24
-\BOOKMARK [3][-]{section*.20}{Thomas-Fermi Wave vector}{subsection.4.2.1}% 25
-\BOOKMARK [3][-]{section*.22}{Example: Coulomb Potential}{subsection.4.2.1}% 26
-\BOOKMARK [2][-]{subsection.4.2.2}{Lindhard Potential}{section.4.2}% 27
-\BOOKMARK [0][-]{chapter.5}{Magnetism}{}% 28
-\BOOKMARK [1][-]{section.5.1}{Paramagnetism}{chapter.5}% 29
-\BOOKMARK [2][-]{section*.23}{Magnetic Moment}{section.5.1}% 30
-\BOOKMARK [3][-]{section*.24}{Example: Hydrogen Atom}{section*.23}% 31
-\BOOKMARK [3][-]{section*.25}{Magnetic Moment of Atoms}{section*.23}% 32
-\BOOKMARK [3][-]{section*.26}{Magnetization}{section*.23}% 33
-\BOOKMARK [3][-]{section*.28}{Magnetic Moment in a -Field}{section*.23}% 34
-\BOOKMARK [3][-]{section*.29}{Magnetic susceptibility}{section*.23}% 35
-\BOOKMARK [3][-]{section*.30}{Diamagnetism}{section*.23}% 36
-\BOOKMARK [3][-]{section*.31}{Simplest Case: e- only}{section*.23}% 37
-\BOOKMARK [2][-]{subsection.5.1.1}{How to fill the valence shell}{section.5.1}% 38
-\BOOKMARK [3][-]{section*.32}{Hund's rules}{subsection.5.1.1}% 39
-\BOOKMARK [3][-]{section*.33}{Crystal field effects}{subsection.5.1.1}% 40
-\BOOKMARK [3][-]{section*.34}{Octahedral crystal environment}{subsection.5.1.1}% 41
-\BOOKMARK [3][-]{section*.35}{Tetrahedral crystal environment}{subsection.5.1.1}% 42
-\BOOKMARK [3][-]{section*.36}{Variation of crystal field environment}{subsection.5.1.1}% 43
-\BOOKMARK [3][-]{section*.37}{Jahn-Teller Distortion}{subsection.5.1.1}% 44
-\BOOKMARK [3][-]{section*.38}{Resonant inelastic x-ray scattering \(RIXS\)}{subsection.5.1.1}% 45
-\BOOKMARK [1][-]{section.5.2}{Ferromagnetism}{chapter.5}% 46
-\BOOKMARK [2][-]{subsection.5.2.1}{H2 Molecule}{section.5.2}% 47
-\BOOKMARK [3][-]{section*.39}{Wave Function Considerations}{subsection.5.2.1}% 48
-\BOOKMARK [3][-]{section*.40}{Quantum mechanical Spin-Operators}{subsection.5.2.1}% 49
-\BOOKMARK [3][-]{section*.41}{Consider weak Coulomb interaction}{subsection.5.2.1}% 50
-\BOOKMARK [3][-]{section*.42}{What is HSpinint}{subsection.5.2.1}% 51
-\BOOKMARK [3][-]{section*.43}{Ferromagnetism}{subsection.5.2.1}% 52
-\BOOKMARK [3][-]{section*.44}{Conjecture}{subsection.5.2.1}% 53
-\BOOKMARK [3][-]{section*.45}{Solution}{subsection.5.2.1}% 54
-\BOOKMARK [3][-]{section*.48}{Landau Theory}{subsection.5.2.1}% 55
-\BOOKMARK [2][-]{subsection.5.2.2}{Exchange Interaction J}{section.5.2}% 56
-\BOOKMARK [2][-]{subsection.5.2.3}{Ferromagnetic Magnons}{section.5.2}% 57
-\BOOKMARK [0][-]{chapter.6}{Superconductivity}{}% 58
-\BOOKMARK [1][-]{section.6.1}{Conventional superconducters}{chapter.6}% 59
-\BOOKMARK [2][-]{subsection.6.1.1}{Link \040\046 Meissner Effect}{section.6.1}% 60
-\BOOKMARK [1][-]{section.6.2}{London Equation}{chapter.6}% 61
-\BOOKMARK [1][-]{section.6.3}{Coherence Length}{chapter.6}% 62
-\BOOKMARK [1][-]{section.6.4}{Ginzburg-Landau Theory}{chapter.6}% 63
-\BOOKMARK [2][-]{subsection.6.4.1}{Orderparameter in the Ginzburg-Landau Model}{section.6.4}% 64
-\BOOKMARK [1][-]{section.6.5}{Classification of different superconductors}{chapter.6}% 65
-\BOOKMARK [1][-]{section.6.6}{Vortices}{chapter.6}% 66
+\BOOKMARK [2][-]{section*.4}{Example: Damped Harmonic Oscillator}{section.2.1}% 5
+\BOOKMARK [3][-]{section*.5}{Kramers-Kronig Relation}{section*.4}% 6
+\BOOKMARK [3][-]{section*.6}{Further Examples of Response Functions}{section*.4}% 7
+\BOOKMARK [0][-]{chapter.3}{Quantum Oscillations \046 ARPES}{}% 8
+\BOOKMARK [1][-]{section.3.1}{Quantum Oscillations}{chapter.3}% 9
+\BOOKMARK [2][-]{subsection.3.1.1}{Landau Cylinder}{section.3.1}% 10
+\BOOKMARK [2][-]{subsection.3.1.2}{Onsager Relation}{section.3.1}% 11
+\BOOKMARK [3][-]{section*.11}{Effective mass and Mean Free Path}{subsection.3.1.2}% 12
+\BOOKMARK [3][-]{section*.12}{De Haas-van Alphen effect and Shubnikov-de Hass effect}{subsection.3.1.2}% 13
+\BOOKMARK [1][-]{section.3.2}{Angle Resolved Photo Emission Spectroscopy}{chapter.3}% 14
+\BOOKMARK [2][-]{subsection.3.2.1}{Scattering Experiment}{section.3.2}% 15
+\BOOKMARK [2][-]{subsection.3.2.2}{Fermi's Golder Rule}{section.3.2}% 16
+\BOOKMARK [2][-]{subsection.3.2.3}{Angle Resolved Photo Emission spectroscopy}{section.3.2}% 17
+\BOOKMARK [0][-]{chapter.4}{Second Quantization}{}% 18
+\BOOKMARK [1][-]{section.4.1}{1D-Chain}{chapter.4}% 19
+\BOOKMARK [1][-]{section.4.2}{Second quantization: Free electron gas}{chapter.4}% 20
+\BOOKMARK [2][-]{section*.13}{Electron-Electron Interaction term}{section.4.2}% 21
+\BOOKMARK [3][-]{section*.18}{Fermi Liquid Theory}{section*.13}% 22
+\BOOKMARK [3][-]{section*.19}{Electron Tight Binding Model}{section*.13}% 23
+\BOOKMARK [3][-]{section*.20}{Example: cubic lattice structure}{section*.13}% 24
+\BOOKMARK [2][-]{subsection.4.2.1}{Charge Ordering}{section.4.2}% 25
+\BOOKMARK [3][-]{section*.22}{Thomas-Fermi Screening}{subsection.4.2.1}% 26
+\BOOKMARK [3][-]{section*.23}{Thomas-Fermi Wave vector}{subsection.4.2.1}% 27
+\BOOKMARK [3][-]{section*.25}{Example: Coulomb Potential}{subsection.4.2.1}% 28
+\BOOKMARK [2][-]{subsection.4.2.2}{Lindhard Potential}{section.4.2}% 29
+\BOOKMARK [0][-]{chapter.5}{Magnetism}{}% 30
+\BOOKMARK [1][-]{section.5.1}{Paramagnetism}{chapter.5}% 31
+\BOOKMARK [2][-]{section*.26}{Magnetic Moment}{section.5.1}% 32
+\BOOKMARK [3][-]{section*.27}{Example: Hydrogen Atom}{section*.26}% 33
+\BOOKMARK [3][-]{section*.28}{Magnetic Moment of Atoms}{section*.26}% 34
+\BOOKMARK [3][-]{section*.29}{Magnetization}{section*.26}% 35
+\BOOKMARK [3][-]{section*.31}{Magnetic Moment in a -Field}{section*.26}% 36
+\BOOKMARK [3][-]{section*.32}{Magnetic susceptibility}{section*.26}% 37
+\BOOKMARK [3][-]{section*.33}{Diamagnetism}{section*.26}% 38
+\BOOKMARK [3][-]{section*.34}{Simplest Case: e- only}{section*.26}% 39
+\BOOKMARK [2][-]{subsection.5.1.1}{How to fill the valence shell}{section.5.1}% 40
+\BOOKMARK [3][-]{section*.35}{Hund's rules}{subsection.5.1.1}% 41
+\BOOKMARK [3][-]{section*.36}{Crystal field effects}{subsection.5.1.1}% 42
+\BOOKMARK [3][-]{section*.37}{Octahedral crystal environment}{subsection.5.1.1}% 43
+\BOOKMARK [3][-]{section*.38}{Tetrahedral crystal environment}{subsection.5.1.1}% 44
+\BOOKMARK [3][-]{section*.39}{Variation of crystal field environment}{subsection.5.1.1}% 45
+\BOOKMARK [3][-]{section*.40}{Jahn-Teller Distortion}{subsection.5.1.1}% 46
+\BOOKMARK [3][-]{section*.41}{Resonant inelastic x-ray scattering \(RIXS\)}{subsection.5.1.1}% 47
+\BOOKMARK [1][-]{section.5.2}{Ferromagnetism}{chapter.5}% 48
+\BOOKMARK [2][-]{subsection.5.2.1}{H2 Molecule}{section.5.2}% 49
+\BOOKMARK [3][-]{section*.42}{Wave Function Considerations}{subsection.5.2.1}% 50
+\BOOKMARK [3][-]{section*.43}{Quantum mechanical Spin-Operators}{subsection.5.2.1}% 51
+\BOOKMARK [3][-]{section*.44}{Consider weak Coulomb interaction}{subsection.5.2.1}% 52
+\BOOKMARK [3][-]{section*.45}{What is HSpinint}{subsection.5.2.1}% 53
+\BOOKMARK [3][-]{section*.46}{Ferromagnetism}{subsection.5.2.1}% 54
+\BOOKMARK [3][-]{section*.47}{Conjecture}{subsection.5.2.1}% 55
+\BOOKMARK [3][-]{section*.48}{Solution}{subsection.5.2.1}% 56
+\BOOKMARK [3][-]{section*.51}{Landau Theory}{subsection.5.2.1}% 57
+\BOOKMARK [2][-]{subsection.5.2.2}{Exchange Interaction J}{section.5.2}% 58
+\BOOKMARK [2][-]{subsection.5.2.3}{Ferromagnetic Magnons}{section.5.2}% 59
+\BOOKMARK [0][-]{chapter.6}{Superconductivity}{}% 60
+\BOOKMARK [1][-]{section.6.1}{Conventional superconducters}{chapter.6}% 61
+\BOOKMARK [2][-]{subsection.6.1.1}{Link \040\046 Meissner Effect}{section.6.1}% 62
+\BOOKMARK [1][-]{section.6.2}{London Equation}{chapter.6}% 63
+\BOOKMARK [1][-]{section.6.3}{Coherence Length}{chapter.6}% 64
+\BOOKMARK [1][-]{section.6.4}{Ginzburg-Landau Theory}{chapter.6}% 65
+\BOOKMARK [2][-]{subsection.6.4.1}{Orderparameter in the Ginzburg-Landau Model}{section.6.4}% 66
+\BOOKMARK [1][-]{section.6.5}{Classification of different superconductors}{chapter.6}% 67
+\BOOKMARK [1][-]{section.6.6}{Vortices}{chapter.6}% 68

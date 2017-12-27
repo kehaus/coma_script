@@ -176,7 +176,13 @@
 }
 \DeclareMathOperator{\sign}{sign}
 
+\newcommand{\FT}[1]{	% typset definition for Fourier transformation operator
+  \mathcal{FT}\{ #1 \}
+}
 
+\newcommand{\princVal}{  % typeset cauchy principle value
+  \mathcal{P}
+}
 
 
 
@@ -300,25 +306,47 @@
 \section{From Causality to Kramer-Kronig relation}
 
 
-\begin{minipage}{0.40\textwidth}
+For a linear system to obey causality its response function has to have the following form
 
-  Looking at a causal function $\tilde{\chi}(t)$, we can split it, like every analytical function, in an even $\chi_\text{even}(t)$ and an odd $\chi_\text{odd}(t)$ part.
+\begin{equation} \label{eq:response_causality}
+  \tilde{\chi}(t) ~~ = ~~ \left\{ \begin{array}{lc} 
+    0        &  t < t_0 \\
+    \chi(t)  &  t > t_0
+  \end{array}\right.
+\end{equation}
 
-  \begin{equation*}
-    \tilde{\chi}(t) ~~ = ~~ \left\{ \begin{array}{lc} 
-      0        &  t < t_0 \\
-      \chi(t)  &  t > t_0
-    \end{array}\right.
-  \end{equation*}
-%   \includegraphics[width=0.8\textwidth]{img/uzh_logo}
-\end{minipage}
-\begin{minipage}{0.05\textwidth}
-\end{minipage}
-\begin{minipage}{0.55\textwidth}
-   \includegraphics[width=1.0\textwidth]{../img/causal_suscept.pdf}
-\end{minipage}
 
-%Every function $\tilde{\chi}(t)$ can be divided in an even $\chi_{even}(t)$ and an odd $\chi_{odd}(t)$ part.
+\begin{figure}[t]
+  \begin{minipage}[c]{.50\textwidth}
+    \vspace*{\fill}
+    \centering
+    \includegraphics[width=0.9\linewidth]{../img/causal_suscept.pdf}
+%   \captionsetup{width=6.9cm}
+    \captionsetup{width=.85\linewidth}
+  \end{minipage}%
+  \begin{minipage}[c]{.50\textwidth}
+    \vspace*{\fill}
+    \centering
+    \includegraphics[width=0.9\linewidth]{../img/causal_sign_fct.pdf}
+    \captionsetup{width=.95\linewidth}
+  \end{minipage}
+  \captionof{figure}{\textbf{Left:} An example of a response function obeying causality as stated by \refEq{eq:response_causality}. \textbf{Right:} Graphical illustration of the sign function.}
+  \label{fig:QO_landau_level}
+\end{figure}
+
+This connection between the causality of a system and its response function can be exemplified in the following way.
+For a linear system, characterized by $\chi(t)$, the response to a input signal $x(t)$ is given as $y(t) = \int x(t -t') \chi(t') dt'$. 
+By causality we understand that there can't be an effect which precedes its cause. Therefore we assume that $y(t_0)$ at particular time $t_0$ can only depend on the input signal $x(t)$ for $t \leq t_0$. In that sense we see that when writing $y(t)$ as
+
+
+\begin{equation}
+  y(t) ~~=~~ \int_{-\infty}^0 \chi(\tau) x(t-\tau)\ d\tau ~+~ \int_0^\infty \chi(\tau) x(t-\tau)\ d\tau
+\end{equation}
+
+the first integral has to vanish. Since $x(t)$ is arbitrary, we can conclude that causality is only obeyed if $\chi(t)=0$ for $t<0$.
+
+Like every analytical function we can split the response function $\hat{\chi}(t)$ in an even $\chi_\text{even}(t)$ and an odd $\chi_\text{odd}(t)$ part
+
 
 \begin{equation} \label{eq:even_odd}
 \tilde{\chi}(t) ~~ = ~~ \frac{\tilde{\chi}(t) + \tilde{\chi}(-t)}{2} + \frac{\tilde{\chi}(t) - \tilde{\chi}(-t)}{2} ~~ = ~~ \chi_\text{even}(t) + \chi_\text{odd}(t)
@@ -332,7 +360,7 @@ Multiplying the even part of this function with the signum function yields,
 \end{equation}
 
 
-Using this relation to replace $\chi_\text{odd}(t)$ in \refEq{eq:even_odd}.
+Using this relation to replace $\chi_\text{odd}(t)$ in \refEq{eq:even_odd} gives
 
 
 \begin{equation}
@@ -369,7 +397,7 @@ The solution to this differential equation can be found rather easy by transform
 
 We define the systems response function in Fourier space as
 
-\begin{equation} \label{eq:damped_osc_respond}
+\begin{equation} \label{eq:damped_osc_response}
   \chi(\omega) ~~\equiv~~ \frac{x(\omega)}{f(\omega)} ~~=~~ \frac{1}{\omega_0^2 - \omega^2 + i\gamma\omega} ~~=~~ | \chi(\omega)| \{\cos(\phi) + i\sin(\phi) \}
 \end{equation}
 
@@ -406,32 +434,154 @@ To illustrate that this solution is correct, we look at the special case were th
 \end{equation}
 
 
-As an ansatz for a solution of \refEq{eq:damped_osc_DE} we choose
+As an ansatz for a solution to \refEq{eq:damped_osc_DE} we choose
 
 \begin{equation}
-  x(t) ~~=~~ f_0 | \chi(\omega) | \cos(\omega t - \phi)
+  x(t) ~~=~~ f_0 | \chi(\omega) | \cos(\omega t)
 \end{equation}
 
 
-We check if this ansatz is correct by calculating its Fourier transform
+We check if this ansatz is correct by calculating its Fourier transform. Using
 
-\begin{equation}
-  x(\omega) ~~=~~ \int x(t)\ e^{i\omega t}\ dt 
-  ~~=~~ f_0 |\chi(\omega)| \int \cos(\omega 1 - \phi)\ e^{i\omega t} dt 
-  ~~=~~ f_0 | \chi(\omega) \int \left\{... \right\} 
-\end{equation}
-
-\textcolor{red}{equation not complete}
+%\begin{equation}
+%  x(\omega) ~~=~~ \int x(t)\ e^{i\omega t}\ dt 
+%  ~~=~~ f_0 |\chi(\omega)| \int \cos(\omega 1 - \phi)\ e^{i\omega t} dt 
+%  ~~=~~ f_0 | \chi(\omega) \int \left\{... \right\} 
+%\end{equation}
 
 
 \begin{align}
   \int \cos(\omega_0 t)\ e^{i\omega t}\ dt 
   ~~& =~~ \int \frac{e^{i\omega_0 t} + e^{-i\omega_0 t)}}{2}\ e^{i\omega t}\ dt
   ~~=~~ \frac{1}{2} \int e^{i(\omega + \omega_0)t} + e^{i(\omega - \omega_0)t}\ dt\nonumber \\
-  ~~& =~~ \frac{1}{2} \delta(\omega + \omega_0) ~+~ \omega(\omega - \omega_0)
+  ~~& =~~ \frac{1}{2} \delta(\omega + \omega_0) ~+~ \delta(\omega - \omega_0)
+\end{align}
+
+we get
+
+\begin{equation}
+  x(\omega) ~~=~~  \frac{f_0 |\chi(\omega)|}{2} (\delta(\omega + \omega_0) ~+~ \delta(\omega - \omega_0))
+\end{equation}
+
+
+%Average power
+%
+%\begin{equation}
+%  P ~~=~~ \frac{1} \int_0^T f(t) \cdot \dot{x}(t)\ dt ~~=~~ \frac{f_0^2}{T} |\chi(\omega)| \int \cos(\omega t) \omega_0 \cos(\omega t - \phi)\ dt ~~=~~ 
+%\end{equation}
+
+
+Power consumption due to the velocity dependent damping term in \refEq{eq:damped_osc_DE} is given as
+
+\begin{align}
+  P(t) ~~& =~~ f(t) \cdot \dot{x}(t) ~~=~~ f_0^2\ |\chi(\omega)|\ \omega\ \cos(\omega t) \sin(\omega t - \phi)\nonumber \\
+  ~~& =~~ - f_0^2\ |\chi(\omega)|\ \omega\ \left[ \cos(\omega t) \sin(\omega t) \cos(\phi) - \cos^2(\omega t) \sin(\phi) \right]
 \end{align}
 
 
+We are interested in the time averaged power dissipated due to the damping term
+
+\begin{align}
+  \langle P \rangle ~~& =~~ \frac{1}{T} \int_0^T P(t)\ dt \nonumber \\ 
+  ~~& =~~ \frac{f_0^2}{T}\ |\chi(\omega)|\ \omega\ \int_0^T \cos(\omega t) \sin(\omega t) \cos(\phi) - 
+  \cos^2(\omega t) \sin(\phi)\ dt \nonumber \\
+  ~~& =~~ \frac{f_0^2}{2}\ |\chi(\omega)|\ \omega_0 \sin(\phi) 
+  ~~=~~ \frac{f_0^2}{2}\ \omega_0\ \chi''(\omega_0)
+\end{align}
+
+To get to this result we used  the properties $\int_0^T \cos(\omega t) \sin(\omega t)\ dt = 0$ and $\int_0^T \cos^2(\omega t)\ dt = 1/2$ of the trigonometric functions when integrating over one period $T$. We further replaced the period with the frequency $\omega_0$ by using $T=2\pi /\omega_0$.
+Using the polar from of the susceptibility introduced in \refEq{eq:damped_osc_response} we can assign the average power loss to the imaginary part $\chi''(t)$.
+
+The physical implication here is that, seen at the example of the damped harmonic oscillator, the dissipated energy of a system can be linked to the imaginary part of its response function.
+This is interesting because it allows us to evaluate the energy put through (dissipated in) a system by just looking at the the response functions real (imaginary) part. 
+%It is also nice to see, that the very physical distinction between energy transmission and -dissipation is mapped to a purely mathematical property like real- and imaginary part of the systems characterizing quantity like the susceptibility.
+It is also nice to see that the very physical distinction between energy transmission and -dissipation can be recognized again in a purely mathematical property, as the real- and imaginary part, of a systems characterizing quantity like the susceptibility.
+
+
+\subsubsection{Kramers-Kronig Relation}
+
+\begin{equation} \label{eq:chi_img}
+  i \chi''(\omega) ~=~ \chi_\text{odd}(\omega) ~=~ \int \sign(t) \cdot \chi_\text{even}(t) e^{i\omega t}\ dt ~=~ \FT{\sign(t)} \ast \FT{\chi_\text{even}(t)}
+\end{equation}
+
+to write the convolution of the Fourier transforms the convolution theorem was used. Since $\sign(t)$ is an odd function its Fourier transform is
+
+\begin{equation}
+  \int \sign(t) \sin(\omega t)\ dt ~~=~~ 2i \int^{\pi \omega}_0 \sin(\omega t)\ dt ~~=~~ \princVal\ \frac{2i}{\omega}
+\end{equation}
+
+Since the integration over the range $t \in \mathbb{R}/[-\pi/\omega, \pi/\omega]$  cancels out and the integrand is even we only have to integrate from $0$ to $\pi/\omega$. 
+The discontinuity introduced by the $\omega^{-1}$ term is due to the sign function and and has no physical origin. Plugging $\sign(\omega)$ into \refEq{eq:chi_img}
+
+\begin{equation}
+  i \chi''(\omega) ~~=~~ \int_{-\infty}^\infty \sign(\omega' - \omega)\ \chi'(\omega')\ d\omega' ~~=~~
+  \princVal \int_{-\infty}^\infty \frac{2i}{\omega' - \omega}\ chi'(\omega')\ d\omega'
+\end{equation}
+
+Since the imaginary unit $i$ is present on both sides of the equation we can neglect it 
+
+\begin{align}
+  \chi''(\omega) ~~& =~~ 2 \princVal \int_{-\infty}^\infty \frac{\chi'(\omega)}{\omega' - \omega}\ d\omega'
+  ~~=~~ 2\princVal \int_{-\infty}^\infty \frac{\chi''(\omega')(\omega' + \omega)}{(\omega'^2 - \omega^2)}\ d\omega' \nonumber \\
+  ~~& =~~ 2\princVal \int_{-\infty}^\infty \frac{\omega\ \chi'(\omega')}{\omega'^2-\omega^2}\ d\omega'
+\end{align}
+
+in the last step we used the fact that the integration $\omega' \chi'(\omega')$ cancels out since the integrand is odd. This relation is between $\chi''(\omega)$ and $\chi'(\omega)$ is known as the \textbf{Kramers-Kronig Relation}. It is a direct consequence of the causality of the response function (\refEq{eq:response_causality}). 
+
+
+\subsubsection{Further Examples of Response Functions}
+
+From Ohm's law we know, that the current density $\vc{j}$ in a material is related to the electric field $\vc{E}$ in the material by the equation $\vc{j} = \sigma \vc{E}$ where $\sigma$ is the material dependent electrical conductivity. Ohm's Law is mostly used for the static case. 
+% But this relation also holds if we assume the current density and the electric field to have a frequency dependence
+In the more general case were we assume that the current density and the electric field have a frequency dependent component, we can generalize Ohm's law with the help of linear response theory to become
+
+\begin{equation}
+  \vc{j}(\omega) ~~=~~ \sigma(\omega) \vc{E}(\sigma)
+\end{equation}
+
+in this case we refer to $\sigma(\omega)$ as the optical conductivity\footnote{Wikipedia - Optical conductivity - \url{https://en.wikipedia.org/wiki/Optical_conductivity}}.
+
+For experiments it's useful to define the electric displacement field $\vc{D}(t)$. Its Fourier transform is given as
+
+\begin{equation}
+  \vc{D}(\omega) ~~=~~ \varepsilon(\omega) \vc{E}(\omega)
+\end{equation}
+
+with the dielectric function $\varepsilon(\omega)$ as the response function of the system. This function is composed of 
+
+\begin{equation}
+  \varepsilon(\omega) ~~=~~ \varepsilon_0 ~+~ \frac{i}{2}\sigma(\omega)
+\end{equation}
+
+The dielectric function can be linked to the refraction index of a material b<
+
+\begin{equation} \label{eq:refrac_index}
+  \sqrt{\varepsilon(\omega)} ~~=~~ n(\omega) ~~=~~ n'(\omega) ~+~ in''(\omega)
+\end{equation}
+
+
+Looking at the special case where the incident angle is zero $\vartheta = 0$ and therefore the wave vectors $\vc{k}_i$, $\vc{k}_r$ and $\vc{k}_t$ of the incident, reflected and transmitted plane waves lay on one line perpendicular to the surface. We can write for the incident $\vc{E}_i$ and transmitted $\vc{E}_t$ electric field component
+
+\begin{gather} 
+  \vc{E}_i \propto e^{i(\vc{k}_i z - \omega t)} ~, \nonumber \\
+  \vc{E}_t \propto e^{i(\vc{k}_t z - \omega t)} ~~\Rightarrow~~ \vc{E}_t \propto e^{i\{(n'+in'')\vc{k}_i z - \omega t\}} = e^{-n''\vc{k}_i z}\ e^{i(n' \vc{k}_i z - \omega t)} 
+\end{gather}
+
+
+By introducing $\lambda = 1/\vc{k}_i n''$ we get for the transmitted electric field
+
+\begin{equation}
+  \vc{E}_t \propto e^{-z/\lambda}\ e^{i(n'\vc{k}_i z - \omega t)}
+\end{equation}
+
+In reflection measurements the accessible quantity is the reflectivity $R(\omega)$
+
+\begin{equation}
+  R(\omega) ~~=~~ \left| \frac{1-n}{1+n} \right|^2 
+  ~~=~~ \left| \frac{1-n'(\omega) - i n''(\omega)}{1 + n' + in''} \right|^2
+\end{equation}
+
+By measuring the reflectivity one can compute only the real part $n'(\omega)$ of the refractive index since the phase information is lost because of the quadratic dependence. But if $n'(\omega)$ over a large frequency range one can compute the imaginary part $n''(\omega)$ by applying Kramers-Kronig Relation. Doing that allows then to reconstruct the complete refractive index $n(\omega)$. If the refractive index is known it isn't difficult to compute then material specific quantities like the dielectric function $\varepsilon(\omega)$ or the optical conductivity $\sigma(\omega)$.
 
 %=======================================================================
 % Quantum Oscillations & ARPES - Techniques to measure Fermi surface
