@@ -301,7 +301,7 @@
 %
 % 25.09.2017
 
-\chapter{Charge Order}
+\chapter{Linear Response Theory}
 
 \section{From Causality to Kramer-Kronig relation}
 
@@ -356,7 +356,7 @@ Like every analytical function we can split the response function $\hat{\chi}(t)
 Multiplying the even part of this function with the signum function yields,
 
 \begin{equation}
-  \sign(t) \cdot \chi_\text{even} ~~ = ~~ \sign(t) \cdot \left\{ \frac{\tilde{\chi}(t)}{2} + \frac{\tilde{\chi}(-t)}{2} \right\} ~~ = ~~~\frac{\tilde{\chi}(t)}{2} - \frac{\tilde{\chi}(t)}{2} ~~ = ~~ \chi_\text{odd}(t)
+  \sign(t) \cdot \chi_\text{even} ~~ = ~~ \sign(t) \cdot \left\{ \frac{\tilde{\chi}(t)}{2} + \frac{\tilde{\chi}(-t)}{2} \right\} ~~ = ~~~\frac{\tilde{\chi}(t)}{2} - \frac{\tilde{\chi}(-t)}{2} ~~ = ~~ \chi_\text{odd}(t)
 \end{equation}
 
 
@@ -507,7 +507,7 @@ It is also nice to see that the very physical distinction between energy transmi
 to write the convolution of the Fourier transforms the convolution theorem was used. Since $\sign(t)$ is an odd function its Fourier transform is
 
 \begin{equation}
-  \int \sign(t) \sin(\omega t)\ dt ~~=~~ 2i \int^{\pi \omega}_0 \sin(\omega t)\ dt ~~=~~ \princVal\ \frac{2i}{\omega}
+  \int \sign(t) \sin(\omega t)\ dt ~~=~~ 2i \int^{\pi \omega}_0 \sin(\omega t)\ dt ~~=~~ \frac{2i}{\omega}
 \end{equation}
 
 Since the integration over the range $t \in \mathbb{R}/[-\pi/\omega, \pi/\omega]$  cancels out and the integrand is even we only have to integrate from $0$ to $\pi/\omega$. 
@@ -515,7 +515,7 @@ The discontinuity introduced by the $\omega^{-1}$ term is due to the sign functi
 
 \begin{equation}
   i \chi''(\omega) ~~=~~ \int_{-\infty}^\infty \sign(\omega' - \omega)\ \chi'(\omega')\ d\omega' ~~=~~
-  \princVal \int_{-\infty}^\infty \frac{2i}{\omega' - \omega}\ chi'(\omega')\ d\omega'
+  \princVal \int_{-\infty}^\infty \frac{2i}{\omega' - \omega}\ \chi'(\omega')\ d\omega'
 \end{equation}
 
 Since the imaginary unit $i$ is present on both sides of the equation we can neglect it 
@@ -553,14 +553,14 @@ with the dielectric function $\varepsilon(\omega)$ as the response function of t
   \varepsilon(\omega) ~~=~~ \varepsilon_0 ~+~ \frac{i}{2}\sigma(\omega)
 \end{equation}
 
-The dielectric function can be linked to the refraction index of a material b<
+The dielectric function can be linked to the refraction index of a material by
 
 \begin{equation} \label{eq:refrac_index}
   \sqrt{\varepsilon(\omega)} ~~=~~ n(\omega) ~~=~~ n'(\omega) ~+~ in''(\omega)
 \end{equation}
 
 
-Looking at the special case where the incident angle is zero $\vartheta = 0$ and therefore the wave vectors $\vc{k}_i$, $\vc{k}_r$ and $\vc{k}_t$ of the incident, reflected and transmitted plane waves lay on one line perpendicular to the surface. We can write for the incident $\vc{E}_i$ and transmitted $\vc{E}_t$ electric field component
+Looking at the special case where the incident angle is zero $\vartheta = 0$ and therefore the wave vectors $\vc{k}_i$, $\vc{k}_r$ and $\vc{k}_t$ of the incident, reflected and transmitted plane waves lay on one line perpendicular to the surface. We can write for the incident $\vc{E}_i$ and transmitted $\vc{E}_t$ electric field component as
 
 \begin{gather} 
   \vc{E}_i \propto e^{i(\vc{k}_i z - \omega t)} ~, \nonumber \\
@@ -776,7 +776,7 @@ A oscillation in the DOS leads therefore in an oscillating resistivity.
 
 \chapter{Second Quantization}
 
-\section{1D-Chain}
+\section{1D-Chain of Atoms}
 
 To have a first insight into second quantization, we look at a phonons emerging in a one dimensional chain of atoms
 
@@ -904,7 +904,7 @@ It turns out that it is a very convenient way of describing physical problems an
 % lec.notes 10.10.17 - first part
 % lec-notes 16.10.17 - second part
 
-\section{Second quantization: Free electron gas} % 10.10.17 - first part
+\section{Free electron gas} % 10.10.17 - first part
 
 Hamiltonian of a free electron gas can be written as. 
 
@@ -966,7 +966,7 @@ To get to the final expression we used the electron density from \refEq{eq:el_de
 
 
 
-\subsubsection{Electron-Electron Interaction term}
+\section{Electron-Electron Interaction}
 
 The electron-electron interaction term in a material is given as
 
@@ -1037,7 +1037,6 @@ The way to perform this integration can be illustrated graphically \myRef{fig:sq
 
 
 
-
 \subsubsection*{Second Quantization: Free Electron Gas} % 16.10.17 - second part 
 
 $ k_F^3 = 3 \pi^2 n$
@@ -1073,10 +1072,19 @@ Bohr Radius: $a_0 = \frac{\hbar}{m e^2}$
 \end{equation}
 
 
+%=======================================================================
+% Electron-Electron Interactions
+%=======================================================================
+%
+% lec.notes 
+% lec-notes 
 
-\subsubsection{Fermi Liquid Theory}
+\chapter{Electron-Electron Interaction}
 
-\subsubsection{Electron Tight Binding Model}
+
+\section{Fermi Liquid Theory}
+
+\section{Electron Tight Binding Model}
 % lec-notes 17.10.17
 %
 
@@ -1190,7 +1198,7 @@ The position ($\epsilon_0$) and width $W=12t$ is determined by the particular si
 %
 
 
-\subsection{Charge Ordering}
+\section{Charge Ordering}
 
 \begin{figure}
   \centering
@@ -1235,7 +1243,7 @@ We can relate the dielectric function and the susceptibility  by using the formu
 \end{equation}
 
 
-\subsubsection{Thomas-Fermi Screening}
+\subsection{Thomas-Fermi Screening}
 
 Calculate $\chi(\mathbf{q})$
 
@@ -1269,7 +1277,7 @@ With this new expression for the electron energy $\varepsilon_k$ we are able to 
 \end{align}
 
 
-As we know from \refEq{eq:tot_charge_dens} the induced charge density is given as the difference between the total charge density $n(\mathbf{r}$ and the external charge density $n_0$. Therefore we can write
+As we know from \refEq{eq:tot_charge_dens} the induced charge density is given as the difference between the total charge density $n(\mathbf{r})$ and the external charge density $n_0$. Therefore we can write
 
 \begin{equation} \label{eq:thomas_fermi}
   \rho^\text{Ind}(\mathbf{r}) ~~=~~ -e \left[ n(\mu + \varepsilon') ~-~ n(\mu) \right] 
@@ -1315,10 +1323,10 @@ From this expression it is visible that we can define a characteristic length sc
 
 \subsubsection{Example: Coulomb Potential}
 
-Looking at a point charge $Q$ placed in a sea of conduction electrons, as illustrated in \myRef{fig:screening_charge_box}.b we can express the external potential generated from the point charge as $\phi^\text{Ext}(\mathbf{r}) = Q/r$ with its Fourier transform  $\phi^\text{Ext}(\mathbf{q}) = 4\pi\ Q/q^2$. Rearranging \refEq{eg:screnn_dielect} and replacing the dielectric function by \myRef{eq:screening_dielect_new}, we obtain
+Looking at a point charge $Q$ placed in a sea of conduction electrons, as illustrated in \myRef{fig:screening_charge_box}.b we can express the external potential generated from the point charge as $\phi^\text{Ext}(\mathbf{r}) = Q/r$ with its Fourier transform  $\phi^\text{Ext}(\mathbf{q}) = 4\pi\ Q/q^2$. Rearranging \refEq{eg:screen_dielect} and replacing the dielectric function by \refEq{eq:screening_dielect_new}, we obtain
 
 \begin{equation}
-  \phi(\mathbf{q}) ~~=~~~\frac{\phi^\text{Ext}(\mathbf{q}}{\epsilon(\mathbf{q}} 
+  \phi(\mathbf{q}) ~~=~~~\frac{\phi^\text{Ext}(\mathbf{q})}{\epsilon(\mathbf{q})} 
   ~~=~~ \frac{4\pi\ Q}{q^2 + k^2_0}
 \end{equation}
 
@@ -1393,7 +1401,7 @@ The same goes for the variable $B$
 
 
 
-With these expressions for $A$ and $B$ and the definition of the electric susceptibility $\chi(\vc{q})$ (\refEq{eq:screen_suscept} we can write
+With these expressions for $A$ and $B$ and the definition of the electric susceptibility $\chi(\vc{q})$ (\refEq{eq:screen_suscept}) we can write
 
 \begin{equation}
   \chi(\vc{q}) ~~\propto~~ \int \frac{d^2 \vc{k}}{(2\pi)^n}\ \frac{f_\vc{k} - f_{\vc{k}+\vc{q}}}{\varepsilon-\vc{k} - \varepsilon_{\vc{k}+\vc{q}}}
@@ -1688,9 +1696,9 @@ Consider now spin wave function:
 \begin{equation}
   \chi_S ~~ = ~~ \chi_{Symmetric} ~~ = ~~ \left\{ 
   \begin{array}{ll}
-    | \uparrow_\alpha \downarrow_\beta \rangle &~~ | 1,1 \rangle\\
-    \left( | \uparrow \downarrow \rangle ~+~ | \downarrow \uparrow \rangle \right)/ \sqrt{2} &~~ | 1,0 \rangle\\
-    | \downarrow_\alpha \uparrow_\beta \rangle &~~ | 1,-1 \rangle
+    | \uparrow_\alpha \uparrow_\beta \rangle &~~=~ | 1,1 \rangle\\
+    \left( | \uparrow \downarrow \rangle ~+~ | \downarrow \uparrow \rangle \right)/ \sqrt{2} &~~=~ | 1,0 \rangle\\
+    | \downarrow_\alpha \downarrow_\beta \rangle &~~=~ | 1,-1 \rangle
   \end{array}\right.
 \end{equation}
 
@@ -1756,7 +1764,7 @@ Furthermore contains $H_\text{single-H}$ both Hamiltonians of the single hydroge
 
 
 \begin{equation} \label{eq:interaction_energy_minus}
-  E_- ~=~E_A ~~=~~ \langle \Psi_S | H_\text{int} | \Psi_S \rangle ~~=~~
+  E_- ~=~E_A ~~=~~ \langle \Psi_A | H_\text{int} | \Psi_A \rangle ~~=~~
   \int ( \psi_\alpha \overbracket[0.5pt][3pt]{ \psi_\beta - \psi_\beta \overbracket[0.5pt][3pt]{ \psi_\alpha )^* H_\text{int} 
   ( \psi_\alpha }^{J_2} \psi_\beta - \psi_\beta}^{J_1} \psi_\alpha ) d^3r
 \end{equation}
@@ -1796,32 +1804,34 @@ From this equation we can associate the introduced variable $J$ as the \textbf{E
 \subsubsection{What is H\textsuperscript{Spin}\textsubscript{int}}
 
 \begin{equation}
-  E_\pm ~~=~~ C ~\pm~ J ~~=~~ C ~+~ J/2 ~+~ 2J ~+~ \cdot \langle \hat{S}_\alpha \cdot \hat{S}_\beta \rangle ~~=~~ \text{constant} ~+~ 2J \langle \hat{S}_\alpha \cdot \hat{S}_\beta \rangle
+  E_\pm ~~=~~ C ~\pm~ J 
+  ~~=~~ C ~+~ J/2 ~+~ 2J \cdot \langle \hat{S}_\alpha \cdot \hat{S}_\beta \rangle 
+  ~~=~~ \text{constant} ~+~ 2J \langle \hat{S}_\alpha \cdot \hat{S}_\beta \rangle
 \end{equation}
 
 The constant contribution to the energies $E_\pm$ can be neglected since absolute energies values are arbitrary. The interesting term for us is the second one on the right-most side. It gives us a quantitative measure of how large the energy difference between the two spin configurations is
 
 \begin{equation}
   \Rightarrow ~~ H^\text{Spin}_\text{int} ~~=~~ - 2J \hat{S}_\alpha \cdot \hat{S}_\beta ~~~~ \left\{
-  \begin{array}{lcr}
-    J > 0 & ~~ \Rightarrow ~~ & E_S > E_A\\
-    J < 0 & ~~ \Rightarrow ~~ & E_A < E_S
+  \begin{array}{lccr}
+    J > 0 & ~~ \Rightarrow ~~ & E_S > E_A & ~~\Rightarrow~~ \chi_S\ \text{favorable}\\
+    J < 0 & ~~ \Rightarrow ~~ & E_A < E_S & ~~\Rightarrow~~ \chi_A\ \text{favorable}
   \end{array}\right.
 \end{equation}
 
 
-From the upper formula we see that $J$ us if $\chi_S$ or $\chi_A$ is preferred. Therefore it can be seen as an indication if ferro- or antiferromagnetism is present in a material.
+From the upper formula we see that $J$ tells if $\chi_S$ or $\chi_A$ is preferred because it determines which energy ($E_S$ or $E_A$) is lower. Therefore $J$ can be seen as an indication if ferro- or antiferromagnetism is present in a material.
 
 
 \subsubsection{Ferromagnetism}
 
 \begin{align}
   H ~~& =~~ - \sum_{ij} J_{ij} \vec{S}_i \cdot \vec{S}_j ~+~ g \mu_B \cdot \sum_j \vec{S}_j \cdot \vec{B}\nonumber \\  
-      & =~~ - \sum_j \sum_i j_{ij} \vec{S}_i \cdot \vec{S}_j ~+~ g \mu_B \sum_j \vec{S}_j \cdot \vec{B}\nonumber \\
+      & =~~ - \sum_j \sum_i J_{ij} \vec{S}_i \cdot \vec{S}_j ~+~ g \mu_B \sum_j \vec{S}_j \cdot \vec{B}\nonumber \\
       & =~~ g \mu_B \sum_j \vec{S}_j \cdot ( \underbrace{\vec{B}_{mf}}_\text{internal} ~+~ \underbrace{\vec{B}}_\text{external})
 \end{align}
 
-Using a mean field approximation we rewrite the interaction from all spins on $\vec{S}_j$ from the first term as with a mean magnetic field $\vec{B}_{mf}$ whereas we defined $\vec{B}_{mf} \equiv -2/g \mu_B \sum_i J_{ij} \vec{S}_i$. 
+Using a mean field approximation we rewrite the interaction from all spins on $\vec{S}_j$ from the first term as with a mean magnetic field $\vec{B}_{mf}$ whereas we define $\vec{B}_{mf} \equiv -2/g \mu_B \sum_i J_{ij} \vec{S}_i$. 
 
 \subsubsection{Conjecture}
 
@@ -1843,7 +1853,7 @@ Solution can be adapted from the results about paramagnetism we gained last week
 Since the argument of the hyperbolic tangent depends also on the magnetization $\vec{M}$ we have an implicit equation. A solution of this equation is illustrated in \myRef{fig:ferromag_graph_sol} as the crossing point between the hyperbolic tangent and the straight line. In this graph it is also visible, that above a certain Temperature $T>T_C$ there only exists one solution for the implicit equation which can be associated with the paramagnetic phase of the material. On the other hand for $T<T_C$ we see that there are exists multiple solution of \ref{eq:ferromag_graph_sol} which is in accordance with the magnetization curve of a ferromagnet. We can determine the Transition temperature $T_C$ by comparing the slopes of the two curves at the origin
 
 \begin{equation}
-  \frac{d}{dx} N \mu_B \tanh(x) ~~ = ~~ \frac{d}{dx} \frac{k_BT}{\mu_B \lambda} x ~~~~ \Rightarrow ~~~~
+  \left. \frac{d}{dx} N \mu_B \tanh(x)\ \right|_{x=0} ~~ = ~~ \frac{d}{dx} \frac{k_BT}{\mu_B \lambda} x ~~~~ \Rightarrow ~~~~
   T_C ~=~\frac{\lambda N \mu_B^2}{k_B} ~=~ \lambda \cdot C
 \end{equation}
 
@@ -1864,7 +1874,7 @@ Since the argument of the hyperbolic tangent depends also on the magnetization $
     \includegraphics[width=0.95\linewidth]{../img/ferro_para_compar.pdf}
     \captionsetup{width=.95\linewidth}
  %   \captionsetup{width=6.9cm}
-    \captionof{figure}{Illustration of susceptibility $\chi$ of a Para- and Ferromagnet.}
+    \captionof{figure}{Illustration of  inverse susceptibility $\chi$ of a Para- and Ferromagnet.}
   \end{minipage}
   
 \end{figure}
@@ -1882,7 +1892,7 @@ Looking at the limit $ x \ll 1$
   ~~~~ \rightarrow ~~~~ 
   \begin{array}{lcr}
     M ~~&=& ~ C \frac{B + \lambda M}{T}\\
-    \chi ~ &\equiv& ~ \frac{C}{T} + \frac{\lambda}{T} \chi
+    \chi ~ &\equiv& ~ \frac{C}{T} + \frac{\lambda C}{T} \chi
   \end{array}
   ~~~~ \Rightarrow ~~~~ 
   \chi ~=~ \frac{C}{T-\lambda C} ~=~ \frac{C}{T - T_C}
