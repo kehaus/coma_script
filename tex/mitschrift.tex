@@ -295,6 +295,9 @@
 \section{Peierl Instability}
 
 
+link between peierls transition and lindhard screening 
+\url{http://large.stanford.edu/courses/2008/ph373/yao1/}
+
 %=======================================================================
 % Derivation of Kramers Kronig relation
 %=======================================================================
@@ -364,16 +367,23 @@ Using this relation to replace $\chi_\text{odd}(t)$ in \refEq{eq:even_odd} gives
 
 
 \begin{equation}
-\tilde{\chi}(t) ~~ = ~~ \chi_\text{even} + \chi_\text{odd} ~~ = ~~ \underbrace{(1 + \sign(t))}_\text{step function} \cdot \chi_\text{even}(t) ~~ = ~~ \sigma(t) \cdot \chi_\text{even}(t)
+\tilde{\chi}(t) ~~ = ~~ \chi_\text{even} + \chi_\text{odd} ~~ = ~~ \underbrace{(1 + \sign(t))}_\text{step function} \cdot \chi_\text{even}(t) ~~ = ~~ 2 \sigma(t) \cdot \chi_\text{even}(t)
 \end{equation}
+
+%Since the Fourier transform conserves the symmetry, the Fourier transform of $\chi_\text{odd}(t)$ is also odd. Furthermore, 
+
+Taking into account that the Fourier transformation conserves the symmetry of a function, by transforming the real and odd function $\chi_\text{odd}(t)$ we get a imaginary and odd function $\chi_\textbf{•}text{odd}(\omega)$.
 
 
 \begin{align}
   \chi_\text{odd}(\omega) ~~& =~~ \int \chi_\text{odd}(t) \cdot e^{i\omega t}\ dt
   ~~=~~ \int_{-\infty}^\infty \chi_\text{odd}(t) \cdot
   \{ \underbrace{\cos(\omega t)}_\text{even} + i\underbrace{\sin(\omega t)}_\text{odd} \}\ dt \nonumber \\
-  ~~& =~~ i \int_{-\infty}^{\infty} \chi_\text{odd}(t) \cdot \sin(\omega t)\ dt ~~=~~ \chi''(\omega)
+  ~~& =~~ i \int_{-\infty}^{\infty} \chi_\text{odd}(t) \cdot \sin(\omega t)\ dt ~~=~~ i\chi''(\omega)
 \end{align}
+
+
+To get to this result we also used the fact that the integral over the entire range vanished for an odd integrand.
 
 
 \subsubsection{Example: Damped Harmonic Oscillator}
@@ -398,7 +408,10 @@ The solution to this differential equation can be found rather easy by transform
 We define the systems response function in Fourier space as
 
 \begin{equation} \label{eq:damped_osc_response}
-  \chi(\omega) ~~\equiv~~ \frac{x(\omega)}{f(\omega)} ~~=~~ \frac{1}{\omega_0^2 - \omega^2 + i\gamma\omega} ~~=~~ | \chi(\omega)| \{\cos(\phi) + i\sin(\phi) \}
+  \chi(\omega) 
+  ~~\equiv~~ \frac{x(\omega)}{f(\omega)} 
+  ~~=~~ \frac{1}{\omega_0^2 - \omega^2 + i\gamma\omega} 
+  ~~=~~ | \chi(\omega)| \{\cos(\phi) + i\sin(\phi) \}
 \end{equation}
 
 The benefit of doing so lays in the fact, that $\chi(\omega)$ depends solely on the system specific 	quantities like the resonance frequency $\omega_0$ and the damping coefficient $\gamma$.
@@ -419,7 +432,7 @@ Splitting the response function up in a real and imaginary part we get
 
 \begin{align}
   \Re\ \chi(\omega) ~& \equiv~ \chi'(\omega) ~=~ \frac{\omega^2_0 - \omega}{(\omega^2-\omega^2_0)^2 + \omega^2 \gamma^2} \\
-  \Im\ \chi(\omega) ~& \equiv~ \chi''(\omega) ~=~ \frac{\gamma \omega}{(\omega^2 - \omega^2_0)^2 + \omega^2 \gamma^2}
+  \Im\ \chi(\omega) ~& \equiv~ \chi''(\omega) ~=~ \frac{-\gamma \omega}{(\omega^2 - \omega^2_0)^2 + \omega^2 \gamma^2}
 \end{align}
 
 %The solution of this problem is then given in Fourier space as
@@ -474,7 +487,7 @@ we get
 Power consumption due to the velocity dependent damping term in \refEq{eq:damped_osc_DE} is given as
 
 \begin{align}
-  P(t) ~~& =~~ f(t) \cdot \dot{x}(t) ~~=~~ f_0^2\ |\chi(\omega)|\ \omega\ \cos(\omega t) \sin(\omega t - \phi)\nonumber \\
+  P(t) ~~& =~~ f(t) \cdot \dot{x}(t) ~~=~~ f_0^2\ |\chi(\omega)|\ (-\omega)\ \cos(\omega t) \sin(\omega t - \phi)\nonumber \\
   ~~& =~~ - f_0^2\ |\chi(\omega)|\ \omega\ \left[ \cos(\omega t) \sin(\omega t) \cos(\phi) - \cos^2(\omega t) \sin(\phi) \right]
 \end{align}
 
@@ -490,12 +503,12 @@ We are interested in the time averaged power dissipated due to the damping term
 \end{align}
 
 To get to this result we used  the properties $\int_0^T \cos(\omega t) \sin(\omega t)\ dt = 0$ and $\int_0^T \cos^2(\omega t)\ dt = 1/2$ of the trigonometric functions when integrating over one period $T$. We further replaced the period with the frequency $\omega_0$ by using $T=2\pi /\omega_0$.
-Using the polar from of the susceptibility introduced in \refEq{eq:damped_osc_response} we can assign the average power loss to the imaginary part $\chi''(t)$.
+Using the polar form of the susceptibility introduced in \refEq{eq:damped_osc_response} we can assign the average power loss to the imaginary part $\chi''(t)$.
 
 The physical implication here is that, seen at the example of the damped harmonic oscillator, the dissipated energy of a system can be linked to the imaginary part of its response function.
-This is interesting because it allows us to evaluate the energy put through (dissipated in) a system by just looking at the the response functions real (imaginary) part. 
+This is interesting because it allows us to evaluate the energy put through (dissipated in) a system by just looking at the the response functions real (imaginary) part in the frequency domain. 
 %It is also nice to see, that the very physical distinction between energy transmission and -dissipation is mapped to a purely mathematical property like real- and imaginary part of the systems characterizing quantity like the susceptibility.
-It is also nice to see that the very physical distinction between energy transmission and -dissipation can be recognized again in a purely mathematical property, as the real- and imaginary part, of a systems characterizing quantity like the susceptibility.
+It is also nice to see that the very physical distinction between energy transmission and dissipation can be recognized again in a purely mathematical property, as the real- and imaginary part, of a systems characterizing quantity like the susceptibility.
 
 
 \subsubsection{Kramers-Kronig Relation}
@@ -504,21 +517,21 @@ It is also nice to see that the very physical distinction between energy transmi
   i \chi''(\omega) ~=~ \chi_\text{odd}(\omega) ~=~ \int \sign(t) \cdot \chi_\text{even}(t) e^{i\omega t}\ dt ~=~ \FT{\sign(t)} \ast \FT{\chi_\text{even}(t)}
 \end{equation}
 
-to write the convolution of the Fourier transforms the convolution theorem was used. Since $\sign(t)$ is an odd function its Fourier transform is
+to write the convolution of the Fourier transforms the convolution theorem was used. Before evaluating the convolution we compute the Fourier transform of the sign function. Since $\sign(t)$ is an odd function its Fourier transform can be written as
 
 \begin{equation}
-  \int \sign(t) \sin(\omega t)\ dt ~~=~~ 2i \int^{\pi \omega}_0 \sin(\omega t)\ dt ~~=~~ \frac{2i}{\omega}
+  \int \sign(t) \sin(\omega t)\ dt ~~=~~ 2i \int^{\pi/ \omega}_0 \sin(\omega t)\ dt ~~=~~ \frac{2i}{\omega}
 \end{equation}
 
-Since the integration over the range $t \in \mathbb{R}/[-\pi/\omega, \pi/\omega]$  cancels out and the integrand is even we only have to integrate from $0$ to $\pi/\omega$. 
-The discontinuity introduced by the $\omega^{-1}$ term is due to the sign function and and has no physical origin. Plugging $\sign(\omega)$ into \refEq{eq:chi_img}
+Given by the periodicity of the sine function the integration over the range $t \in \mathbb{R}/[-\pi/\omega, \pi/\omega]$  cancels out. Furthermore since the integrand is even we only have to integrate from $0$ to $\pi/\omega$. 
+The discontinuity introduced by the $\omega^{-1}$ term is due to the sign function and and has no physical origin. Plugging $\sign(\omega)$ into \refEq{eq:chi_img} leads to
 
 \begin{equation}
   i \chi''(\omega) ~~=~~ \int_{-\infty}^\infty \sign(\omega' - \omega)\ \chi'(\omega')\ d\omega' ~~=~~
   \princVal \int_{-\infty}^\infty \frac{2i}{\omega' - \omega}\ \chi'(\omega')\ d\omega'
 \end{equation}
 
-Since the imaginary unit $i$ is present on both sides of the equation we can neglect it 
+The imaginary unit $i$ is present on both sides of the equation therefore we neglect it 
 
 \begin{align}
   \chi''(\omega) ~~& =~~ 2 \princVal \int_{-\infty}^\infty \frac{\chi'(\omega)}{\omega' - \omega}\ d\omega'
@@ -610,7 +623,7 @@ Charged particles exposed to a magnetic field $B$ are forced to move on closed c
 
 
 This quantization of accessible states in reciprocal space is illustrated in \myRef{fig:QO_landau_level}. 
-The electrons are free to move along the corresponding axes in reciprocal space along which the magnetic field is applied. In the plane (in $\vc{k}$-space) perpendicular to the magnetic field, the energy states lie on circles (\myRef{fig:QO_landau_level} right, bottom). This restriction lead to the characteristic picture of the nested cylinders (left image in \myRef{fig:QO_landau_level}). These cylinders are called \textbf{Landau cylinders} and the energy scale of quantization of the radius of these cylinders is given by the \textbf{cyclotron frequency} $\omega_c = eB/mc$.
+The electrons are free to move along the corresponding axes in reciprocal space along which the magnetic field is applied. In the plane (in $\vc{k}$-space) perpendicular to the magnetic field, the energy states lie on circles (\myRef{fig:QO_landau_level} right, bottom). This restriction lead to the characteristic picture of the nested cylinders (left image in \myRef{fig:QO_landau_level}). These cylinders are called \textbf{Landau cylinders} and the energy scale of quantization of the radius of these cylinders is given by the \textbf{cyclotron frequency} $\omega_c = eB/m$.
 
 
 
@@ -1323,7 +1336,7 @@ From this expression it is visible that we can define a characteristic length sc
 
 \subsubsection{Example: Coulomb Potential}
 
-Looking at a point charge $Q$ placed in a sea of conduction electrons, as illustrated in \myRef{fig:screening_charge_box}.b we can express the external potential generated from the point charge as $\phi^\text{Ext}(\mathbf{r}) = Q/r$ with its Fourier transform  $\phi^\text{Ext}(\mathbf{q}) = 4\pi\ Q/q^2$. Rearranging \refEq{eg:screen_dielect} and replacing the dielectric function by \refEq{eq:screening_dielect_new}, we obtain
+Looking at a point charge $Q$ placed in a sea of conduction electrons, as illustrated in \myRef{fig:screening_charge_box}.b we can express the external potential generated from the point charge as $\phi^\text{Ext}(\mathbf{r}) = Q/r$ with its Fourier transform  $\phi^\text{Ext}(\mathbf{q}) = 4\pi Q/q^2$. Rearranging \refEq{eg:screen_dielect} and replacing the dielectric function by \refEq{eq:screening_dielect_new}, we obtain
 
 \begin{equation}
   \phi(\mathbf{q}) ~~=~~~\frac{\phi^\text{Ext}(\mathbf{q})}{\epsilon(\mathbf{q})} 
@@ -1333,7 +1346,7 @@ Looking at a point charge $Q$ placed in a sea of conduction electrons, as illust
 Fourier transform this back to real space leads to the well known \textbf{Yukawa Potential} 
 
 \begin{equation}
-  \phi(\mathbf{r}) ~~=~~ Q \frac{e^{-i k_0 r}}{r}
+  \phi(\mathbf{r}) ~~=~~ Q \frac{e^{-k_0 r}}{r}
 \end{equation}
 
 The difference between the Coulomb- and Yukawa potential are displayed in \myRef{fig:screening_yukawa}. The screening effect added point charge by the surrounding negative charges is clearly visible in the faster convergence to zero of the Yukawa Potential. The screening also weakens the long range interaction of the charges in the solid.
@@ -1354,7 +1367,7 @@ As we know, the charge density for one electron with momentum $\mathbf{k}$ is gi
 As mentioned above, assuming the term $e\phi$ as perturbation, we can express the electron wave vector $\psi_\mathbf{k}$ as 
 
 \begin{equation} \label{eq:lindh_wf}
-  \psi_\mathbf{k} ~~=~~ | \mathbf{k}_0 \rangle ~+~ \sum_\mathbf{k}' \frac{\langle \mathbf{k}' | e\phi | \mathbf{k}_0 \rangle}{\varepsilon_{\mathbf{k}_0} - \varepsilon_{\mathbf{k}'}}
+  \psi_\mathbf{k} ~~=~~ | \mathbf{k}_0 \rangle ~+~ \sum_\mathbf{k}' \frac{\langle \mathbf{k}' | e\phi | \mathbf{k}_0 \rangle}{\varepsilon_{\mathbf{k}_0} - \varepsilon_{\mathbf{k}'}}\ | \mathbf{k}' \rangle
 \end{equation}
 
 
@@ -1371,7 +1384,9 @@ To plug our ansatz for $\psi_\mathbf{k}$ into \refEq{eq:lindh_charge} we evaluat
 Using this equation we can write the charge density \refEq{eq:lindh_charge} in the following way
 
 \begin{equation}
-  \rho^\text{Ind}(\mathbf{r}) ~~=~~ -e \sum_{\mathbf{k}} f_\mathbf{k} (A+B)
+  \rho^\text{Ind}(\mathbf{r}) 
+  ~~=~~ -e \sum_{\mathbf{k}} \left( |\Psi_\mathbf{k}|^2 ~-~ 1 \right)
+  ~~=~~ -e \sum_{\mathbf{k}} f_\mathbf{k} (A+B)
 \end{equation}
 
 
@@ -1404,12 +1419,12 @@ The same goes for the variable $B$
 With these expressions for $A$ and $B$ and the definition of the electric susceptibility $\chi(\vc{q})$ (\refEq{eq:screen_suscept}) we can write
 
 \begin{equation}
-  \chi(\vc{q}) ~~\propto~~ \int \frac{d^2 \vc{k}}{(2\pi)^n}\ \frac{f_\vc{k} - f_{\vc{k}+\vc{q}}}{\varepsilon-\vc{k} - \varepsilon_{\vc{k}+\vc{q}}}
+  \chi(\vc{q}) ~~\propto~~ \int \frac{d^2 \vc{k}}{(2\pi)^n}\ \frac{f_\vc{k} - f_{\vc{k}+\vc{q}}}{\varepsilon_\vc{k} - \varepsilon_{\vc{k}+\vc{q}}}
   ~~~~~~~~\text{with the dimensionality}~ n \in \{1,2,3\} 
 \end{equation}
 
 
-By knowing the band structure one can now calculate $\chi{\vc{q})}$. In this way one is able to experimentally measure the screening potential.
+By knowing the band structure one can now calculate $\chi(\vc{q})$. In this way one is able to experimentally measure the screening potential.
 
 
 
@@ -1566,7 +1581,7 @@ where $N$ denotes the number of atoms per volume. Recalling \ref{eq:mag_suscept}
 \textcolor{red}{compare formula with wikipedia. probably wrong by a prefactor}
 
 \begin{equation}
-  \chi_\text{Diamagnetic} ~~=~~ -\frac{\mu_0 N e^2 <r^2> Z}{4m}
+  \chi_\text{Diamagnetic} ~~=~~ -\frac{\mu_0 N Z e^2}{4m} <r^2>
 \end{equation}
 
 
@@ -1791,13 +1806,13 @@ By further defining $C \equiv C_1+C_2$ and $J \equiv J_1+J_2$ one can write the 
 Furthermore for the difference of the singlet- and triplet energy we get
 
 \begin{equation}
-  E_+ - E_- ~~=~~~2J ~~=~~ 4 \int \psi^*_\alpha \psi^*_\beta H_\text{int} \psi_\alpha \psi_\beta d^3r
+  E_+ - E_- ~~=~~~2J ~~=~~ 4 \int \psi^*_\alpha \psi^*_\beta H_\text{int} \psi_\beta \psi_\alpha d^3r
 \end{equation}
 
 From this equation we can associate the introduced variable $J$ as the \textbf{Exchange Integral}.
 
 \begin{equation}
-  J ~~=~~ \frac{E_+-E_-}{2} ~~=~~ 2 \int \psi^*_\alpha \psi^*_\beta H_\text{int} \psi_\alpha \psi_\beta d^3r
+  J ~~=~~ \frac{E_+-E_-}{2} ~~=~~ 2 \int \psi^*_\alpha \psi^*_\beta H_\text{int} \psi_\beta \psi_\alpha d^3r
 \end{equation}
 
 
@@ -1805,7 +1820,7 @@ From this equation we can associate the introduced variable $J$ as the \textbf{E
 
 \begin{equation}
   E_\pm ~~=~~ C ~\pm~ J 
-  ~~=~~ C ~+~ J/2 ~+~ 2J \cdot \langle \hat{S}_\alpha \cdot \hat{S}_\beta \rangle 
+  ~~=~~ C ~-~ J/2 ~-~ 2J \cdot \langle \hat{S}_\alpha \cdot \hat{S}_\beta \rangle 
   ~~=~~ \text{constant} ~+~ 2J \langle \hat{S}_\alpha \cdot \hat{S}_\beta \rangle
 \end{equation}
 
@@ -2251,7 +2266,7 @@ Where $v_F$ stands for the Fermi velocity and $\Delta$ for superconducting gap b
 
 The two length scales, penetration depth and coherence length, allow us now, to categorize the superconductors in the groups \textit{Type 1} and \textit{Type 2}. This goes as follows:
 
-By defining $\kappa \equiv \xi/\lambda$ we say a Superconductor belongs to the group of \textit{Type 1} (\textit{Type 2}) if $\kappa ~<~ (>)~ 1/\sqrt{2} \simeq 0.707 $. 
+By defining $\kappa \equiv \lambda/\xi$ we say a Superconductor belongs to the group of \textit{Type 1} (\textit{Type 2}) if $\kappa ~<~ (>)~ 1/\sqrt{2} \simeq 0.707 $. 
 
 Values of $\kappa$ for some materials are given in \textcolor{red}{length scale table}. The classification of SC into Type 1 and Type 2 does not fully coincide with the classification of conventional and unconventional. Although a lot of the conventional (elementary) superconductors are of Type 1, there are also some exceptions like Niobium (Nb) which is a conventional Type 2 Superconductor.
 
@@ -2267,7 +2282,7 @@ The Landau Theory of Phase Transition can also be used in the case of the transi
 \end{equation}
 
 $|\psi|$ is treated as the order parameter. 
-To find the temperature dependence of the free energy per volume we make the following assumptions: near the transition temperature $T_C$, the coefficient $a$ has to be linear in temperature ($a(T)=a_0(T-T_C) +...$) and the coefficient $b$has to be given as $b(T)=b_0+...$ with $a_0, b_0$ being constants and larger than zero.
+To find the temperature dependence of the free energy per volume we make the following assumptions: near the transition temperature $T_C$, the coefficient $a$ has to be linear in temperature ($a(T)=a_0(T-T_C) +...$) and the coefficient $b$ has to be given as $b(T)=b_0+...$ with $a_0, b_0$ being constants and larger than zero.
 
 Looking for the extrema of $(f_\text{SC}-f_\text{NS})$
 
@@ -2369,7 +2384,7 @@ To define the appearance of vortices from Type 2 Superconductors into our formal
 
 \begin{equation} \label{eq:vortex_free_energy}
   f_\text{SC} - f_\text{NS} ~~≃~~ a(T) |\psi(r)|^2 ~+~ b(T)|\psi(r)|^4 ~+~ 
-  \frac{\hbar^2}{2m} \nabla |\psi|^2
+  \frac{\hbar^2}{2m} |\nabla \psi|^2
 \end{equation}
 
 To get the total Free energy we integrate \myEq{eq:vortex_free_energy} over all space
@@ -2461,7 +2476,7 @@ Since one vortex has exactly one flux quantum, we can set up a relation between 
 We assume, that the magnetic field penetration the superconductor has at least to be as strong as one flux quantum to be able to create a vortex
 
 \begin{equation}
-  \pi \lambda^2 H ~~\overset{!}{=}~~ \Phi_0 ~~~~~~\Rightarrow~~~~~~ H_{c_1} ~=~ \frac{\Phi_0}{\pi \lambda}
+  \pi \lambda^2 H ~~\overset{!}{=}~~ \Phi_0 ~~~~~~\Rightarrow~~~~~~ H_{c_1} ~=~ \frac{\Phi_0}{\pi \lambda^2}
 \end{equation}
 
 
